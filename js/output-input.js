@@ -25,7 +25,7 @@ console.log("Привет, " + madMax + "!");
 
 
 /*
-### 3. Задача -
+### 3. Задача + - (ну наверно тут предпологалось через массив, а не так как я)
 Объяви переменные intValue, numericValue, size, number типа number.
 Присвой им любые разные значения. 
 Вывести в консоль переменные в консоль через пробел, в обратном порядке их создания.
@@ -35,7 +35,8 @@ let intValue = 1;
 let numericValue = 2;
 let size = 3;
 let number = 4;
-console.log();
+console.log(number, size, numericValue, intValue);
+
 
 /*
 ### 4. Задача +
@@ -52,7 +53,7 @@ console.log(typeof isTrue);
 
 
 /*
-### 5. Задача. + -
+### 5. Задача. +
 Сделать рефакторинг кода:
 
 ```
@@ -64,9 +65,9 @@ console.log(chiclo boolian user__text)
 */
 
 let userAge = 10;
-let boolian = false;
-let userText = "Какой-то текст";
-console.log(userAge + boolian + userText)
+let isBoolian = false;
+let userText = " > 12 утверждение: ";
+console.log(userAge + userText + isBoolian)
 
 /*
 ### 6. Задача +
@@ -148,28 +149,30 @@ console.log(a + b);
 
 
 /*
-### 10. Задача -
+### 10. Задача + - (br)
 Пользователь вводит с клавиатуры любое сначала число, а затем текст.
 Вывести в консоль в следующем виде: <br>
 `Вы ввели текст: <текст пользователя>, вы ввели число: <число пользователя>`
 */
 
+let numberEnter = prompt("Введите число")
+let textEnter = prompt("введите текст")
+console.log("Вы ввели текст: " + textEnter + ", вы ввели число: " + numberEnter);
+
 /*
-### 11. ★ Задача ★ 
+### 11. ★ Задача ★ +
 Что выведется в консоли и почему:
 */
 
 
-console.log(numTest); // ? ощибка, код читается сверху вниз
-
+//console.log(numTest); // ? ошибка, код читается сверху вниз + тут есть магия, показакать Саше)
 var numTest = 7;
-
 console.log(numTest); // ? выведется 7 если коментируем первую строку
 
-console.log(numberTest); // ?
+//console.log(numberTest); // ? ошибка, код читается сверху вниз
 let numberTest = 12;
-console.log(numberTest); // ?
+console.log(numberTest); // ? выведется 12 если коментируем console.log(numberTest)
 
-console.log(PI); // ?
+//console.log(PI); // ? ошибка, код читается сверху вниз
 const PI = 3.1415;
-console.log(PI); // ?
+console.log(PI); // ? выведется 3.1415 если коментируем console.log(PI)
