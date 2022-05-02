@@ -8,14 +8,17 @@
 let monday = 1 + 1;
 let tuesday = 3 - 3;
 let wednesday = 3 * 3;
-let thursday = 60 / 5;
-let friday = 5 % 5;
-let saturday = 5 ** 2;
+let thursday = 60 / 5; //  12
+let friday = 24 % 5; // 1
+let saturday = 5 ** 3; // 125
 console.log(monday, tuesday, wednesday, thursday, friday, saturday);
 
 
 
 // 2. Как получить целое число при делении ? + 
+// parseInt()
+// ПОлучить целое при деления без этих функций
+
 
 let s = Math.floor(7 / 3);
 console.log(s);
@@ -43,6 +46,10 @@ console.log(day);   // 11
 console.log(day++); // 11
 console.log(day);   // 12
 
+// console.log(11++); // error
+
+
+
 
 
 // 4. Как увеличить переменную в 2 раза ? (Есть ли короткая запись ?) +
@@ -59,7 +66,9 @@ console.log(winTickets);
 
 // 6. Какое действие имеет более сильный приоритет: % или **
 
-//%
+// () ** */ +-
+// **
+// console.log(5 % 4 ** 2);
 
 // 7. Как поменять приоритет действий в 6 задачи ? Более слабый сделать более сильным. +
 
@@ -78,3 +87,9 @@ let secondResult = "4" + "7" + 4;
 console.log(secondResult); //474
 
 // если везде плюсы то конкатенация, в ином случае считается как обычное уравнение (приводится к числовому типу)
+
+// Запросить число и добавить к нему 7 и вывести в красивом виде:
+let num = 10
+console.log(num + " + 7 = " + (num + 7));
+
+// "10 + 7 = 17"
