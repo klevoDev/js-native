@@ -5,42 +5,71 @@
 // Выполнить деление первого на второе и записать в подробном виде: <br>
 // `10 : 5 = 2`
 
-let firstNum = 10;
-let secondNum = 5;
-console.log(firstNum + " : " + secondNum + " = " + firstNum / secondNum);
+// let firstNum = prompt("Введите первое число:");
+// let secondNum = prompt("Введите второе число:");
+// console.log(firstNum + " : " + secondNum + " = " + firstNum / secondNum);
 
-// ### 2. Задача 
+
+
+// ### 2. Задача +
 // Запросить у пользователя 1 число. 
 // Прибавить к нему 10, записать в подробном виде: <br>
 // `25 + 10 = 35`
 
+// let firstNum = prompt("Введите число:");
+// let total = Number(firstNum) + 10;
+// console.log(firstNum + " + " + 10 + " = " + Number(total));
 
 
-// ### 3. Задача 
+
+// ### 3. Задача +
 // Запросить у пользователя 1 число. 
 // Из 100 вычитаем запрошенное число, записать в подробном виде: <br>
 // `100 - 17 = 83`
 
+// let userNum = prompt("Введите число:");
+// console.log(100 + " - " + userNum + " = " + (100 - userNum));
 
-// ### 4. Задача 
+
+
+// ### 4. Задача +
 // Запросить 2 числа, выполнить умножение в подробном виде: <br>
 // `5 × 7 = 35`
 
-// ### 5. Задача 
+// let firstNum = prompt("Первое число:");
+// let secondNum = prompt("Второе число:");
+// console.log(firstNum + " * " + secondNum + " = " + firstNum * secondNum);
+
+
+
+// ### 5. Задача +
 // Запросить 2 числа, выполнить вычитание в подробном виде: <br>
 // `10 - 13 = -3`
 
+// let userNum = prompt("Первое число:");
+// let userSecondNum = prompt("Второе число:");
+// console.log(userNum + " - " + userSecondNum + " = " + (userNum - userSecondNum));
 
-// ### 6. Задача 
+
+
+// ### 6. Задача +
 // Запросить два числа, выполнить сначала умножение с этими числами, затем результат разделить на 2.
 // Записать в подробном виде: <br>
 // `10 × 50 : 2 = 250`
 
+// let userFirstNum = prompt("Первое число:");
+// let userSecondNum = prompt("Второе число:");
+// console.log(userFirstNum + " * " + userSecondNum + " : " + "2 = " + userFirstNum * userSecondNum / 2);
 
-// ### 7. Задача 
+
+// ### 7. Задача +
 // Запросить у пользователя число. Вывести в консоль удвоенное число.
 // Операцию записать в подробном виде: <br>
 // `17 × 2 = 34`
+
+// let userNum = prompt("Введите число:");
+// console.log(userNum + " * 2 = " + userNum * 2);
+
 
 
 // ### 8. Задача +
@@ -49,9 +78,8 @@ console.log(firstNum + " : " + secondNum + " = " + firstNum / secondNum);
 // Вывести в консоль: <br>
 // `Тебя зовут <имя>, после дня рождения тебе будет <возраст> лет!`
 
-
-// let userName = prompt("Введите свое имя:")
-// let userAge = prompt("Введите свой возраст:")
+// let userName = prompt("Введите свое имя:");
+// let userAge = prompt("Введите свой возраст:");
 // console.log("Тебя зовут " + userName + ", после дня рождения тебе будет " + userAge + " лет!");
 
 
@@ -60,13 +88,11 @@ console.log(firstNum + " : " + secondNum + " = " + firstNum / secondNum);
 // Измени значение в переменной seven, чтобы в консоль вывелась цифра 10.
 // Используя только оператор инкремента.
 
-// ```
-let seven = 7;
-seven++;
-seven++;
-seven++;
-console.log(seven);
-// ```
+// let seven = 7;
+// seven++;
+// seven++;
+// seven++;
+// console.log(seven);
 
 
 // ### 10. Задача + -
@@ -89,64 +115,86 @@ console.log(seven);
 // ```
 
 
-// ### 12. Задача
+// ### 12. Задача + -
 // Не выполняя код, дать ответ, что выведется в консоль:
 // Результат записать в комментарий.
 
-// ```
+
 // let tetraVar = 4;
 // console.log(3 - ++tetraVar - 3 + ++1 * 2 * (++tetraVar + --tetraVar));
-// ```
 
-// ### 13. Задача 
+// ++1*2*(5+3) = 17 -> 3 - 5 - 3 + 17 = 12
+
+
+
+// ### 13. Задача + -
 // Считай с клавиатуры три целых числа.
 // Выведи на экран их среднее арифметическое в подробнов виде. <br>
 // Среднее арифметическое - это число, равное сумме всех чисел, деленной на их количество.
 
+// let userFirstNum = Number(prompt("Первое число:"));
+// let userSecondNum = Number(prompt("Второе число:"));
+// let userThirdNumber = Number(prompt("Третье число"));
+// console.log("Среднее арифметическое чисел: " + userFirstNum + ", " + userSecondNum + ", " + userThirdNumber + " = " + (userFirstNum + userSecondNum + userThirdNumber) / 3);
+// console.log((10 + 10 + 10) / 3);
 
-// ### 14. Задача 
+
+
+// ### 14. Задача + -
 // Что выведется в консоль?
 
 // ```
-// console.log("6" + 10);
-// console.log(20 + "5");
-// console.log("10" + "10");
+// console.log("6" + 10); 610
+// console.log(20 + "5"); 205
+// console.log("10" + "10"); 1010
 
-// console.log("6" - 10);
-// console.log(20 / "5");
-// console.log("10" * "10");
+// console.log("6" - 10); -4
+// console.log(20 / "5"); 4
+// console.log("10" * "10"); 100
 
-// console.log("10" + 7 + 5 + "3");
-// console.log("10" - 7 + 5 + "3");
-// console.log("10" + (7 + 5) + "3");
+// console.log("10" + 7 + 5 + "3"); 10753
+// console.log("10" - 7 + 5 + "3"); 11, верно 83:(
+// console.log("10" + (7 + 5) + "3"); 10123
 
-// console.log(Number("10") + 7 + 5 + "3");
-// console.log(Number("10") + Number(String(7)) + String(5) + "3");
+// console.log(Number("10") + 7 + 5 + "3"); 10753, верно 223:( 
+// console.log(Number("10") + Number(String(7)) + String(5) + "3"); 10753, верно 1753:(
 // ```
 
-// ### 15. Задача 
+
+
+// ### 15. Задача + -
 // Укажите все значения NaN:
 
-// ```
-// console.log("2px" - 2);
+// console.log("2px" - 2); nan
 // console.log(0 + 3);
 // console.log("10" + 10);
 // console.log("3" - 4);
-// console.log("4px" * 2);
+// console.log("4px" * 2); nan
 // console.log(10 - "7");
-// console.log(7 - "2px");
-// console.log("4px" + 2);
-// console.log("8px" / 2);
-// ```
+// console.log(7 - "2px"); nan
+// console.log("4px" + 2); nan, тут ошибся, в консоли показало склеивание, ну очевидно)
+// console.log("8px" / 2); nan
 
 
-// ## ★ Задачи повышенной сложности ★ ##
+
+// ## ★ Задачи повышенной сложности ★ ## +
 
 // ### 16. ★ Задача ★
 // Легенда: Вы заходите в магазин и видите огромную очередь, вам нужно рассчитать время ожидания в очереди.
 // <br>
 // Пользователь вводит кол-во людей в очереди.
 // Фиксированное время приема одного покупателя всегда равна 5 минутам.
+
+// let manInLine = prompt("Введите кол-во людей:");
+// let allMinutes = manInLine * 5;
+// console.log(allMinutes);
+// let hours = Math.floor(allMinutes / 60);
+// let minutes = hours % 60;
+// console.log(hours);
+
+
+// console.log("Вы должны отстоять в очереди " + hours + " час и " + minutes + " минут.");
+
 
 // Пример ввода: <br>
 // `Введите кол-во людей: 40`
@@ -155,14 +203,18 @@ console.log(seven);
 // `Вы должны отстоять в очереди 3 часа и 20 минут.`
 
 
-// ### 17. ★ Задача ★
+
+// ### 17. ★ Задача ★ + -
 // В переменной number записано целое число.
 // В переменную lastDigit нужно записать последнюю цифру этого числа.
 // Для вычисления используй переменную number и оператор «остаток от деления».
 
-// ```
 // let number = 546;
-// ```
+// let lastDigit = number % 10;
+// console.log(lastDigit);
+
+
 
 // ### 18. ★★ Задача ★★
-// Решить задачу 14 без использования функций `parseInt` и `Math.floor`.
+// Решить задачу 16 без использования функций `parseInt` и `Math.floor`.
+
