@@ -136,7 +136,6 @@
 // let userSecondNum = Number(prompt("Второе число:"));
 // let userThirdNumber = Number(prompt("Третье число"));
 // console.log("Среднее арифметическое чисел: " + userFirstNum + ", " + userSecondNum + ", " + userThirdNumber + " = " + (userFirstNum + userSecondNum + userThirdNumber) / 3);
-// console.log((10 + 10 + 10) / 3);
 
 
 
@@ -215,9 +214,9 @@
 // ### 18. ★★ Задача ★★ +
 // Решить задачу 16 без использования функций `parseInt` и `Math.floor`.
 
-let users = prompt("Введите кол-во людей:");
-let timePerUser = 5;
-let totalMin = users * timePerUser;
-let hour = totalMin / 60 | 0; //Операнды преобразуются в 32-битные целые числа, представленные последовательностью битов. Дробная часть, если она есть, отбрасывается.
-let min = totalMin % 60;
-console.log("Вы должны отстоять в очереди " + hour + " часа и " + min + " минут.");
+// let users = prompt("Введите кол-во людей:");
+// let timePerUser = 5;
+// let totalMin = users * timePerUser;
+// let hour = totalMin / 60 | 0; //Операнды преобразуются в 32-битные целые числа, представленные последовательностью битов. Дробная часть, если она есть, отбрасывается.
+// let min = totalMin % 60;
+// console.log("Вы должны отстоять в очереди " + hour + " часа и " + min + " минут.");
