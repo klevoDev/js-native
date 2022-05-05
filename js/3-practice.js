@@ -21,6 +21,10 @@
 // console.log(firstNum + " + " + 10 + " = " + Number(total));
 
 
+// let num = Number(prompt('Write y number'))
+// console.log(firstNum + " + 10  = " + (num + 10));
+
+
 
 // ### 3. Задача +
 // Запросить у пользователя 1 число. 
@@ -28,7 +32,7 @@
 // `100 - 17 = 83`
 
 // let userNum = prompt("Введите число:");
-// console.log(100 + " - " + userNum + " = " + (100 - userNum));
+// console.log("100 - " + userNum + " = " + (100 - userNum));
 
 
 
@@ -38,7 +42,7 @@
 
 // let firstNum = prompt("Первое число:");
 // let secondNum = prompt("Второе число:");
-// console.log(firstNum + " * " + secondNum + " = " + firstNum * secondNum);
+// console.log(firstNum + " × " + secondNum + " = " + firstNum * secondNum);
 
 
 
@@ -59,7 +63,7 @@
 
 // let userFirstNum = prompt("Первое число:");
 // let userSecondNum = prompt("Второе число:");
-// console.log(userFirstNum + " * " + userSecondNum + " : " + "2 = " + userFirstNum * userSecondNum / 2);
+// console.log(userFirstNum + " × " + userSecondNum + " : 2 = " + userFirstNum * userSecondNum / 2);
 
 
 // ### 7. Задача +
@@ -67,7 +71,7 @@
 // Операцию записать в подробном виде: <br>
 // `17 × 2 = 34`
 
-// let userNum = prompt("Введите число:");
+// let userNum = Number(prompt("Введите число:"));
 // console.log(userNum + " * 2 = " + userNum * 2);
 
 
@@ -100,9 +104,18 @@
 // Результат записать в комментарий.
 
 // ```
-// let tetraVar = 4;
-// console.log(7 + tetraVar++ - 3 * --tetraVar); два варианта 3 или -1 вопрос к оператору инкремента
+// let tetraVar = 4; // 4
+// console.log(7 + tetraVar++ - 3 * --tetraVar);
+
+
+// 7 + 3 - 9
+// console.log(- 3 * --tetraVar);
+// console.log(7 + tetraVar++ - 3 * --tetraVar);
+// два варианта 3 или -1 вопрос к оператору инкремента
 // ```
+
+
+
 
 
 // ### 11. Задача + -
@@ -135,9 +148,9 @@
 // let userFirstNum = Number(prompt("Первое число:"));
 // let userSecondNum = Number(prompt("Второе число:"));
 // let userThirdNumber = Number(prompt("Третье число"));
-// console.log("Среднее арифметическое чисел: " + userFirstNum + ", " + userSecondNum + ", " + userThirdNumber + " = " + (userFirstNum + userSecondNum + userThirdNumber) / 3);
+// console.log("Ср. арифм: " + userFirstNum + ", " + userSecondNum + ", " + userThirdNumber + " = " + (userFirstNum + userSecondNum + userThirdNumber) / 3);
 
-
+// (3 + 5 + 4) / 3 = 15
 
 // ### 14. Задача + -
 // Что выведется в консоль?
@@ -184,8 +197,9 @@
 // Пользователь вводит кол-во людей в очереди.
 // Фиксированное время приема одного покупателя всегда равна 5 минутам.
 
-// let users = prompt("Введите кол-во людей:");
+// let users = Number(prompt("Введите кол-во людей:"));
 // let timePerUser = 5;
+
 // let min = users * timePerUser;
 // let hour = Math.floor(min / 60);
 // let mins = min % 60;
@@ -217,6 +231,11 @@
 // let users = prompt("Введите кол-во людей:");
 // let timePerUser = 5;
 // let totalMin = users * timePerUser;
-// let hour = totalMin / 60 | 0; //Операнды преобразуются в 32-битные целые числа, представленные последовательностью битов. Дробная часть, если она есть, отбрасывается.
+// // let hour = totalMin / 60 | 0; 
+// let hour = (totalMin - totalMin % 60) / 60;
+
+
+// // Операнды преобразуются в 32-битные целые числа, представленные последовательностью битов. Дробная часть, если она есть, отбрасывается.
 // let min = totalMin % 60;
 // console.log("Вы должны отстоять в очереди " + hour + " часа и " + min + " минут.");
+
