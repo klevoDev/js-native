@@ -162,7 +162,7 @@ console.log(`${s3 + s1 + s2}`);
 
 
 
-// ### 16. Задача + -
+// ### 16. Задача +
 // В переменную digits нужно записать строку "100". Используй переменные x, y, пустую строку.
 
 // - Не изменяй значения переменных x, y, z;
@@ -171,9 +171,12 @@ console.log(`${s3 + s1 + s2}`);
 
 let x = 5;
 let y = 4;
-let z = 0;
-let digits = x + y + String(z);
+let num1 = x - y;
+let num2 = x + y;
+let num3 = y - y;
+let digits = num1 + num2 + String(num3);
 console.log(digits);
+
 
 
 // ### 17. Задача +
@@ -208,7 +211,7 @@ console.log(emptyString.length);
 console.log("Oh no!".length);
 console.log((emptyString + 4 + 3 + "11").length);
 
-// ### 19. Задача + -
+// ### 19. Задача + 
 // В консоль выводится четыре строки.
 // Внеси изменения в код, чтобы все буквы в этих строках стали строчными.
 // Не изменяй значения переменных title, degree и career.
