@@ -36,7 +36,7 @@ console.log("Петр сказал: \"Иван учит английский я�
 // ### 4. Задача +
 // Пользуясь шаблонными литералами, сделать рефакторинг кода 3 задачи.
 
-// console.log(`у ${name} имеет ${rareCoins}шт. редких монет!`);
+// console.log(`У ${name} имеет ${rareCoins}шт. редких монет!`);
 
 // ### 5. Задача +
 // Вывести в консоль: <br>
@@ -67,7 +67,7 @@ console.log("FirstLine\n\t\ SecondLine\nThirdLine");
 // const myStr = "<a href="http://www.example.com" target="_blank">Link</a>";
 // ```
 
-// const myStr = `<a href="http://www.example.com" target="_blank">Link</a>"`;
+// const myStr = '<a href="http://www.example.com" target="_blank">Link</a>"';
 // const myStr2 = "\<a href=\"http://www.example.com\" target=\"_blank\">Link</a>\"";
 // console.log(myStr);
 // console.log(myStr2);
@@ -133,7 +133,8 @@ console.log(strText.length);
 let s1 = "Do";
 let s2 = "It";
 let s3 = "Just";
-let tagline = s3 + s1 + s2;
+// let tagline = s3 + s1 + s2;
+let tagline = `${s3}${s1}${s2}`;
 console.log(tagline);
 
 
@@ -141,7 +142,7 @@ console.log(tagline);
 // ### 14. Задача +
 // Выполнить задачу 13 с использованием шаблонных литералов.
 
-console.log(`${s3 + s1 + s2}`);
+// console.log(`${s3 + s1 + s2}`);
 
 
 
@@ -157,7 +158,8 @@ console.log(`${s3 + s1 + s2}`);
 // let x = 2;
 // let y = 4;
 // let z = 0;
-// let digits = x + y + String(z);
+// let emptyStr = "";
+// let digits = x + y + emptyStr + z;
 // console.log(digits);
 
 
@@ -169,13 +171,15 @@ console.log(`${s3 + s1 + s2}`);
 // - Для инициализации переменной digits используй x, y, z, пустую строку;
 // - Программа должна выводить в консоль переменную digits;
 
-let x = 5;
-let y = 4;
-let num1 = x - y;
-let num2 = x + y;
-let num3 = y - y;
-let digits = num1 + num2 + String(num3);
-console.log(digits);
+// let x = 5;
+// let y = 4;
+// // let num1 = x - y;
+// // let num2 = x + y;
+// // let num3 = y - y;
+
+// // 5 * 4 * 5
+// let digits = x * y * x + "";
+// console.log(digits);
 
 
 
@@ -212,14 +216,13 @@ console.log("Oh no!".length);
 console.log((emptyString + 4 + 3 + "11").length);
 
 // ### 19. Задача + 
-// В консоль выводится четыре строки.
+// В консоль выводится три строки.
 // Внеси изменения в код, чтобы все буквы в этих строках стали строчными.
 // Не изменяй значения переменных title, degree и career.
 
 let title = "Senior Lead Principal Software Engineer Data Architect";
 let degree = "In college, I Majored in Political Science and Minored in Religious Studies.";
 let career = "Experienced Team Leader with strong Organizational Skills and a Successful career in Management.";
-
 console.log(title.toLowerCase());
 console.log(degree.toLowerCase());
 console.log(career.toLowerCase());
