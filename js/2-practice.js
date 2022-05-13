@@ -168,14 +168,53 @@ console.log(uzerName + "имеет" + "доступ:" + "true")
 */
 
 
-// console.log(numTest); // ? undefined
+// console.log(numTest); // undefined
 // var numTest = 7; // Hoisting
-// console.log(numTest); // ? выведется 7 даже если не коментируем первую строку
+// console.log(numTest); // выведется 7 даже если не коментируем первую строку
 
-// console.log(numberTest); // ? ошибка, код читается сверху вниз
+// console.log(numberTest); // ошибка, код читается сверху вниз
 // let numberTest = 12;
-// console.log(numberTest); // ? выведется 12 если коментируем console.log(numberTest)
+// console.log(numberTest); // выведется 12 если коментируем console.log(numberTest)
 
 // //console.log(PI); // ? ошибка, код читается сверху вниз
 // const PI = 3.1415;
-// console.log(PI); // ? выведется 3.1415 если коментируем console.log(PI)
+// console.log(PI); // выведется 3.1415 если коментируем console.log(PI)
+
+
+
+// 2(typeof)
+
+// ### 11. Задача
+// Не выполняя код, дать ответ, что выведется в консоль:
+// Результат записать в комментарий.
+
+// console.log(typeof "text"); // string
+// console.log(typeof "1010"); // string
+// console.log(typeof false); // boolean
+// console.log(typeof "Pavel"); // string
+// console.log(typeof "undefined"); // string
+
+// console.log(typeof -106.432); // number, думал что double или float
+// console.log(typeof "null"); // string
+// console.log(typeof 111); // number
+// console.log(typeof true); // boolean
+// console.log(typeof " "); // string
+
+
+
+// ### 12. Задача
+// Не выполняя код, дать ответ, что выведется в консоль:
+// Результат записать в комментарий.
+
+// console.log(typeof Infinity); // чекал что это: положительная бесконечность тип number
+// console.log(typeof 200); // number
+// console.log(typeof ""); // string
+// console.log(typeof "true"); // string
+//console.log(typeof null); // object
+//null — умышленно созданный «пустой» объект. Единственное значение типа Null.
+
+// console.log(typeof "tester"); // string
+// console.log(typeof NaN); // number
+// console.log(typeof false); // boolean
+// console.log(typeof -Infinity); // number
+// console.log(typeof undefined); // undefined
