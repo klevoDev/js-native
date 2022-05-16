@@ -6,7 +6,7 @@
 
 //Инструкция if(...) вычисляет условие в скобках и, если результат true, то выполняет блок кода.
 
-// if (4 == "4") {
+// if (4 === 4) {
 //     alert("Верно")
 // }
 
@@ -39,10 +39,8 @@
 // а) От 0 вкл. до 10 вкл или нет
 
 // let num2 = Number(prompt("Проверка от 0 вкл. до 10 вкл, введите цифру:"));
-// if (num2 > 0 && num2 < 11) {
+// if (num2 >= 0 && num2 <= 10) {
 //     alert("В яблочко");
-// } else if (num2 === 0) {
-//     alert("В яблочко :)")
 // } else {
 //     alert("Не попал")
 // }
@@ -85,9 +83,9 @@
 //     console.log("Тип String");
 // } else if (typeof num5 === "number") {
 //     console.log("Тип Number");
-// } else if (typeof num5 === "object") {
+// } else if (num5 === null) {
 //     console.log("Тип Null");
-// } else if (typeof num5 === "undefined") {
+// } else if (num5 === undefined) {
 //     console.log("Тип Undefined");
 // } else {
 //     console.log("Определим позже)");
