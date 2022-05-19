@@ -6,9 +6,9 @@
 
 // let num1 = Number(prompt("Введите число, желательно 108:"));
 // if (num1 === 108) {
-//     alert("Супер");
+//     console.log("Ом");
 // } else {
-//     alert("попробуй еще :)");
+//     console.log("попробуй еще :)");
 // }
 
 
@@ -22,8 +22,6 @@
 // let num3 = Number(prompt("Введите число:"));
 // if (num2 > num3) {
 //     console.log(num3);
-// } else if (num2 < num3) {
-//     console.log(num2);
 // } else {
 //     console.log(num2);
 // }
@@ -35,9 +33,9 @@
 
 // let num3 = Number(prompt("Введите число:"));
 // if (num3 % 2 === 0) {
-//     alert("true");
+//     console.log(true);
 // } else {
-//     alert("false");
+//     console.log(false);
 // }
 
 
@@ -47,11 +45,12 @@
 // иначе: `error`.
 
 // let num4 = Number(prompt("Введите число:"));
-// if (num4 % 2 === 0 && num4 % 7 === 0) {
-//     alert("okey");
+// if (num4 % 2 === 0 || num4 % 7 === 0) {
+//     console.log("okey");
 // } else {
-//     alert("error");
+//     console.log("error");
 // }
+
 
 
 
@@ -61,9 +60,9 @@
 // let num5 = Number(prompt("Введите число:"));
 // let num6 = prompt("Введите строку:");
 // if (num5 % 2 === 0) {
-//     alert(num6 + "=even=");
+//     console.log(num6 + "=even=");
 // } else {
-//     alert(num6 + "=odd=");
+//     console.log(num6 + "=odd=");
 // }
 
 // ### 6. Задача +
@@ -75,11 +74,11 @@
 // let num6 = Number(prompt("Введите число:"));
 // let num7 = Number(prompt("Введите число:"));
 // if (num6 % 2 === 0 && num7 % 3 === 0) {
-//     alert("plus plus");
+//     console.log("plus plus");
 // } else if (num6 % 2 === 0 || num7 % 3 === 0) {
-//     alert("plus");
+//     console.log("plus");
 // } else {
-//     alert("minus");
+//     console.log("minus");
 // }
 
 
@@ -91,9 +90,9 @@
 // let userName = prompt("Введите Имя:");
 // let userAge = Number(prompt("Введите возраст:"));
 // if (userAge > 18) {
-//     alert("Добро пожаловать, " + userName);
+//     console.log("Добро пожаловать, " + userName);
 // } else {
-//     alert(userName + ", ваш возраст - " + userAge + ", вам доступ запрещён!.");
+//     console.log(userName + ", ваш возраст - " + userAge + ", вам доступ запрещён!");
 // }
 
 
@@ -109,9 +108,9 @@
 // let cold = "на улице холодно";
 // let hot = "на улице тепло";
 // if (temperature > 0) {
-//     alert(hot);
+//     console.log(hot);
 // } else {
-//     alert(cold);
+//     console.log(cold);
 // }
 
 
@@ -125,15 +124,12 @@
 
 // let num9 = Number(prompt("Введите число"));
 // if (num9 >= 0 && num9 < 10) {
-//     alert("thin")
+//     console.log("thin")
 // } else if (num9 >= 10 && num9 <= 20) {
-//     alert("medium")
-// } else if (num9 > 21 && 50 > num9) {
-//     alert("extra")
-// } else {
-//     alert("")
-// }
-
+//     console.log("medium")
+// } else if (num9 >= 21 && 50 > num9) {
+//     console.log("extra")
+// } 
 
 
 // ### 10. Задача +
@@ -141,7 +137,9 @@
 // Если он не попал в промежуток от 10 до 21 вкл, то вывести в консоль: `Luck`.
 
 // let num10 = Number(prompt("Введите число:"));
-// if (num10 <= 10 || num10 >= 21) alert("Luck");
+// if (num10 <= 10 || num10 >= 21) {console.log("Luck")};
+
+// if (!(num10 >= 10 && num10 <= 21)) {console.log("Luck")};
 
 
 
@@ -152,7 +150,9 @@
 
 // let userAge = Number(prompt("Введите возраст:"));
 // let userName = prompt("Ваше имя:");
-// if (userAge >= 18 && userAge <= 27) alert(userName + ", явитесь в военкомат");
+// if (userAge >= 18 && userAge <= 27) {
+//     console.log(userName + ", явитесь в военкомат");
+// }
 
 
 // ### 12. Задача +
@@ -178,6 +178,15 @@
 //     console.log("Попробуйте ввести возраст еще раз:");
 // }
 
+// let age = prompt();
+// if (age < 18) {
+//     if (age >= 6) {
+//         console.log("нужно ходить в школу");
+//     }
+// } else {
+//     console.log("пора в институт");
+// }
+
 
 
 // ### 13. Задача +
@@ -194,7 +203,7 @@
 // ```
 
 // let textUser = prompt("Введите что хотите:");
-// if (textUser.length > "7") {
+// if (textUser.length > 7) {
 //     console.log(textUser.toUpperCase());
 // } else {
 //     console.log(textUser.toLowerCase());
@@ -241,9 +250,9 @@
 // let firstString = prompt("Введите что хотите:");
 // let secondString = prompt("Введите что хотите второй раз:");
 // if (firstString === secondString) {
-//     alert("Строки одинаковые");
+//     console.log("Строки одинаковые");
 // } else {
-//     alert("Строки разные");
+//     console.log("Строки разные");
 // }
 
 
@@ -256,9 +265,9 @@
 // let firstString = prompt("Введите что хотите:");
 // let secondString = prompt("Введите что хотите второй раз:");
 // if (firstString.length === secondString.length) {
-//     alert("Количество совпадает");
+//     console.log("Количество совпадает");
 // } else {
-//     alert("Не совпадает");
+//     console.log("Не совпадает");
 // }
 
 
@@ -274,9 +283,9 @@
 // let secret = "AmIGo";
 // let userPass = prompt();
 // if (secret.toLowerCase() === userPass.toLowerCase()) {
-//     alert("доступ разрешен");
+//     console.log("доступ разрешен");
 // } else {
-//     alert("доступ запрещен");
+//     console.log("доступ запрещен");
 // }
 
 
@@ -290,15 +299,13 @@
 // let num1 = Number(prompt("Введите число:"));
 // let num2 = Number(prompt("Введите число:"));
 // let num3 = Number(prompt("Введите число:"));
-// if (num1 > num2 && num1 > num3) {
+// if (num1 >= num2 && num1 >= num3) {
 //     console.log("наибольшее число:" + num1);
 // } else if (num2 > num1 && num2 > num3) {
 //     console.log("наибольшее число:" + num2);
 // } else if (num3 > num1 && num3 > num2) {
 //     console.log("наибольшее число:" + num3);
-// } else if (num2 === num1 && num1 === num3) {
-//     console.log(num1);
-// }
+// } 
 
 // ### ★ 19. Задача ★ +
 // Запросить у пользователя с клавиатуры число.
@@ -317,6 +324,8 @@
 // } else if (num === "") {
 //     console.log("Пользователь ничего не ввёл");
 // }
+
+// isNaN ?
 
 
 // ### ★ 20. Задача ★ +-
@@ -378,7 +387,7 @@
 // Если оно равно 108, то вывести в консоль: `Ом`.
 
 // let num1 = Number(prompt("Введите число, желательно 108:"));
-// (num1 === 108) ? alert("Супер") : alert("попробуй еще :)");
+// (num1 === 108) ? console.log("Супер") : console.log("попробуй еще :)");
 
 
 
@@ -386,7 +395,7 @@
 // Запросить одно число, проверить на чётность. Если число чётное, то вывести ```true```, иначе ```false```.
 
 // let num3 = Number(prompt("Введите число:"));
-// (num3 % 2 === 0) ? alert("true") : alert("false");
+// (num3 % 2 === 0) ? console.log("true") : console.log("false");
 
 
 
@@ -395,7 +404,7 @@
 
 // let num6 = prompt("Введите строку:");
 // let num5 = Number(prompt("Введите число:"));
-// (num5 % 2 === 0) ? alert(num6 + "=even=") : alert(num6 + "=odd=");
+// (num5 % 2 === 0) ? console.log(num6 + "=even=") : console.log(num6 + "=odd=");
 
 
 
@@ -407,6 +416,6 @@
 // В противном случае ничего не делаем.
 
 // let num9 = Number(prompt("Введите число"));
-// (num9 >= 0 && num9 < 10) ? alert("thin") :
-//     (num9 >= 10 && num9 <= 20) ? alert("medium") :
-//         (num9 > 21 && 50 > num9) ? alert("extra") : alert("");
+// (num9 >= 0 && num9 < 10) ? console.log("thin") :
+//     (num9 >= 10 && num9 <= 20) ? console.log("medium") :
+//         (num9 > 21 && 50 > num9) ? console.log("extra") : console.log("");
