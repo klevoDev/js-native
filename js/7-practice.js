@@ -488,20 +488,7 @@
 // ```
 
 
-// let num = Number(prompt());
-// let count = 0;
-// let result = Number();
-// let result2 = Number();
 
-// for (let i = 2; i < num; i++) {
-//     if (num % i !== 0) {
-//         console.log(i + "простое чиcло");
-//     } else {
-//         console.log("else число");
-//     }
-// }
-
-// if (num % )
 
 
 
@@ -550,7 +537,7 @@
 
 
 
-// ### ★ 33. Задача ★
+// ### ★ 33. Задача ★ -
 // С помощью вложенных циклов нарисуйте:
 
 // 1
@@ -559,23 +546,85 @@
 // 4 4 4 4
 // 5 5 5 5 5
 
-// let s = " ";
+// for (let n = 1; n < 6; n++) {
+//     let s = " ";
+//     for (let i = 0; i < n; i++) {
+//         s += n + " ";
+//     }
+//     console.log(s);
+// }
+
+
+
+// ### ★ 35. Задача ★
+// С помощью вложенных циклов и символа `*` нарисуйте:
+
+// ```
+// ****
+// ***
+// **
+// *
+// ```
+
+
+
+// ### ★ 38. Задача ★
+// С помощью вложенных циклов нарисуйте:
+
+// ```
+//         1
+//       2 1
+//     3 2 1
+//   4 3 2 1
+// 5 4 3 2 1 
+
+
+
+
+
+
+// ```
+// const star = '*';
+// ```
+
+// ```
+// *
+// **
+// ***
+// ```
+
+// const star = "*";
+// let starResult = "";
+// for (let i = 0; i < 3; i++) {
+//     //debugger
+//     starResult += star;
+//     //debugger
+//     console.log(starResult);
+//     //debugger
+// }
+
+
+// let s = "";
+// let q = 1;
 // for (let i = 1; i < 5; i++) {
-//     for (let j = 1; j < 5; j++) {
-//         for (let k = " "; k < 5; k++) {
-//             console.log(k);
+
+//     s += i;
+//     s += "\n";
+//     for (let j = 2; j < 5; j++) {
+//         if (i === j) {
+//             s += j;
 //         }
-//         console.log(s);
 //     }
-//     console.log(i);
+
 // }
-// console.log();
+// console.log(s);
 
 
-// let s = 0;
-// for (let i = 1; i <= 5; i++) {
-//     for (let j = 1; j <= 3; j++) {
-//         console.log(s);
-//     }
-// }
+// 1
+// X X
+// 3 3 3
+// X X X X
+// 5 5 5 5 5
+
+// let n = 2;
 
