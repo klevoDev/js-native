@@ -99,7 +99,7 @@
 
 
 
-// 11. Задача -
+// 11. Задача +
 // Создать массив любой длины, состоящий из чисел. Добавлять к каждому третьему элементу массива строку: =x3=. Вывести в консоль получившийся массив.
 
 // const test = [23, 43, 54, 2, 5, 2, 3];
@@ -130,7 +130,7 @@
 
 
 
-// 13. Задача +-
+// 13. Задача +
 // Создать пустой массив. Заполнить его тремя элементами, которые введёт пользователь с клавиатуры. Вывести в консоль получившийся массив.
 
 // const userArray = [];
@@ -153,7 +153,7 @@
 
 
 
-// 15. Задача + -
+// 15. Задача +
 // Дан массив чисел. Вывести в консоль только положительные значения.
 
 // const numberArray = [-13, 6, 12, -11, 5, 4, 19, 13, -1, 0, 5, -9];
@@ -166,7 +166,7 @@
 
 
 
-// 16. Задача + -
+// 16. Задача +
 // Вывести в консоль самое большое значение из массива.
 
 // const numberArray = [-13, 6, 12, -11, 5, 4, 19, 13, -1, 0, 5, -9];
@@ -200,7 +200,7 @@
 // Вывести в консоль индекс самого минимального значения из массива numberArray.
 
 // const numberArray = [-13, 6, 12, -11, 5, 4, 19, 13, -1, 0, 5, -9];
-// console.log(Math.min(...numberArray));
+
 
 
 // 19. Задача +
@@ -239,7 +239,7 @@
 // let newArr = [];
 
 // for (let i = 0; i < numberArray.length; i++) {
-//     numberArray[i] % 3 === 0 && numberArray[i] !== 0 ? newArr += numberArray[i] : null
+//     numberArray[i] % 3 === 0 && numberArray[i] !== 0 ? newArr.push(numberArray[i]) : null
 // }
 // console.log(newArr);
 
@@ -297,43 +297,53 @@
 // const arr = [3, 7, 4];
 // const newArr = arr;
 // newArr.push(7);
-// console.log(arr); // ?
+// console.log(arr); // ? [3, 7, 4, 7]
 
-// [3, 7, 4, 7]
+
 
 // так как это ссылка на область памяти где хранятся данные, мы не создали новый массив, а сделали новую ссылку для доступа в старый массив.
 
 
 
-// 26. Задача
+// 26. Задача +
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
 
-// const arr = [2, 1, 5]; 
+// const arr = [2, 1, 5];
 
 // const newArr = arr;
 // arr.pop();
 
-// console.log(newArr); // ?
+// console.log(newArr); // ? [2, 1]
 
 
 
-// 27. Задача
+
+// 27. Задача +
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
+// Методы, работающие с началом массива:
 
-// const arr = [2, 1, 5]; 
+// shift
+// Удаляет из массива первый элемент и возвращает его.
+// unshift
+// Добавляет элемент в начало массива.
+
+// const arr = [2, 1, 5];
 // const newArr = arr;
 // const antArr = newArr;
 
 // antArr.unshift(5, 4);
 
-// console.log(arr); // ?
-// console.log(newArr); // ?
-// console.log(antArr); // ?
-// 28. Задача
+// console.log(arr); // ? [5, 4, 2, 1, 5]
+// console.log(newArr); // ? [5, 4, 2, 1, 5]
+// console.log(antArr); // ? [5, 4, 2, 1, 5]
+
+
+
+// 28. Задача - 
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
@@ -344,58 +354,112 @@
 // list[2] = 7;
 // arr[4] = 12;
 
-// console.log(arr); // ?
-// console.log(list); // ?
-// console.log(list.length); // ?
-// 29. Задача
+// console.log(arr); // ? [6, 9, 7, undefine]
+// console.log(list); // ? [6, 9, 7, undefine]
+// console.log(list.length); // ? 4 или 3
+
+
+
+// 29. Задача +
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
 
-// const arr = [1, 2]; 
+// const arr = [1, 2];
 // const copyArr = arr;
 // const othArr = arr;
 
-// copyArr.push(1, 2);
-// othArr.shift();
+// copyArr.push(1, 2); // [1, 2, 1, 2]
+// othArr.shift(); // [2, 1, 2]
 
-// console.log(arr); // ?
-// console.log(copyArr); // ?
-// console.log(othArr); // ?
-// 30. Задача
+// console.log(arr); // ? [2, 1, 2]
+// console.log(copyArr); // ? [2, 1, 2]
+// console.log(othArr); // ? [2, 1, 2]
+
+
+
+// 30. Задача +
 
 // Дан массив. Написать программу, которая скопирует массив targetList в другую переменную. При изменении скопированного массива (при добавлении, удалении) исходный массив не должен изменяться.
 
 // const targetList = [4, 5, true, 3, 'text', 1, null];
-// 31. Задача
+
+// let newArray = [];
+// for (let i = 0; i < targetList.length; i++) {
+//     newArray.push(targetList[i])
+// }
+
+
+
+// 31. Задача +
 
 // Даны 2 массива, перенести каждый третий элемент из массива basicList в массив everyThreeList. Программа должна работа для массива любой длины.
 
 // const basicList = [-11, 3, 23, -14, 5, 43, 3, 14, -1, 65, 5, -9, 10, 11, 17, 2, 1];
 // const everyThreeList = [];
-// 32. Задача
+
+// for (let i = 0; i < basicList.length; i++) {
+//     if ((i + 1) % 3 === 0) {
+//         everyThreeList.push(basicList[i])
+//     }
+// }
+
+// console.log(everyThreeList);
+
+
+// 32. Задача +
 
 // Дан массив чисел, вывести в консоль произведение всех нечётных положительных чисел.
 
 // const numberArray = [-199, 6, 22, -31, 7, -6, 1, 11, -3, 0, 5, -99];
-// 33. Задача
+
+// let multiplicationAllNumbers = 1;
+// for (let i = 0; i < numberArray.length; i++) {
+//     if (numberArray[i] % 2 !== 0 && numberArray[i] > 0) {
+//         multiplicationAllNumbers *= numberArray[i]
+//     }
+// }
+// console.log(multiplicationAllNumbers);
+
+
+
+// 33. Задача +
 
 // Дан массив чисел, вывести в консоль количество отрицательных чисел.
 
 // const numberList = [-199, 30, 10, 15, -1, -12, 43, 38, -7, 3, 5, -4, -99];
-// 34. Задача
+// let negativeNumbers = 0;
+// for (let i = 0; i < numberList.length; i++) {
+//     if (numberList[i] < 0) {
+//         negativeNumbers += 1
+//     }
+// }
+// console.log(negativeNumbers);
+
+// 34. Задача +
 
 // Дан массив чисел, вывести в консоль количество массивов и null.
 
 // const list = [[-199, 30, 10, 15], -1, null, '43', null, [-7, 3, 5], 'null', -99, [], 4, null];
-// 35. Задача
+
+// let arraysCount = 0;
+// let nullCount = 0;
+// for (let i = 0; i < list.length; i++) {
+//     typeof list[i] === "object" && list[i] !== null ? arraysCount += 1 : null
+//     list[i] === null ? nullCount += 1 : null
+// }
+// console.log(arraysCount, nullCount);
+
+
+
+// 35. Задача +
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // const arr1 = [3, 4, 5];
 // const arr2 = [3, 4, 5];
-// console.log(arr1 === arr2); // ?
+// console.log(arr1 === arr2); // ? false разные массивы
 
 // const copyArr1 = arr1;
-// console.log(copyArr1 === arr1); // ?
+// console.log(copyArr1 === arr1); // ? true общая ссылка
