@@ -108,6 +108,57 @@ for (const value of taskArray) {
     // Индекс нету
 }
 
+// * == Копирование массива == *
+
+let testArray = [3, 4, 7]; // Хранит не массив чисел, а ссылку на область памяти, в которой подряд идут эти значения
+
+let testArrayCopy = testArray; // Копируем ссылку, а не значения
+testArrayCopy[0] = 1000;
+console.log(testArrayCopy);
+console.log(testArray);
+
+// Ссылаются ли массивы на одну область видимости или нет
+console.log(testArrayCopy === testArray); // true, значит они связаны по сслыки
+
+console.log([] === []); // false
+console.log([10] === [10]); // false
+
+// * Если нужна копия, то создаём пустой массив и пушим туда все элементы (примитивы) в цикле
+// ! Такая копия будет только поверхностной
+
+
+let tester = 10; // Тестер хранит число 10
+let copyTester = tester;
+copyTester += 10;
+console.log(copyTester);
+console.log(tester);
+
+
+
+// * === Дополнение
+
+const arr = [3, null, [3, '6 el'], 'text', false, [3, [5, false]]];
+
+console.log(arr[2][1]);
+
+
+const city = [
+    'Moscow',
+    'Paris',
+    'London', // Висячая запятая
+];
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
