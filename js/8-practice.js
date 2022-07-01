@@ -201,6 +201,14 @@
 
 // const numberArray = [-13, 6, 12, -11, 5, 4, 19, 13, -1, 0, 5, -9];
 
+// let minValue = numberArray[0];
+// for (let i = 1; i < numberArray.length; i++) {
+//     if (minValue > numberArray[i]) {
+//         minValue = numberArray[i]
+//     }
+// }
+// console.log(minValue);
+
 
 
 // 19. Задача +
@@ -236,10 +244,10 @@
 // Перенести значения, кратные 3 из массива numberArray в массив newArr;
 
 // const numberArray = [-13, 6, 12, -11, 5, 4, 19, 13, -1, 0, 5, -9];
-// let newArr = [];
+// const newArr = [];
 
 // for (let i = 0; i < numberArray.length; i++) {
-//     numberArray[i] % 3 === 0 && numberArray[i] !== 0 ? newArr.push(numberArray[i]) : null
+//     numberArray[i] % 3 === 0 && numberArray[i] !== 0 && newArr.push(numberArray[i])
 // }
 // console.log(newArr);
 
@@ -249,15 +257,27 @@
 
 // Написать программу, которая посчитает количество строк и чисел в массиве varArray. Результат вывести в консоль с подписью, где число строк, а где чисел.
 
-// const varArray = [15, 12, 'text', true, 6, 7, 21, [], false, 0, 1, '', -1, 'world', 'piece'];
+const varArray = [15, 12, 'text', true, 6, 7, 21, [], false, 0, 1, '', -1, 'world', 'piece'];
 
 // let rowCount = 0;
 // let numbersCount = 0;
 // for (let i = 0; i < varArray.length; i++) {
-//     typeof varArray[i] === "string" ? rowCount += 1 : null
-//     typeof varArray[i] === "number" ? numbersCount += 1 : null
+//     typeof varArray[i] === "string" && (rowCount += 1)
+//     typeof varArray[i] === "number" && (numbersCount += 1)
 // }
 // console.log(`В массиве находится ${rowCount} строк и ${numbersCount} чисел.`);
+
+// * 2 part
+// let rowCount = 0;
+// let numbersCount = 0;
+// for (const element of varArray) {
+//     typeof element === "string" && (rowCount += 1)
+//     typeof element === "number" && (numbersCount += 1)
+// }
+// console.log(`В массиве находится ${rowCount} строк и ${numbersCount} чисел.`);
+
+
+
 
 
 
@@ -265,13 +285,19 @@
 
 // Написать программу, которая посчитает количество массивов внутри массива testArray.
 
-// const testArray = [11, 17, [18, 10], -5, 7, [], 9, [-1], [4, 5]];
+// const testArray = [11, null, {}, new Date(), 17, [18, 10], -5, 7, [], 9, [-1], [4, 5]];
 // let arraysCount = 0;
 // for (let i = 0; i < testArray.length; i++) {
 //     typeof testArray[i] === "object" ? arraysCount += 1 : null;
 // }
 // console.log(arraysCount);
 
+
+// let arraysCount = 0;
+// for (const el of testArray) {
+//     Array.isArray(el) && (arraysCount += 1)
+// }
+// console.log(arraysCount);
 
 
 // 24. Задача +
@@ -281,10 +307,9 @@
 // const numberArray = [-13, 6, 12, -11, 5, -4, 19, 13, -1, 0, 5, -9];
 // let sum = 0;
 
-// for (let i = 0; i < numberArray.length; i++) {
-//     numberArray[i] < 0 ? sum += numberArray[i] : null
+// for (const el of numberArray) {
+//     el < 0 && (sum += el)
 // }
-
 // console.log(Math.round(sum / numberArray.length));
 
 
@@ -300,8 +325,7 @@
 // console.log(arr); // ? [3, 7, 4, 7]
 
 
-
-// так как это ссылка на область памяти где хранятся данные, мы не создали новый массив, а сделали новую ссылку для доступа в старый массив.
+// так как это ссылка на область памяти где хранятся данные, мы не создали новый массив, а сделали скопировали ссылку для доступа в старый массив.
 
 
 
@@ -348,15 +372,21 @@
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
 
-// const arr = [6, 9, 3]; 
+// const arr = [6, 9, 4];
 // const list = arr;
 
 // list[2] = 7;
 // arr[4] = 12;
 
-// console.log(arr); // ? [6, 9, 7, undefine]
-// console.log(list); // ?
-// console.log(list.length); // ?
+
+// // arr/list = [6, 9, 7, empty, 12]
+// console.log(arr); // ? [6, 9, 7, empty, 12]
+// console.log(list); // ? [6, 9, 7, empty, 12]
+// console.log(list.length); // ? 5
+
+
+
+
 
 
 
@@ -384,16 +414,25 @@
 
 // const targetList = [4, 5, true, 3, 'text', 1, null];
 
-// let newArray = [];
+// const newArray = [];
 // for (let i = 0; i < targetList.length; i++) {
 //     newArray.push(targetList[i])
 // }
 
 
+// ? for of
+// const targetList = [4, 5, true, 3, 'text', 1, null];
+// const newArray = [];
+// for (const el of targetList) {
+//     newArray.push(el)
+// }
+// console.log(newArray);
+
+
 
 // 31. Задача +
 
-// Даны 2 массива, перенести каждый третий элемент из массива basicList в массив everyThreeList. Программа должна работа для массива любой длины.
+// Даны 2 массива, перенести каждый третий элемент из массива basicList в массив everyThreeList. Программа должна работать для массива любой длины.
 
 // const basicList = [-11, 3, 23, -14, 5, 43, 3, 14, -1, 65, 5, -9, 10, 11, 17, 2, 1];
 // const everyThreeList = [];
@@ -405,6 +444,8 @@
 // }
 
 // console.log(everyThreeList);
+
+
 
 
 // 32. Задача +
@@ -422,6 +463,15 @@
 // console.log(multiplicationAllNumbers);
 
 
+// ? for of
+// const numberArray = [-199, 6, 22, -31, 7, -6, 1, 11, -3, 0, 5, -99];
+// let answer = 1;
+// for (const el of numberArray) {
+//     el % 2 !== 0 && el > 0 && (answer *= el)
+// }
+// console.log(answer);
+
+
 
 // 33. Задача +
 
@@ -434,19 +484,45 @@
 //         negativeNumbers += 1
 //     }
 // }
+
 // console.log(negativeNumbers);
+
+
+// ? for of 
+// const numberList = [-199, 30, 10, 15, -1, -12, 43, 38, -7, 3, 5, -4, -99];
+// let negativeNumbers = 0;
+// for (const el of numberList) {
+//     el < 0 && (negativeNumbers += 1)
+// }
+// console.log(negativeNumbers);
+
+
+
 
 // 34. Задача +
 
-// Дан массив чисел, вывести в консоль количество массивов и null.
+// Дан массив чисел, вывести в консоль общее количество массивов и null.
 
 // const list = [[-199, 30, 10, 15], -1, null, '43', null, [-7, 3, 5], 'null', -99, [], 4, null];
 
 // let arraysCount = 0;
 // let nullCount = 0;
 // for (let i = 0; i < list.length; i++) {
-//     typeof list[i] === "object" && list[i] !== null ? arraysCount += 1 : null
-//     list[i] === null ? nullCount += 1 : null
+//     Array.isArray(list[i]) && (arraysCount += 1)
+//     list[i] === null && (nullCount += 1)
+// }
+// console.log(arraysCount, nullCount);
+
+
+// ? for of
+// const list = [[-199, 30, 10, 15], -1, null, '43', null, [-7, 3, 5], 'null', -99, [], 4, null];
+
+// let arraysCount = 0;
+// let nullCount = 0;
+
+// for (const el of list) {
+//     Array.isArray(el) && (arraysCount += 1)
+//     el === null && (nullCount += 1)
 // }
 // console.log(arraysCount, nullCount);
 
@@ -472,14 +548,14 @@
 
 // Дан массив товаров и цен в корзине, посчитать сумму всей покупки и вывести результат в консоль.
 
-// const cartList = [
-//     ['carot', 200],
-//     ['potato', 300],
-//     ['milk', 80],
-//     ['mushrooms', 600],
-//     ['beet', 200],
-//     ['сabbage', 300]
-// ];
+const cartList = [
+    ['carot', 200],
+    ['potato', 300],
+    ['milk', 80],
+    ['mushrooms', 600],
+    ['beet', 200],
+    ['сabbage', 300]
+];
 
 // let sum = 0;
 // for (let i = 0; i < cartList.length; i++) {
@@ -489,26 +565,29 @@
 // console.log(sum);
 
 
+// ? for of
 
-// ★ 37. Задача ★
+// let sum = 0;
+// for (const el of cartList) {
+//     sum += el[1]
+// }
+// console.log(sum);
+
+
+
+
+// ★ 37. Задача ★ ! while решить похожую в циклах
 
 // Создать пустой массив. Пользователя запрашивают вводить числа до тех пор, пока он не введёт слово Хватит. Как только пользователь ввёл слово, вывести массив чисел.
 
 // Массив должен состоять из типа number, не string;
 // Слово Хватит не зависит от регистра, можно написать, как с маленькой, так и сбольшой буквы;
 
-// let s = Number(prompt());
-
-// let d = [];
-
-// for (let i = 0; i < s.lenght; i++) {
-
-// }
 
 
 
 
-// ★ 38. Задача ★ +
+// ★ 38. Задача ★ + && for of
 
 // Выполнить сортировку массива array.Четные элементы отправьте в массив arrayEven, а нечетные - в arrayOdd.А если встречается значение 0, то проигнорировать его(Переносить в arrayEven не нужно).
 
@@ -523,6 +602,18 @@
 // console.log(arrayEven);
 // console.log(arrayOdd);
 
+
+// ? for of
+
+// const array = [0, 9, 2, 7, -2, 4, 34, -7, 0, -12, 28, 14, 0, 0, 15, 22, 0];
+// const arrayEven = [];
+// const arrayOdd = [];
+
+// for (const el of array) {
+//     el % 2 === 0 && el !== 0 && arrayEven.push(el)
+//     el % 2 !== 0 && arrayOdd.push(el)
+// }
+// console.log(arrayEven, arrayOdd);
 
 
 // ★ 39. Задача ★
