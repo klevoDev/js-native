@@ -148,3 +148,139 @@
 
 // let test = checkValue(11)
 // console.log(test);
+
+
+
+// 11. Задача +
+
+// Написать функцию, которая проверяет переданное число на крастность 17.
+
+// function checkNum(num) {
+//     return num % 17 === 0
+// }
+
+// let test = checkNum(34)
+// console.log(test);
+
+
+
+// 12. Задача +
+
+// Написать функцию, на вход которой подаётся 2 числа, функция проверяет равны ли эти числа.
+
+// function checkEquality(num1, num2) {
+//     return num1 === num2
+// }
+
+// let test = checkEquality(3, 2)
+// console.log(test);
+
+
+
+// 13. Задача -
+
+// Написать функцию, на вход которой подаётся 2 или 3 или 4 перемнных, функция возвращает true / false, в зависимости от того являются ли все переменные типом string.
+
+// function getString(val1, val2, val3, val4) {
+// }
+
+
+
+// 14. Задача +
+
+// Написать функцию, на вход которой подаётся число, функция возвращает текст: Делится на 5, если переданное число делится на 5. Иначе возвращает: Не делится.
+
+// function calcDivision(num) {
+//     return num % 5 === 0 ? "Делится на 5." : "Не делится."
+// }
+
+// let test = calcDivision(10)
+// console.log(test);
+
+
+
+// 15. Задача +
+
+// Сделать рефакторинг кода.
+
+// function isTwenty(num) {
+//     if (num == 20) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
+
+// function chekTwenty(num) {
+//     return num === 20
+// }
+
+
+
+// 16. Задача -
+
+// Написать функцию, которая складывает 2 или 3 числа, возвращает результат. Учесть, что пользователь может подать на вход не число. Вывести в этом случе: error.
+
+// function calcSum(num1, num2, num3) {
+
+//     if (typeof num2 === "number" && typeof num3 === "number") {
+//         return num1 + num2
+//     } else if (typeof num1 === "number") {
+//         return num1
+//     } else {
+//         return "error"
+//     }
+// }
+
+// let test = calcSum(3, 4, 'sd')
+// console.log(test);
+
+
+
+// 17. Задача
+
+// Написать функцию, которая перемножает 2, 3 или 4 числа, возвращает результат. Учесть, что пользователь может подать на вход не число. Вывести в этом случе: error.
+
+
+
+
+// 18. Задача +
+
+// Написать функцию, которая склеивает переданные 2 строки через пробел.
+
+// function showString(val1, val2) {
+//     if (typeof val1 === "string" && typeof val2 === "string") {
+//         return val1 + " " + val2
+//     }
+// }
+
+
+
+// let test = showString("3", "4")
+// console.log(test);
+
+
+
+// 19. Задача +
+
+// Написать функию, которая вычисляет площадь окружности. На вход одно число - радиус окружности.
+
+// function getArea(radius) {
+//     console.log(`Площадь круга через радиус = ${3.14 * (radius * radius)}`);
+// }
+
+// getArea(2)
+
+
+
+// 20. Задача +
+
+// Написать функцию, которая выводит столбик (от 1 до 10 включительно) из таблицы умножения на то число, которое подали на вход в функцию.
+
+// function showMultiply(value) {
+//     for (let i = 1; i <= 10; i++) {
+//         console.log(`${value} x ${i} = ${value * i}`);
+//     }
+// }
+
+// showMultiply(7)
