@@ -42,11 +42,48 @@ console.log(test(10, 3));
 // show, get, calc, create, change, check(is, has)
 // 2. Сколько параметров на вход?
 // 3. Есть ли параметр по умолчанию?
-// 4. Что функция возвращает? (return)
+// 4. Что функция возвращает? (return - после него функция завершает работу)
 // ======================
 // 5. Проверка
 // 6. Попробовать упростить функцию
 
+
+
+const arr = [3, 5, 6]
+
+
+// Написать функцию, которая добавляет в переданный массив, переданное число
+
+
+// * 1. Мутриуем исходный массив 
+function pushValue(array, value) {
+    // Невяно: array = arr, value = 10
+    array.push(value)
+}
+
+pushValue(arr, 10);
+
+console.log(arr);
+
+
+// * 2. Создать новый массив (не му)
+// Написать функцию, которая вовзаращает массив из чётных чисел
+// Числа берутся из переданного массива
+
+function getEvenArr(array) {
+    const newArr = [];
+
+    for (const el of array) {
+        el % 2 === 0 && newArr.push(el)
+    }
+
+    return newArr
+}
+
+
+const evenArray = getEvenArr(arr)
+console.log(evenArray);
+console.log(arr);
 
 
 
