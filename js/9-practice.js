@@ -341,7 +341,10 @@
 //     return sum / arr.length;
 // }
 
+// console.log(getValue(someArray));
 
+
+// ? for of:
 // function getValue(arr) {
 //     let sum = 0;
 //     for (const el of arr) {
@@ -352,28 +355,115 @@
 
 // console.log(getValue(someArray));
 
-// 25. Задача
+
+
+
+// 25. Задача +
 
 // Написать функцию, которая принимает массив. Функция возвращает одно число – количество чётных чисел.
 
+// const someArray = [3, 4, 23, 6, 7, 23, 8];
+
+// function getEvenNumber(arr) {
+//     let evenNumber = 0;
+//     for (const el of arr) {
+//         el % 2 === 0 && (evenNumber += 1)
+//     }
+//     return evenNumber
+// }
+
+// console.log(getEvenNumber(someArray));
+
+
+
+// 26. Задача +
+
+// Написать функцию, на вход которой подаётся массив чисел, функция заменяет все чётные числа на строку even.
+
 // const someArray = [3, 4, 23, 6, 7, 23];
 
-// function getValue(arr) {
-//     let s = Number();
-//     for (let i = 0; i < arr.lenght; i++) {
+// function getNumChange(arr) {
+//     for (let i = 0; i < someArray.length; i++) {
 //         if (arr[i] % 2 === 0) {
-//             s += 1
+//             arr[i] = 'even'
 //         }
 //     }
-
+//     return arr
 // }
-// console.log(s);
-// console.log(getValue(someArray));
 
-// let s = 0;
-// for (let i = 0; i < someArray.lenght; i++) {
-//     if (someArray[i] % 2 === 0) {
-//         s += i
+// console.log(getNumChange(someArray));
+
+
+
+// 27. Задача +
+
+// Написать функцию, на вход которой подаётся массив чисел, функция заменяет все отрицательные числа на положительные.
+
+// const someArray = [3, 4, 25, -6, 7, -23];
+
+// function getPositiveNum(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] < 0) {
+//             arr[i] *= -1
+//         }
 //     }
+//     return arr
 // }
-// console.log(s);
+
+// console.log(getPositiveNum(someArray));
+
+
+
+// 28. Задача +
+
+// Написать функцию, на вход которой подаётся массив из чисел, функция возвращает новый массив из чисел, которые делятся на 7.
+
+// const someArray = [3, 4, 25, -6, 7, -23, 21];
+
+// function getDividedSeven(arr) {
+//     const newArr = []
+
+//     for (const el of arr) {
+//         el % 7 === 0 && newArr.push(el)
+//     }
+//     return newArr
+// }
+
+// console.log(getDividedSeven(someArray));
+
+
+
+// 29. Задача +
+
+// Написать функцию, на вход которой подаётся массив из строк, функция возвращает новый массив из строк, чья длина больше 3 символов.
+
+// const arrString = ["тост", "ой", "бег", "пост"]
+
+// function getArrString(arr) {
+//     const newArr = [];
+//     for (const el of arr) {
+//         el.length <= 3 && newArr.push(el)
+//     }
+//     return newArr
+// }
+
+// console.log(getArrString(arrString));
+
+
+
+// 30. Задача +
+
+// Написать функцию, на вход которой подаётся массив из чисел, функция изменяет текущий массив, заменяя каждый второй элемент массива на строку =x2=.
+
+// const someArray = [3, 5, 6, 23, 8, 89, 56, 7, 1]
+
+// function changeSecondEl(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         if ((i + 1) % 2 === 0 && i !== 0) {
+//             arr[i] = "=x2="
+//         }
+//     }
+//     return arr
+// }
+
+// console.log(changeSecondEl(someArray));
