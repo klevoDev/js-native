@@ -552,3 +552,119 @@
 // }
 
 // console.log(test(3)); // ? 3 - ответ nan!
+
+
+// 36. Задача +
+
+// Не выполняя код, дать ответ: 
+// Что выведется в консоль? Ответ записать в комментарий.
+
+// function test(x, y) {
+//     console.log(x + y); 
+// }
+
+// console.log(test(3, 7)); // ? 12
+
+
+
+// 37. Задача + -
+
+// Не выполняя код, дать ответ: 
+// Что выведется в консоль? Ответ записать в комментарий.
+
+// console.log(test(3, 7)); // ? 12
+// console.log(test(true, 1)); // ? -
+// console.log(test('1', 0)); // ? 10
+
+// function test(x, y) {
+//     return x + y;
+// }
+
+
+
+// 38. Задача + -
+
+// Не выполняя код, дать ответ: 
+// Что выведется в консоль? Ответ записать в комментарий.
+
+// function test(x, y) {
+//     return x * y;
+// }
+
+// console.log(test('3', '7')); // ? 21 наверно)
+// console.log(test(false, 1)); // ? -
+// console.log(test('1', 0)); // ? 0
+// console.log(test('1', 'true')); // ? -
+
+
+
+// 39. Задача
+
+// Не выполняя код, дать ответ: 
+// Что выведется в консоль? Ответ записать в комментарий.
+
+// function test(x = 1, y = 1) {
+//     return x * y;
+// }
+
+// console.log(test(4)); // ? 4
+// console.log(test(null, 5)); // ? -
+// console.log(test(undefined, 5)); // ? 5
+// console.log(test(undefined, undefined)); // ? 1, 1
+
+
+
+// 40. Задача
+
+// Не выполняя код, дать ответ: 
+// Что выведется в консоль? Ответ записать в комментарий.
+
+// console.log(test(3, 2, 1)); // ? 6
+// console.log(test(null, null, 2)); // ? 1
+// console.log(test(undefined, undefined, 5)); // ? 5
+// console.log(test(undefined, undefined, undefined)); // ? 1
+// console.log(test(3, 2, undefined)); // ? 6
+// console.log(test(3, 2)); // ? 6
+
+// function test(x, y, z = 1) {
+//     return x * y * z; 
+// }
+
+
+
+// 41. Задача
+
+// Не выполняя код, дать ответ: 
+// Что выведется в консоль? Ответ записать в комментарий.
+
+// console.log(sum(3, sum(4, 5))); // ? 12
+// console.log(sum(sum(3, -1), 7)); // ? 9
+// console.log(sum(sum(0, -5), sum(3, 7))); // ? -5
+// console.log(sum(sum(3, sum(12, 5)), sum(sum(4, 8), 13))); // ? 45
+// console.log(sum(sum(sum(5, 3), sum(7, -15)), sum(sum(10, 10), sum(-15, -5)))); // 0
+
+// function sum(x, y) {
+//     return x + y;
+// }
+
+// ? Посмотрел решение первого примера, так думал что должна быть ошибка, по итогу ошибки нет и на основе первого прорашал следующие, лучше проговорить почему 4 + 5 в первом примере
+
+// 42. Задача +
+
+// Написать функцию, на вход которой подаётся массив чисел. Функция возвращает одно число - наибольшее из них.
+
+// const numberArray = [-13, 6, 12, -11, 5, 4, 19, 13, 0, 5];
+
+// function getMaxValue(arr) {
+//     let maxValue = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         if (maxValue < arr[i]) {
+//             maxValue = arr[i]
+//         }
+//     }
+//     return maxValue
+// }
+
+// console.log(getMaxValue(numberArray));
+
+
