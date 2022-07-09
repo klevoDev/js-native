@@ -668,3 +668,84 @@
 // console.log(getMaxValue(numberArray));
 
 
+
+// ? ★ Задачи повышенной сложности ★
+
+
+// ★ 43. Задача ★ + -
+
+// Не выполняя код, дать ответ: 
+// Что выведется в консоль? Ответ записать в комментарий.
+
+// console.log(test(5)); // ? 50
+// function test(x) {
+//     let multi1 = 10;
+//     return multi1 * x;
+// }
+// console.log(multi1); // ? 50 - ошибся, забыл про зону видимости
+
+// console.log(anotherTest(5)); // ? 50
+// function anotherTest(x) {
+//     var multi2 = 10;
+//     return multi2 * x;
+// }
+// console.log(multi2); // ? 50 - опять ошибся, думал что вар видно везде, ну кроме тела функции)
+
+// console.log(otherTest(5)); // ? 50
+// function otherTest(x) {
+//     const multi3 = 10;
+//     return multi3 * x;
+// }
+// console.log(multi3); // ? будет ошибка
+
+
+
+// ★ 44. Задача ★ +
+
+// Написать функцию, которая вычисляет факториал числа. На вход подаётся целое число. Функция возвращает -1, если:
+
+// На вход подали не число;
+// На вход подали отрицательное число;
+// На вход подали не целое число;
+
+// Примеры:
+// 1! = 1
+// 2! = 1 x 2 = 2
+// 3! = 1 x 2 x 3 = 6
+// 7! = 1 х 2 х 3 х 4 х 5 х 6 х 7 = 5040
+// 0! = 1 (Искл)
+
+
+// function getFactorialNumber(userNum) {
+//     let calc = 1;
+//     let result = 1;
+//     if (userNum === 0) {
+//         return "0! = 1";
+//     } else if (userNum === 1) {
+//         return "1! = 1";
+//     } else if (typeof userNum !== "number") {
+//         return "-1";
+//     } else if (userNum < 0) {
+//         return "-1";
+//     } else if (Number.isInteger(userNum) === false) {
+//         return "-1";
+//     } else {
+//         for (let i = 1; i <= userNum; i++) {
+//             if (i > 1) {
+//                 calc = calc + " x " + i
+//                 result *= i;
+//             }
+//         }
+//         return userNum + "! = " + calc + " = " + result;
+//     }
+// }
+
+// console.log(getFactorialNumber(6));
+
+
+
+
+
+
+
+
