@@ -93,3 +93,30 @@ let num = 10
 console.log(num + " + 7 = " + (num + 7));
 
 // "10 + 7 = 17"
+
+
+
+console.log(Number(undefined));
+console.log(Number(11));
+console.log(Number('11'));
+console.log(Number(' 11 '));
+console.log(Number(''));
+console.log(Number(' '));
+console.log(Number('     '));
+console.log(Number('0'));
+console.log(Number('  0  '));
+console.log(Number('11'));
+console.log(Number('11px'));
+console.log(Number('-11'));
+console.log(Number('+11'));
+console.log(Number('/11'));
+console.log(Number('*11'));
+console.log(Number('10000_'));
+console.log(Number(null));
+console.log(Number(undefined));
+console.log(Number(false));
+console.log(Number(true));
+console.log(Number([]));
+console.log(Number([0]));
+console.log(Number([1]));
+console.log(Number([1, 1])); // '1, 1'

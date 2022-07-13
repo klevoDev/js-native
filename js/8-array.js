@@ -6,6 +6,7 @@
 
 // * Ссылочный тип (объект -> структура данных)
 // object -> [Array, Function, Object]
+// [Arguments]
 
 // * Array * //
 

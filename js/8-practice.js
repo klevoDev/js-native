@@ -548,14 +548,14 @@ const varArray = [15, 12, 'text', true, 6, 7, 21, [], false, 0, 1, '', -1, 'worl
 
 // Дан массив товаров и цен в корзине, посчитать сумму всей покупки и вывести результат в консоль.
 
-const cartList = [
-    ['carot', 200],
-    ['potato', 300],
-    ['milk', 80],
-    ['mushrooms', 600],
-    ['beet', 200],
-    ['сabbage', 300]
-];
+// const cartList = [
+//     ['carot', 200],
+//     ['potato', 300],
+//     ['milk', 80],
+//     ['mushrooms', 600],
+//     ['beet', 200],
+//     ['сabbage', 300]
+// ];
 
 // let sum = 0;
 // for (let i = 0; i < cartList.length; i++) {

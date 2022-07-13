@@ -86,4 +86,16 @@ console.log(evenArray);
 console.log(arr);
 
 
+// * Дополнительно
+// На вход в функцию подаётся любое количество параметров, функция должна вернуть их сумму
 
+function test() {
+    // console.log(arguments);
+    let sum = 0
+    for (const el of arguments) {
+        sum += el
+    }
+    return sum
+}
+
+console.log(test(3, 4, 5, 7)); 

@@ -358,7 +358,7 @@
 
 
 
-// 25. Задача +
+// 25. Задача + Проверяем от сюда / посыпался на не выполняя код.
 
 // Написать функцию, которая принимает массив. Функция возвращает одно число – количество чётных чисел.
 
@@ -442,7 +442,7 @@
 // function getArrString(arr) {
 //     const newArr = [];
 //     for (const el of arr) {
-//         el.length <= 3 && newArr.push(el)
+//         el.length >= 3 && newArr.push(el)
 //     }
 //     return newArr
 // }
@@ -459,7 +459,7 @@
 
 // function changeSecondEl(arr) {
 //     for (let i = 0; i < arr.length; i++) {
-//         if ((i + 1) % 2 === 0 && i !== 0) {
+//         if ((i + 1) % 2 === 0) {
 //             arr[i] = "=x2="
 //         }
 //     }
@@ -480,7 +480,8 @@
 //     "каркассон",
 //     "один",
 //     "марс",
-//     "ой"];
+//     "ой"
+// ];
 
 // function getSymbol(arr) {
 //     for (let i = 0; i < arr.length; i++) {
@@ -500,10 +501,11 @@
 
 // Написать функцию, на вход которой подаётся массив, функция удаляет первый и последний элементы из массива.
 
-// const someArray = [3, 5, 6, 23, 8, 89, 56, 7, 1]
+// const someArray = [0, 3, 5, 6, 23, 8, 89, 56, 7, 1]
 
 // function changeArray(arr) {
-//     arr.shift() && arr.pop()
+//     arr.shift()
+//     arr.pop()
 //     return arr
 // }
 
@@ -519,10 +521,13 @@
 // const array = [56, 7, 1]
 
 // function getGluingArr(arr1, arr2) {
-//     return arr1.concat(arr2)
-
+//     for (const el of arr2) {
+//         arr1.push(el)
+//     }
+//     // return arr1.concat(arr2)
 // }
-// console.log(getGluingArr(someArray, array));
+// getGluingArr(someArray, array);
+// console.log(someArray);
 
 
 
@@ -548,6 +553,8 @@
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // function test(x, y) {
+//     // let x = 3; let y;
+//     console.log(y);
 //     return x + y;
 // }
 
@@ -563,7 +570,7 @@
 //     console.log(x + y); 
 // }
 
-// console.log(test(3, 7)); // ? 12
+// console.log(test(3, 7)); // ? 10
 
 
 
@@ -572,14 +579,15 @@
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
 
-// console.log(test(3, 7)); // ? 12
-// console.log(test(true, 1)); // ? -
-// console.log(test('1', 0)); // ? 10
+// console.log(test(3, 7)); // 10
+// console.log(test(true, 1)); // 2
+// console.log(test('1', 0)); // '10'
 
 // function test(x, y) {
 //     return x + y;
 // }
 
+// hoisting
 
 
 // 38. Задача + -
@@ -591,10 +599,10 @@
 //     return x * y;
 // }
 
-// console.log(test('3', '7')); // ? 21 наверно)
-// console.log(test(false, 1)); // ? -
-// console.log(test('1', 0)); // ? 0
-// console.log(test('1', 'true')); // ? -
+// console.log(test('3', '7')); // 21
+// console.log(test(false, 1));  // 0
+// console.log(test('1', 0)); // 0
+// console.log(test('1', 'true')); // 1
 
 
 
@@ -604,13 +612,14 @@
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // function test(x = 1, y = 1) {
+//     let x = 4; let y;
 //     return x * y;
 // }
 
 // console.log(test(4)); // ? 4
-// console.log(test(null, 5)); // ? -
+// console.log(test(null, 5)); // ? 0
 // console.log(test(undefined, 5)); // ? 5
-// console.log(test(undefined, undefined)); // ? 1, 1
+// console.log(test(undefined, undefined)); // ? 1
 
 
 
@@ -620,9 +629,9 @@
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // console.log(test(3, 2, 1)); // ? 6
-// console.log(test(null, null, 2)); // ? 1
-// console.log(test(undefined, undefined, 5)); // ? 5
-// console.log(test(undefined, undefined, undefined)); // ? 1
+// console.log(test(null, null, 2)); // ? 0
+// console.log(test(undefined, undefined, 5)); // ? NaN
+// console.log(test(undefined, undefined, undefined)); // ? NaN
 // console.log(test(3, 2, undefined)); // ? 6
 // console.log(test(3, 2)); // ? 6
 
@@ -632,7 +641,7 @@
 
 
 
-// 41. Задача
+// 41. Задача +
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
@@ -647,32 +656,27 @@
 //     return x + y;
 // }
 
-// ? Посмотрел решение первого примера, так думал что должна быть ошибка, по итогу ошибки нет и на основе первого прорашал следующие, лучше проговорить почему 4 + 5 в первом примере
 
-// 42. Задача +
+// (refactoring) 42. Задача +
 
 // Написать функцию, на вход которой подаётся массив чисел. Функция возвращает одно число - наибольшее из них.
 
-// const numberArray = [-13, 6, 12, -11, 5, 4, 19, 13, 0, 5];
+const numberArray = [-13, 6, 12, -11, 5, 4, 19, 13, 5];
 
-// function getMaxValue(arr) {
-//     let maxValue = 0;
-//     for (let i = 0; i < arr.length; i++) {
-//         if (maxValue < arr[i]) {
-//             maxValue = arr[i]
-//         }
-//     }
-//     return maxValue
-// }
+function getMaxValue(arr) {
+    let maxValue = 0;
+    for (const el of arr)
+        if (maxValue < el) { return maxValue = el }
+}
 
-// console.log(getMaxValue(numberArray));
+console.log(getMaxValue(numberArray));
 
 
 
 // ? ★ Задачи повышенной сложности ★
 
 
-// ★ 43. Задача ★ + -
+// ★ 43. Задача ★ +
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
@@ -727,7 +731,9 @@
 //         return "-1";
 //     } else if (userNum < 0) {
 //         return "-1";
-//     } else if (Number.isInteger(userNum) === false) {
+//         // if (parseInt(userNum) === userNum)
+//         // Number.isInteger(userNum) === false
+//     } else if (!Number.isInteger(userNum)) {
 //         return "-1";
 //     } else {
 //         for (let i = 1; i <= userNum; i++) {
@@ -745,7 +751,39 @@
 
 
 
+// ★★ 45. Задача ★★
+
+// Написать функцию, которая возвращает массив с частью последовательности: 1 2 2 3 3 3 4 4 4 4 5 5 ... (число повторяется столько раз, чему оно равно) 
+// На вход в функцию подаётся одно неотрицательное число (целое число n) - столько элементов последовательности должна быть в возвращаемом массиве.
+
+// Например n = 7, то программа выведет массив с числами:
+// 1 2 2 3 3 3 4 (т.е. 7 элементов из последовательности)
 
 
+// let result = [];
+// let calc = '';
+// let test = 7;
 
+
+// ### ★ 33. Задача ★ -
+// С помощью вложенных циклов нарисуйте:
+
+// 1
+// 2 2
+// 3 3 3
+// 4 4 4 4
+// 5 5 5 5 5
+
+// let t = " ";
+// let result = " ";
+// for (let i = 1; i <= 5; i++) {
+//     for (let j = 1; j <= i; j++) {
+//         t = j
+//     }
+
+
+//     result = i
+
+//     console.log(result, t);
+// }
 
