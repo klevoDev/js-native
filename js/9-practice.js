@@ -661,15 +661,15 @@
 
 // Написать функцию, на вход которой подаётся массив чисел. Функция возвращает одно число - наибольшее из них.
 
-const numberArray = [-13, 6, 12, -11, 5, 4, 19, 13, 5];
+// const numberArray = [-13, 6, 12, -11, 5, 4, 19, 13, 5];
 
-function getMaxValue(arr) {
-    let maxValue = 0;
-    for (const el of arr)
-        if (maxValue < el) { return maxValue = el }
-}
+// function getMaxValue(arr) {
+//     let maxValue = 0;
+//     for (const el of arr)
+//         if (maxValue < el) { return maxValue = el }
+// }
 
-console.log(getMaxValue(numberArray));
+// console.log(getMaxValue(numberArray));
 
 
 
