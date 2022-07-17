@@ -12,7 +12,8 @@
 //         country: "Russia",
 //         abroad: ["Vienna", "Paris", "London", "Miami"]
 //     },
-//     item: ["bag", "book", "pencil"]
+//     item: ["bag", "book", "pencil"],
+//     more: null
 // };
 
 
@@ -29,7 +30,8 @@
 
 // Изменить возраст на 4 года меньше;
 
-// console.log(user.age -= 4);
+// user.age -= 4
+// console.log(user.age);
 
 
 
@@ -46,8 +48,8 @@
 // Вывести в консоль все свойства объекта user, кроме тех свойства, тип которых равен object;
 
 // for (const key in user) {
-//     if (typeof user[key] !== "object") {
-//         console.log(user[key]);
+//     if (typeof user[key] !== "object" || user[key] === null) {
+//         console.log(`${key}: ${user[key]}`);
 //     }
 // }
 
@@ -57,8 +59,19 @@
 
 // Вывести в консоль последний город из заграничного массива в объекте "my address";
 
-// let lastEl = user["my address"].abroad
-// lastEl = lastEl[lastEl.length - 1]
+
+// const lastEl = user["my address"].abroad[user["my address"].abroad.length - 1]
+
+// const lastAbroadIdx = user["my address"].abroad.length - 1
+// const test = user["my address"].abroad[lastAbroadIdx]
+
+
+// const abroadCityList = user["my address"].abroad
+// const lastCityAbroad = abroadCityList[abroadCityList.length - 1]
+
+// console.log(lastCityAbroad);
+
+
 // console.log(lastEl);
 
 
@@ -67,8 +80,8 @@
 
 // Вывести в консоль в столбик все города из заграничного массива;
 
-// for (const el of user["my address"].abroad) {
-//     console.log(el);
+// for (const city of user["my address"].abroad) {
+//     console.log(city);
 // }
 
 
@@ -84,14 +97,14 @@
 //     "like language": "Java Script"
 // };
 
-// let copyPerson = {};
+// const copyPerson = {};
 
 // for (const key in person) {
-//     copyPerson[key] += person[key]
+//     copyPerson[key] = person[key]
 // }
 
 // console.log(copyPerson);
-// console.log(copyPerson === person);
+// console.log(copyPerson === person); // +++ like, subcribe
 
 
 
@@ -101,17 +114,36 @@
 
 // const prop = 'job';
 
-// const user = {
+// const user2 = {
 //     name: "Lucas",
 //     age: 29,
 // };
 
-// user[prop] = "Manager"
+// user2[prop] = "Manager"
+// console.log(user2);
+
+
+// ### 9. Задача +
+// Дан объект user, выполнить удаление свойств, которые содержут слово delete в ключе.
+
+// const user = {
+//     name: "Lucas",
+//     age: 29,
+//     "delete me": 'text',
+//     delete: 105,
+//     'deleteProp': false
+// };
+
+// delete user.delete;
+// delete user["delete me"];
+// delete user.deleteProp;
+
 // console.log(user);
 
 
 
-// 9. Задача -
+
+// !!! 9. Задача lecture
 
 // Написать функцию, на вход которой подаётся объект и ключ, функция возвращает значение из этого объекта с переданным ключом. Если такого ключа нет, то функция возвращает undefined.
 
@@ -119,33 +151,40 @@
 //     name: "Peter",
 //     age: 33,
 //     job: "Developer",
-
-//     "my address": {
-//         city: "Moscow",
-//         country: "Russia",
-//         abroad: ["Vienna", "Paris", "London", "Miami"]
-//     },
-//     item: ["bag", "book", "pencil"]
 // };
+// // console.log(user.name);
 
 // function getProprty(obj, key) {
-//     return obj
+//     // let obj = user; let key = "job"
+//     return obj[key] // obj.job
 // }
 
-// 10. Задача + -
+
+// console.log(getProprty(user, "job"));
+
+// 10. Задача +
 
 // Написать функция, которая удаляет свойство из объекта, если оно есть.
 
-// const user = { name: "Lucas" };
+// const user = { name: "Lucas", test: 111 };
 
-// function deleteValue(obj) {
-//     for (const key in obj) {
-//         return delete obj[key]
-//     }
-
+// function deleteProp(obj, key) {
+//     delete obj[key]
+//     // for (const key in obj) {
+//     //     return delete obj[key]
+//     // }
 // }
 
-// deleteValue(user);
+// Скорость выполнения кода, n - 
+// o(1)
+// o(n)
+// o(n^2) 
+
+
+// -------------------------------
+
+
+// console.log(deleteProp(user, 'test'));
 // console.log(user);
 
 
@@ -155,10 +194,13 @@
 // Написать функцию, на вход которой подаётся 2 параметра. Функция вычисляет произведение двух чисел. Функция возвращает объект, в котором хранится 2 параметра и результат умножения.
 
 // function getObject(num1, num2) {
-//     let multiply = Number();
-//     multiply = num1 * num2;
-//     let obj = { num1, num2, multiply };
-//     return obj
+//     const multiply = num1 * num2;
+//     return {
+//         num1: num1, // num1,
+//         num2, // num2: num2
+//         multiply, // multiply: multiply
+//         // operand1: num1 // не упрощается
+//     };
 // }
 
 // console.log(getObject(2, 6));
@@ -166,14 +208,27 @@
 
 
 
-// 12. Задача +
+//  12. Задача +
 
 // Написать функцию, на вход которой подаётся объект. Функция возвращает число - количество свйоств в объекте.
 
-// function getSumProperty(obj) {
-//     return Object.keys(obj).length;
+const user = {
+    name: "Peter",
+    age: 33,
+    job: "Developer",
+    item: ["bag", "book", "pencil"],
+    null: null
+};
+
+// function getSumProp(obj) {
+//     let sumObj = 0;
+//     for (const key in obj) {
+//         sumObj += 1
+//     }
+//     console.log(sumObj);
 // }
-// console.log(getSumProperty(user));
+
+// console.log(getSumProp(user));
 
 
 
@@ -182,7 +237,7 @@
 // Написать функцию, на вход которой подаётся объект. Функция возвращает массив, состоящий из ключей переданного объекта
 
 // function getKeys(obj) {
-//     let keys = [];
+//     const keys = [];
 //     for (const key in obj) {
 //         keys.push(key)
 //     }
@@ -200,7 +255,7 @@
 // function getSumObject(obj) {
 //     let sum = 0;
 //     for (const key in obj) {
-//         if (typeof user[key] === "object") {
+//         if (typeof user[key] === "object" && user[key] !== null) {
 //             sum += 1
 //         }
 //     }
@@ -227,18 +282,35 @@
 
 
 
-// 16. Задача
+// 16. Задача +
 
 // Написать функцию, на вход которой подаётся объект. Функция возвращает массив, состоящий из значений переданного объекта.
 
-// 17. Задача
+// const user = {
+//     name: "Lucas",
+//     age: 29,
+// };
+
+// function getArray(object) {
+//     let arr = [];
+//     for (const key in object) {
+//         arr.push(object[key])
+//     }
+//     return arr
+// }
+
+// console.log(getArray(user));
+
+
+
+// TODO: 17. Задача -
 
 // Написать функци, на вход которой подаётся массив. Функция возвращает объект с ключами типа данных и количеством, которые находятся в массиве.
 
-// // Например в массиве testArray:
-// const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4 'false', 7, 8, 'link', 1, false, 0, -3 'button', undefined, {name: 'Pavel'}];
+// Например в массиве testArray:
+const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false', 7, 8, 'link', 1, false, 0, -3, 'button', undefined, { name: 'Pavel' }];
 
-// // После вызова функции вернётся объект:
+// После вызова функции вернётся объект:
 // {
 //     string: 4,
 //     number: 9,
@@ -248,23 +320,88 @@
 //     object: 2
 // };
 
+// function getTypeObject(arr) {
+
+//     let s = {
+//         string: 0,
+//         number: 0,
+//         null: 0,
+//         undefined: 0,
+//         boolean: 0,
+//         object: 0
+//     };
+
+//     for (const el of arr) {
+//         if (el === String()) {
+//             s.string += 1
+//         } else if (el === Number()) {
+//             s.number += 1
+//         } else if (el === undefined) {
+//             s.undefined += 1
+//         } else if (el === null) {
+//             s.null += 1
+//         } else if (el === true || el === false) {
+//             s.boolean += 1
+//         } else if (el === Object) {
+//             s.boolean += 1
+//         }
+//     }
+
+    // for (const key in arr) {
+    //     if (key === "string") {
+    //         s.string += 1
+    //     } else if (key === "number") {
+    //         s.number += 1
+    //     } else if (key === "undefined") {
+    //         s.undefined += 1
+    //     } else if (key === null) {
+    //         s.null += 1
+    //     }
+    // }
+
+    // switch (obj.key) {
+    //     case typeof key === "string":
+    //         s.string += 1
+    //         break;
+    //     case typeof key === "number":
+    //         s.string += 1
+    //         break;
+    //     case typeof key === "string":
+    //         s.string += 1
+    //         break;
+    //     case typeof key === "undefined":
+    //         s.undefined += 1
+    //         break;
+    //     case key === null:
+    //         s.null += 1
+    //         break;
+
+    //     default:
+    //         break;
+    // }
+
+//     return s
+// }
+
+// console.log(getTypeObject(testArray));
 
 
-// 18. Задача
+
+// 18. Задача +
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // const user1 = { isAdmin: false };
 // const user2 = { isAdmin: false };
-// console.log(user1 === user2); // ?
+// console.log(user1 === user2); // ? false
 
 // const copyUser1 = user1;
-// console.log(copyUser1 === user1); // ?
+// console.log(copyUser1 === user1); // ? true
 
 
 
-// 19. Задача
+// 19. Задача -
 
 // Написать функци, на вход которой подаётся объект. Функция возвращает объект с ключами типа данных и количеством, которые находятся в объекте.
 
@@ -292,7 +429,7 @@
 
 
 
-// 20. Задача
+// 20. Задача +
 
 // Дан объект bob, удалить у него свойства со знаечниями undefind и null.
 
@@ -300,22 +437,33 @@
 //     name: "Bob",
 //     age: 25,
 //     job: "Developer",
-//     "like language": "Java Script"
+//     "like language": "Java Script",
 //     test: undefined,
 //     nuller: null,
 //     isHuman: true,
 //     item: ['bag', 'pen']
 // };
 
+// for (const key in bob) {
+//     if (typeof bob[key] === "undefined") {
+//         delete bob[key]
+//     } else if (bob[key] === null) {
+//         delete bob[key]
+//     }
+// }
+
+// console.log(bob);
 
 
-// 21. Задача
+
+
+// 21. Задача +
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
 
-// const user = { 
-//     name: "Mark", 
+// const user = {
+//     name: "Mark",
 //     age: 35,
 //     isAdmin: false
 // };
@@ -323,23 +471,32 @@
 // const copyUser = user;
 // copyUser.name = "Lawlet";
 
-// console.log(copyUser.name); // ?
-// console.log(user.name); // ?
+// console.log(copyUser.name); // ? 
+// console.log(user.name); // ? 
+
+// обращаемся не к значению, а к ключу, то есть я подумал что тут поменяли ключ. То что тут одна ссылка это понял)
+
+// почему так подумал:
+
+// console.log(key); // key
+// console.log(user); // object
+// console.log(user.key); // ! undefined Обращаемся не к значению в этой переменной, а к ключу key
+// console.log(user[key]);  // value
 
 
 
-// 22. Задача
+// 22. Задача 
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
 
-// const user = { 
-//     name: "Roger", 
-//     job: "Workman"
+// const user = {
+//     name: "Roger",
+//     job: "Workman",
 //     age: 33,
 // };
 
-// console.log(createCopy(user, "Ben")); // ?
+// console.log(createCopy(user, "Ben"));
 
 // function createCopy(obj, newName) {
 //     obj.name = newName;
@@ -435,3 +592,12 @@
 // ★ 31. Задача ★
 
 // Напишите функцию isEmpty, которая проверяет есть ли у объекта свойства или нет.
+
+
+
+
+
+
+
+// ? // todo 12. +
+// ? // fixme 14. + добавил проверку на null
