@@ -2,19 +2,19 @@
 
 // Дан объект user, выполнить задачи 1-6:
 
-// const user = {
-//     name: "Peter",
-//     age: 33,
-//     job: "Developer",
+const user = {
+    name: "Peter",
+    age: 33,
+    job: "Developer",
 
-//     "my address": {
-//         city: "Moscow",
-//         country: "Russia",
-//         abroad: ["Vienna", "Paris", "London", "Miami"]
-//     },
-//     item: ["bag", "book", "pencil"],
-//     more: null
-// };
+    "my address": {
+        city: "Moscow",
+        country: "Russia",
+        abroad: ["Vienna", "Paris", "London", "Miami"]
+    },
+    item: ["bag", "book", "pencil"],
+    more: null
+};
 
 
 
@@ -639,7 +639,7 @@
 
 
 
-// 26. Задача
+// 26. Задача - 25 так же
 
 // Создать объект и заполнить выдуманными данными, используя где нужно, вложенный массив или объект: 
 // Объект магазин: 
@@ -652,6 +652,18 @@
 // Список партнёров (названия компаний, сайт партнёра);
 // Вывести каждое свойство по отдельности через console.log()
 
+// const miniMarket = {
+//     food: ["potatoes", "orange", "tea"],
+//     household: ["brush", "mop", "soap"],
+//     cosmetic: ["powder", "lipstick"],
+//     diningRoom: "yes",
+//     parking: "yes",
+//     floors: 5,
+//     partners: {
+//         "Магнит": "https://magnit.ru/",
+//         "Яндекс": "https://yandex.ru/"
+//     }
+// };
 
 
 // 27. Задача
@@ -711,17 +723,55 @@
 
 // Написать функцию, на вход которой подаётся массив объектов с сотрудниками, каждый сотрудник имеет имя и возраст [{name: 'Иван', age: 23}, {name: 'Илья', age: 27}, ..., {name: 'Ольга', age: 22}]). Фукция возвращает массив, где каждый элемент представляет из себя строку "Имя: Иван, возвраст: 23".
 
-// ★ 31. Задача ★
+// const staff = [
+//     { name: 'Иван', age: 23 },
+//     { name: 'Илья', age: 27 },
+//     { name: 'Ольга', age: 22 },
+// ];
+
+// function arrNameAge(arr) {
+//     // let newStaff = [];
+//     for (const key in arr) {
+//         console.log(`${}: ${}`);
+//     }
+//     // return newStaff
+// }
+
+// console.log(arrNameAge(staff));
+
+
+
+// ★ 31. Задача ★ +
 
 // Напишите функцию isEmpty, которая проверяет есть ли у объекта свойства или нет.
 
+// function isEmpty(obj) {
+//     for (const key in obj) {
+//         console.log(obj[key]);
+//     }
 
+// }
 
+// const test = {};
+// const test2 = { test: null };
+// const test3 = { test: undefined };
 
+// function isEmpty(obj) {
+//     for (const key in obj) {
+//         if (obj[key]) {
+//             return false;
+//         } else if (obj[key] === undefined) {
+//             return false;
+//         } if (obj[key] === null) {
+//             return false;
+//         }
+//     }
+// }
 
-
-
-// ? todo 12. +
-// ? fixme 14. + добавил проверку на null
+// console.log(isEmpty(staff));
+// console.log(isEmpty(user));
+// console.log(isEmpty(test));
+// console.log(isEmpty(test2));
+// console.log(isEmpty(test3));
 
 
