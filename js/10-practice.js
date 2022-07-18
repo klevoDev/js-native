@@ -212,13 +212,13 @@
 
 // Написать функцию, на вход которой подаётся объект. Функция возвращает число - количество свйоств в объекте.
 
-const user = {
-    name: "Peter",
-    age: 33,
-    job: "Developer",
-    item: ["bag", "book", "pencil"],
-    null: null
-};
+// const user = {
+//     name: "Peter",
+//     age: 33,
+//     job: "Developer",
+//     item: ["bag", "book", "pencil"],
+//     null: null
+// };
 
 // function getSumProp(obj) {
 //     let sumObj = 0;
@@ -303,12 +303,12 @@ const user = {
 
 
 
-// TODO: 17. Задача -
+// 17. Задача +
 
 // Написать функци, на вход которой подаётся массив. Функция возвращает объект с ключами типа данных и количеством, которые находятся в массиве.
 
 // Например в массиве testArray:
-const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false', 7, 8, 'link', 1, false, 0, -3, 'button', undefined, { name: 'Pavel' }];
+// const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false', 7, 8, 'link', 1, false, 0, -3, 'button', undefined, { name: 'Pavel' }];
 
 // После вызова функции вернётся объект:
 // {
@@ -322,7 +322,7 @@ const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false'
 
 // function getTypeObject(arr) {
 
-//     let s = {
+//     let typeObj = {
 //         string: 0,
 //         number: 0,
 //         null: 0,
@@ -332,55 +332,44 @@ const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false'
 //     };
 
 //     for (const el of arr) {
-//         if (el === String()) {
-//             s.string += 1
-//         } else if (el === Number()) {
-//             s.number += 1
-//         } else if (el === undefined) {
-//             s.undefined += 1
+//         if (typeof el === "string") {
+//             typeObj.string += 1
+//         } else if (typeof el === "number") {
+//             typeObj.number += 1
+//         } else if (typeof el === 'undefined') {
+//             typeObj.undefined += 1
 //         } else if (el === null) {
-//             s.null += 1
-//         } else if (el === true || el === false) {
-//             s.boolean += 1
-//         } else if (el === Object) {
-//             s.boolean += 1
+//             typeObj.null += 1
+//         } else if (typeof el === "boolean") {
+//             typeObj.boolean += 1
+//         } else if (typeof el === "object") {
+//             typeObj.object += 1
 //         }
 //     }
 
-    // for (const key in arr) {
-    //     if (key === "string") {
-    //         s.string += 1
-    //     } else if (key === "number") {
-    //         s.number += 1
-    //     } else if (key === "undefined") {
-    //         s.undefined += 1
-    //     } else if (key === null) {
-    //         s.null += 1
-    //     }
-    // }
+//     // switch (obj.key) {
+//     //     case typeof key === "string":
+//     //         s.string += 1
+//     //         break;
+//     //     case typeof key === "number":
+//     //         s.string += 1
+//     //         break;
+//     //     case typeof key === "string":
+//     //         s.string += 1
+//     //         break;
+//     //     case typeof key === "undefined":
+//     //         s.undefined += 1
+//     //         break;
+//     //     case key === null:
+//     //         s.null += 1
+//     //         break;
 
-    // switch (obj.key) {
-    //     case typeof key === "string":
-    //         s.string += 1
-    //         break;
-    //     case typeof key === "number":
-    //         s.string += 1
-    //         break;
-    //     case typeof key === "string":
-    //         s.string += 1
-    //         break;
-    //     case typeof key === "undefined":
-    //         s.undefined += 1
-    //         break;
-    //     case key === null:
-    //         s.null += 1
-    //         break;
+//     //     default:
+//     //         break;
+//     // }
 
-    //     default:
-    //         break;
-    // }
+//     return typeObj
 
-//     return s
 // }
 
 // console.log(getTypeObject(testArray));
@@ -401,7 +390,7 @@ const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false'
 
 
 
-// 19. Задача -
+// 19. Задача +
 
 // Написать функци, на вход которой подаётся объект. Функция возвращает объект с ключами типа данных и количеством, которые находятся в объекте.
 
@@ -410,23 +399,54 @@ const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false'
 //     name: "Bob",
 //     age: 25,
 //     job: "Developer",
-//     "like language": "Java Script"
+//     "like language": "Java Script",
 //     test: undefined,
 //     nuller: null,
 //     isHuman: true,
 //     item: ['bag', 'pen']
 // };
 
-// После вызова функции вернётся объект:
-// {
-//     string: 3,
-//     number: 1,
-//     null: 1,
-//     undefined: 1,
-//     boolean: 1,
-//     object: 1
-// };
+// // После вызова функции вернётся объект:
+// // {
+// //     string: 3,
+// //     number: 1,
+// //     null: 1,
+// //     undefined: 1,
+// //     boolean: 1,
+// //     object: 1
+// // };
 
+// function getTypeObject(obj) {
+
+//     let typeObj = {
+//         string: 0,
+//         number: 0,
+//         null: 0,
+//         undefined: 0,
+//         boolean: 0,
+//         object: 0
+//     };
+
+//     for (const key in obj) {
+//         if (typeof obj[key] === "string") {
+//             typeObj.string += 1
+//         } else if (typeof obj[key] === "number") {
+//             typeObj.number += 1
+//         } else if (typeof obj[key] === 'undefined') {
+//             typeObj.undefined += 1
+//         } else if (obj[key] === null) {
+//             typeObj.null += 1
+//         } else if (typeof obj[key] === "boolean") {
+//             typeObj.boolean += 1
+//         } else if (typeof obj[key] === "object") {
+//             typeObj.object += 1
+//         }
+//     }
+
+//     return typeObj
+// }
+
+// console.log(getTypeObject(person));
 
 
 // 20. Задача +
@@ -485,7 +505,7 @@ const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false'
 
 
 
-// 22. Задача 
+// 22. Задача + от сюда
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
@@ -496,7 +516,7 @@ const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false'
 //     age: 33,
 // };
 
-// console.log(createCopy(user, "Ben"));
+// console.log(createCopy(user, "Ben")); // ? поменяется имя
 
 // function createCopy(obj, newName) {
 //     obj.name = newName;
@@ -505,29 +525,64 @@ const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false'
 
 
 
-// 23. Задача
+// 23. Задача +
 
 // Создать объект player со следующими полями:
 // name = Vita;
 // money = 1000;
 // level = 1;
-// К созданному объекту добавить следующие поля:
-// friendList = пустой массив;
-// likes fly = false;
-// Создать переменную: propText и присвоить значение isBetaTester.
-// Добавить в объект ключ, название которого лежит в переменной propText, со значением true.
-// Добавить в массив friendList имя: Alph и Rich.
-// Вывести все свойства в консоль в виде: <ключ>: <значение>;.
+
+// let player = {
+//     name: "Vita",
+//     money: 1000,
+//     level: 1
+// };
+
+// // К созданному объекту добавить следующие поля:
+// // friendList = пустой массив;
+// // likes fly = false;
+
+// player.friendList = [];
+// player["likes fly"] = false;
+
+// // Создать переменную: propText и присвоить значение isBetaTester.
+
+// let propText = "isBetaTester";
+
+// // Добавить в объект ключ, название которого лежит в переменной propText, со значением true.
+
+// player[propText] = true;
+
+// // Добавить в массив friendList имя: Alph и Rich.
+
+// player.friendList = ["Alph", "Rich"];
+
+// // Вывести все свойства в консоль в виде: <ключ>: <значение>;.
+
+// for (const key in player) {
+//     console.log(`${key}: ${player[key]}; `);
+// }
 
 
 
-// 24. Задача
+// 24. Задача +
 
 // Написать функцию, на вход которой подаётся объект. Функция возвращает новый объект, состоящий только из текстовых свойств переданного объекта.
 
+// function getStringObj(obj) {
+//     let newObj = {};
+//     for (const key in obj) {
+//         if (typeof obj[key] === "string") {
+//             newObj[key] = obj[key]
+//         }
+//     }
+//     return newObj
+// }
+
+// console.log(getStringObj(bob));
 
 
-// 25. Задача
+// 25. Задача -
 
 // Создать объект и заполнить выдуманными данными, используя где нужно, вложенный массив или объект: 
 // Объект автомобиль: 
@@ -537,7 +592,50 @@ const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false'
 // Год выпуска;
 // Завод (адрес у завода, название);
 // Владелец (имя, фамилия, дата рождения, пол);
+
 // Вывести каждое свойство по отдельности через console.log()
+
+// let info = {
+//     "Серийный номер": 121212,
+//     "Марка машины": "Lada",
+//     "Год выпуска": 1974,
+//     "Завод": {
+//         "адрес у завода": "Ленина 4",
+//         "название": "Сектор газа"
+//     },
+//     "Владелец": {
+//         "имя": "Иван",
+//         "фамилия": "Левченко",
+//         "дата рождения": 1952,
+//         "пол": "муж",
+//     },
+// };
+
+// // ? Понял что надо вложенным делать но правильную запись так и не нашел, взял в инете
+
+// for (let key in info) {
+//     if (typeof (info[key]) === 'object') { // Если одно из свойств объекта options - это объект, то...
+
+//         for (const i in info[key]) { // Выводим свойства вложенного объекта
+//             console.log(`${i}: ${info[key][i]}`);
+//         }
+//     }
+//     else {
+//         console.log(`${key}: ${info[key]}`);
+//     }
+// }
+
+// // ? мой вариант
+
+// for (const key in info) {
+//     if (typeof info[key] === "object") {
+//         console.log(console.log(`${info.key}: ${key};`));
+//     } else {
+//         console.log(`${key}: ${info[key]};`);
+//     }
+
+// }
+// console.log(s);
 
 
 
@@ -576,10 +674,34 @@ const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false'
 
 
 
-// 29. Задача
+// 29. Задача +
 
 // Написать функцию, которая проверяет, является ли переданный параметр примитивом
 
+// function chekPrimitive(value) {
+//     let check = Boolean();
+//     if (typeof value === "string") {
+//         check = true
+//     } else if (typeof value === "number") {
+//         check = true
+//     } else if (value === undefined) {
+//         check = true
+//     } else if (value === null) {
+//         check = true
+//     } else if (value === true || value === false) {
+//         check = true
+//     } else if (typeof value === "symbol") {
+//         check = true
+//     } else if (typeof value === "bigint") {
+//         check = true
+//     } else {
+//         check = false
+//     }
+
+//     return check
+// }
+
+// console.log(chekPrimitive(1));
 
 
 
@@ -599,5 +721,7 @@ const testArray = ['headline', 7, 5, null, ['array'], true, null, -3, 4, 'false'
 
 
 
-// ? // todo 12. +
-// ? // fixme 14. + добавил проверку на null
+// ? todo 12. +
+// ? fixme 14. + добавил проверку на null
+
+
