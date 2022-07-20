@@ -532,7 +532,7 @@ const user = {
 // money = 1000;
 // level = 1;
 
-// let player = {
+// const player = {
 //     name: "Vita",
 //     money: 1000,
 //     level: 1
@@ -542,20 +542,20 @@ const user = {
 // // friendList = пустой массив;
 // // likes fly = false;
 
-// player.friendList = [];
+// player.friendList = []; // ab102
+
 // player["likes fly"] = false;
 
 // // Создать переменную: propText и присвоить значение isBetaTester.
 
-// let propText = "isBetaTester";
+// const propText = "isBetaTester";
 
 // // Добавить в объект ключ, название которого лежит в переменной propText, со значением true.
 
 // player[propText] = true;
 
 // // Добавить в массив friendList имя: Alph и Rich.
-
-// player.friendList = ["Alph", "Rich"];
+// player.friendList.push("Alph", "Rich"); // ab105
 
 // // Вывести все свойства в консоль в виде: <ключ>: <значение>;.
 
@@ -572,13 +572,20 @@ const user = {
 // function getStringObj(obj) {
 //     let newObj = {};
 //     for (const key in obj) {
-//         if (typeof obj[key] === "string") {
-//             newObj[key] = obj[key]
-//         }
+//         // if (typeof obj[key] === "string") {
+//         //     newObj[key] = obj[key]
+//         // }
+//         typeof obj[key] === "string" && (newObj[key] = obj[key])
 //     }
 //     return newObj
 // }
 
+
+// const bob = {
+//     name: "Bob",
+//     money: 1000,
+//     level: 1
+// };
 // console.log(getStringObj(bob));
 
 
@@ -595,21 +602,24 @@ const user = {
 
 // Вывести каждое свойство по отдельности через console.log()
 
-// let info = {
-//     "Серийный номер": 121212,
-//     "Марка машины": "Lada",
-//     "Год выпуска": 1974,
-//     "Завод": {
-//         "адрес у завода": "Ленина 4",
-//         "название": "Сектор газа"
-//     },
-//     "Владелец": {
-//         "имя": "Иван",
-//         "фамилия": "Левченко",
-//         "дата рождения": 1952,
-//         "пол": "муж",
-//     },
-// };
+const info = {
+    "Серийный номер": 121212,
+    "Марка машины": "Lada",
+    "Год выпуска": 1974,
+    завод: {
+        "адрес у завода": "Ленина 4",
+        название: "Сектор газа"
+    },
+    владелец: {
+        имя: "Иван",
+        фамилия: "Левченко",
+        "дата рождения": 1952,
+        пол: "муж",
+    },
+};
+// console.log(info["Серийный номер"]);
+// console.log(info.завод["адрес у завода"]);
+
 
 // // ? Понял что надо вложенным делать но правильную запись так и не нашел, взял в инете
 
@@ -625,10 +635,11 @@ const user = {
 //     }
 // }
 
-// // ? мой вариант
+// // // ? мой вариант
 
 // for (const key in info) {
 //     if (typeof info[key] === "object") {
+//         // тут for in
 //         console.log(console.log(`${info.key}: ${key};`));
 //     } else {
 //         console.log(`${key}: ${info[key]};`);
@@ -660,10 +671,20 @@ const user = {
 //     parking: "yes",
 //     floors: 5,
 //     partners: {
-//         "Магнит": "https://magnit.ru/",
-//         "Яндекс": "https://yandex.ru/"
+//         list: [
+//             { magnit: "https://magnit.ru/" },
+//             { yandex: "https://yandex.ru/" }
+//         ]
 //     }
 // };
+
+// miniMarket.food[0]
+// // miniMarket['food'][0]
+// miniMarket.food[1]
+// miniMarket.food[2]
+// miniMarket.partners.magnit
+//miniMarket.patners.list[0].magnit
+//miniMarket.patners.list[1].yandex
 
 
 // 27. Задача
@@ -690,28 +711,41 @@ const user = {
 
 // Написать функцию, которая проверяет, является ли переданный параметр примитивом
 
-// function chekPrimitive(value) {
-//     let check = Boolean();
-//     if (typeof value === "string") {
-//         check = true
-//     } else if (typeof value === "number") {
-//         check = true
-//     } else if (value === undefined) {
-//         check = true
-//     } else if (value === null) {
-//         check = true
-//     } else if (value === true || value === false) {
-//         check = true
-//     } else if (typeof value === "symbol") {
-//         check = true
-//     } else if (typeof value === "bigint") {
-//         check = true
-//     } else {
-//         check = false
-//     }
+function chekPrimitive(value) {
+    // let check = Boolean();
+    // if (typeof value === "string") {
+    //     check = true
+    // } else if (typeof value === "number") {
+    //     check = true
+    // } else if (value === undefined) {
+    //     check = true
+    // } else if (value === null) {
+    //     check = true
+    // } else if (value === true || value === false) {
+    //     check = true
+    // } else if (typeof value === "symbol") {
+    //     check = true
+    // } else if (typeof value === "bigint") {
+    //     check = true
+    // } else {
+    //     check = false
+    // }
 
-//     return check
-// }
+
+    return typeof value !== 'object' && typeof value !== 'function' || value === null
+
+
+    // 8 типов
+    // string, number, boolean, undefined, null, symbol, bigint - примитивы
+    // object - ссылочные типы [Array, Object, Argumnets, Function]
+
+    // console.log(typeof (null)); // "object"
+    // console.log(typeof (function test() {})); // "function"
+}
+
+
+
+
 
 // console.log(chekPrimitive(1));
 
@@ -762,13 +796,14 @@ const user = {
 //             return false;
 //         } else if (obj[key] === undefined) {
 //             return false;
-//         } if (obj[key] === null) {
+//         } else if (obj[key] === null) {
 //             return false;
 //         }
 //     }
+//     return true
 // }
 
-// console.log(isEmpty(staff));
+// // console.log(isEmpty(staff));
 // console.log(isEmpty(user));
 // console.log(isEmpty(test));
 // console.log(isEmpty(test2));
