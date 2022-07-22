@@ -540,29 +540,106 @@
 // console.log(getInitials(firstName, secondName));
 
 
-// 26. Задача
+// 26. Задача +
 
 // Написать функцию, на вход которой подаётся строка с текстом. Функция переворачивает все слова в тексте наоборот.
 
 // Example:
 // "The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The"
-// 27. Задача
+
+// let text = "The greatest victory is that which requires no battle";
+
+// function getTextReverse(value) {
+//     let textReverse = value.split(' ').reverse();
+//     let stringReverse = "";
+//     for (const el of textReverse) {
+//         stringReverse += el + " "
+//     }
+//     return stringReverse
+// };
+
+// console.log(getTextReverse(text));
+
+
+
+// 27. Задача +
 
 // Написать функцию, которая преобразует массив строк в массив чисел, где каждое число - количество символов в строке. Функция возвращает новый массив.
 
 // Example: ['a', 'as', 'red', 'test'] --> [1, 2, 3, 4]
-// 28. Задача
+
+// let someArray = ['asf3', 'as', 'red', 'test'];
+
+// function getArrNumber(arr) {
+//     let countArr = [];
+//     for (const el of someArray) {
+//         countArr += el.length
+//     }
+//     return countArr
+// };
+
+// console.log(getArrNumber(someArray));
+
+
+
+// 28. Задача + -
 
 // Написать функцию, на вход которой подаётся массив с словами. Функция мутирует массив, переворачия все слова в массиве наоборот.
 
-// 29. Задача
+// let text = ["The", "greatest", "victory", "is", "that", "which", "requires", "no", "battle"];
+
+// function getReverseArr(arr) {
+//     let newArr = [];
+//     for (const el of arr) {
+//         newArr.push(el.split('').reverse().join(''));
+//     }
+//     return newArr
+// };
+
+// console.log(getReverseArr(text));
+
+
+
+// 29. Задача + - (isNan увел)
 
 // Написать функцию, на вход которой подаётся строка. Функция возвращает объект, в котором есть 3 свойства:
 
 // Количество заглавных букв;
 // Количество строчных букв;
 // Количество чисел;
-// 30. Задача
+
+
+// const someText = "dddd AAAA 1234 G dddd GGG 4";
+
+// function getObject(value) {
+//     let lower = 0;
+//     let upper = 0;
+//     let number = 0;
+
+//     let localArr = [];
+
+//     for (const el of value) {
+//         localArr.push(el)
+//     }
+
+//     for (const el of localArr) {
+//         !isNaN(el) && el !== " " ? (number++) : null
+//         el === el.toLowerCase() && el !== " " && isNaN(el) ? (lower++) : null
+//         el === el.toUpperCase() && el !== " " && isNaN(el) ? (upper++) : null
+//     }
+
+//     return {
+//         "Количество заглавных букв": `${upper}`,
+//         "Количество строчных букв": `${lower}`,
+//         "Количество чисел": `${number}`
+//     }
+// };
+
+// console.log(getObject(someText));
+
+
+
+// 30. Задача + -
 
 // Написать функцию, на вход которой подаётся строка. Функция возвращает строку, удаляя оттуда все цифры
 
@@ -570,6 +647,22 @@
 // '! !'                 -> '! !'
 // '123456789'           -> ''
 // 'This looks5 grea8t!' -> 'This looks great!'
+
+const someText = 'This looks5 grea8t!';
+
+function getOnlyText(text) {
+    let newText = "";
+    for (const el of text) {
+        if (isNaN(el)) {
+            newText += el
+        }
+    }
+    return newText
+};
+
+console.log(getOnlyText(someText));
+
+
 // 31. Задача
 
 // Написать функцию, на вход которой подаётся строка. Функция возвращает строку, удаляя оттуда все сивмолы пробела
@@ -586,6 +679,9 @@
 // Диск на котором лежит файл;
 // Папка, в которой лежит файл;
 // Расширение файла;
+
+
+
 // ★ 33. Задача ★
 
 // Дан объект user, выполнить удаление свойств с помощью цикла, которые содержут слово delete в ключе.
