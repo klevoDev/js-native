@@ -291,31 +291,137 @@
 
 
 
-// 17. Задача
+// 17. Задача + го
 
 // Написать функцию, на вход которой подаётся строка из функции generateLink 16 задачи. Функция возвращает объект, состоящий из свойств:
 
 // link: адрес ссылки;
 // content: содержимое тега a;
 // className: имя класс;
-// 18. Задача
+
+// function generateLink(link, text, classLink) {
+//     return {
+//         link: `${link}`,
+//         content: `${text}`,
+//         className: `${classLink}`
+//     }
+// };
+
+// console.log(generateLink(test1, test2, test3));
+
+
+
+// 18. Задача +
 
 // Написать функцию, на вход которой подаётся путь к файлу, например: C:\Program Files\project\test.js. Функция возвращает объект с двумя данными:
 
 // Диск на котором лежит файл;
 // Расширение файла;
-// 19. Задача
+
+// const place = "C:\Program Files\project\test.js";
+
+// function getData(value) {
+//     let disc = "";
+//     let expReverse = "";
+//     let test = value.split('').reverse().join('');
+
+//     for (const el of value) {
+//         if (el !== ":") {
+//             disc += el
+//         } else {
+//             break
+//         }
+//     }
+
+//     for (const el of test) {
+//         if (el !== ".") {
+//             expReverse += el
+//         } else {
+//             break
+//         }
+//     }
+
+//     const expansion = expReverse.split('').reverse().join('');
+
+//     return {
+//         disc: `${disc}`,
+//         exp: `${expansion}`
+//     }
+// }
+
+// console.log(getData(place));
+
+
+
+// 19. Задача -
 
 // Написать функцию, на вход которой подаётся строка в kebab-case, функция возращает эту же строку в lowerCamelCase cssToJs("background-color") == 'backgroundColor'; cssToJs("list-style-image") == 'listStyleImage'; cssToJs("-webkit-transition") == 'webkitTransition';
 
-// 20. Задача
+// const cssStyle = "background-color";
+
+// function cssToJs(value) {
+
+//     return newStr
+// }
+
+// console.log(cssToJs(cssStyle));
+
+
+
+// 20. Задача +
 
 // Написать функцию, на вход которой подаётся строка, содержащая класс по БЭМ, вида: class = "about__btn about__btn_disabled" В функцию подаётся строкал только вида, описанного сверху Вывести в консоль:
 
 // Название блока;
 // Название элемента;
 // Название модифитора;
-// 21. Задача
+
+// const classBam = "about__btn about__btn_disabled";
+
+// function getBam(value) {
+//     let countMod = 1;
+
+//     let block = "";
+//     let element = "";
+
+//     for (const el of value) {
+//         if (el !== "_") {
+//             block += el
+//         } else {
+//             break
+//         }
+//     }
+
+//     for (const el of value) {
+//         if (el !== " ") {
+//             element += el
+//         } else {
+//             break
+//         }
+//     }
+
+//     for (const el of value) {
+//         if (el !== " ") {
+//             countMod += 1
+//         } else {
+//             break
+//         }
+//     }
+
+//     let mod = value.slice(countMod);
+
+//     return {
+//         "Название блока": `${block}`,
+//         "Название элемента": `${element}`,
+//         "Название модифитора": `${mod}`
+//     }
+// }
+
+// console.log(getBam(classBam));
+
+
+
+// 21. Задача +
 
 // Создать переменную: stringTask = "aaaccaaaccaacacaacc".
 
@@ -323,25 +429,117 @@
 // Вывести в консоль количество "с";
 // Найти сколько % в строке символов "a" и "c";
 // Программа должна работать с любым (в пределах разумного) количеством символов "a" и "с";
-// 22. Задача
+
+// const stringTask = "aaaccaaaccaacacaaccaс";
+
+// function getAC(value) {
+//     let countA = 0;
+//     let countC = 0;
+
+//     for (const el of value) {
+//         if (el === "a" || el === "а") {
+//             countA += 1;
+//         }
+//     }
+
+//     for (const el of value) {
+//         if (el === "c" || el === "с") {
+//             countC += 1;
+//         }
+//     }
+
+//     let countAll = countA + countC;
+//     let percentA = countA / countAll * 100;
+//     let percentC = countC / countAll * 100;
+
+//     console.log(
+//         `Количество "a" = ${countA}
+//         \nКоличество "c" = ${countC}
+//         \nПроцентов "a" в строке ${value} = ${Math.round(percentA)}%
+//         \nПроцентов "с" в строке ${value} = ${Math.round(percentC)}%`
+//     );
+// }
+
+// getAC(stringTask)
+
+
+
+// 22. Задача +
 
 // Создать функцию, которая удаляет первый и последний символы строки, которая подаётся на вход в функцию. Функция возвращает новую строку. Если в строке меньше двух символов, то возвращать пустую строку.
 
-// 23. Задача
+// const someStr = "train";
+
+// function delSymbol(value) {
+//     let newString = value.slice(1, value.length - 1);
+
+//     if (newString.length < 2) {
+//         return " ";
+//     } else {
+//         return newString;
+//     }
+// };
+
+// console.log(delSymbol(someStr));
+
+
+
+// 23. Задача +
 
 // Написать функцию, которая возвращает перевёрнутую строку строку.
 
 // 'world'  =>  'dlrow'
 // 'word'   =>  'drow'
-// 24. Задача
+
+// const someStr = "train";
+
+// function reverseString(str) {
+//     let localStr = "";
+//     return localStr = str.split('').reverse().join('')
+// };
+
+// console.log(reverseString(someStr));
+
+
+
+// 24. Задача +
 
 // Написать функцию, которая удаляет все пробелы из строки. Функция возвращает новую строку.
 
-// 25. Задача
+// const someStr = " t r a i n ";
+
+// function delSpaces(value) {
+//     let newStr = ""
+//     for (const el of value) {
+//         if (el !== " ") {
+//             newStr += el
+//         }
+//     }
+//     return newStr
+// }
+// console.log(delSpaces(someStr));
+
+
+
+// 25. Задача +
 
 // Написать функцию, на вход которой подаётся 2 строки: имя и фамилия. Функция возвращает одну строку - инициалы через точки.
 
 // Alexander Volkov --> A.V.
+
+// let firstName = "Alexander";
+// let secondName = "Volkov";
+
+// function getInitials(val1, val2) {
+//     let firName = val1.slice(0, 1)
+//     let secName = val2.slice(0, 1)
+
+//     return `${firName}.${secName}.`
+// }
+
+// console.log(getInitials(firstName, secondName));
+
+
 // 26. Задача
 
 // Написать функцию, на вход которой подаётся строка с текстом. Функция переворачивает все слова в тексте наоборот.
