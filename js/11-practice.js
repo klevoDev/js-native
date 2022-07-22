@@ -37,14 +37,15 @@
 
 // const string = "train"
 
-// function getSimbol(str) {
-//     let firstSimbol = str[0]
-//     let penultimateSimbol = str[str.length - 2]
-//     let lastSimbol = str[str.length - 1]
-//     return `${firstSimbol}, ${penultimateSimbol}, ${lastSimbol}`
+// function getBaseSymbols(str) {
+//     return {
+//         first: str[0],
+//         penult: str[str.length - 2],
+//         last: str[str.length - 1]
+//     }
 // }
 
-// console.log(getSimbol(string));
+// console.log(getBaseSymbols(string));
 
 
 
@@ -56,27 +57,27 @@
 // const modelTwo = "car";
 
 // function glueLines(str1, str2) {
-//     if (str1.length > str2.length) {
-//         return str1 + str2
-//     } else if (str1.length < str2.length) {
-//         return str2 + str1
-//     } else if (str1.length === str2.length) {
-//         return `Строки равны`
-//     }
+//     return str1.length > str2.length ? str1 + str2 : str2 + str1;
 // }
 
 // console.log(glueLines(modelOne, modelTwo));
 
 
 
-// 5. Задача + -
+// 5. Задача +
 
 // Написать функцию, на вход которой подаётся строка, функция возвращает количество, встречающихся букв a незасивимо от того какой язык: русский или английский.
 
-// const someString = "rвsfaваы";
+// const someString = "rвsfaваыаfaaа аа aa";
 
 // function getLetters(str) {
-//     return str.length
+//     let s = 0;
+//     for (const el of str) {
+//         if (el === "а" || el === "a") {
+//             s++
+//         }
+//     }
+//     return s
 // }
 // console.log(getLetters(someString));
 
@@ -92,7 +93,7 @@
 // function getSumSymbol(value, symbol) {
 //     let countSymbol = 0;
 //     for (const el of value) {
-//         el === symbol && (countSymbol += 1)
+//         el === symbol && countSymbol++
 //     }
 //     return countSymbol;
 // }
@@ -109,27 +110,54 @@
 // const monday = "day";
 
 // function checkStr(value1, value2) {
-//     console.log(value1.indexOf(value2));
+//     return value1.includes(value2);
 // };
 
-// checkStr(day, monday)
+// console.log(checkStr(day, monday));
 
 
+// 8. Задача ---------- дубль
 
-// 8. Задача ----------
+// Написать функцию, на вход которой подаётся 2 строки. Функция проверяет равны ли эти строки независимо от регистра.
 
-// Написать функцию, на вход которой подаётся 2 строки, которая проверяет есть вторая строка в первой
+// function checkStr(str1, str2) {
+//     return str1.toLowerCase() === str2.toLowerCase()
+// }
+
+// console.log(checkStr('Roman', 'roman'));
 
 
-
-
-// 9. Задача -
+// 9. Задача +
 
 // Написать функцию, на вход которой подаётся 3 строки, которая проверяет есть вторая или третья строка в первой. Функция может работать как с двумя переменными, так и стремя.
 
-// const monday = "monday";
+// const monday = "null";
 // const day = "days";
-// const mon = "mon";
+// // const mon = "mon";
+
+// function checkStr(str1, str2, str3) {
+//     // когда 2 параметра, задача решается не ок
+//     // если 2 параметра
+//     // !undefined = !false -> true
+
+//     // str3 === undefined
+//     if (!str3) {
+//         return str1.includes(str2)
+//     } else {
+//         // Когда 3 параметра задача решается ок
+//         // если три параметра:
+//         return str1.includes(str2) || str1.includes(str3)
+//     }
+// }
+
+// console.log(!false); // true
+// console.log(!''); // true
+// console.log(!'fds'); // false
+// console.log(!null); // true
+
+// console.log(!!'gfdgdf'); // !! === Boolean()
+
+// console.log(checkStr(monday, day, ""));
 
 
 
@@ -147,32 +175,121 @@
 
 
 
-// 11. Задача
+// 11. +
 
 // Написать функцию, на вход которой подаётся 2 строки. Функция проверяет начинается ли первая строка со второй строки или заканчивается ей?
 
-// 12. Задача
+// const monday = "monday";
+// const day = "on";
+
+// function checkStr(value1, value2) {
+//     return value1.startsWith(value2) || value1.endsWith(value2);
+
+// }
+
+// console.log(checkStr(monday, day));
+// console.log(checkStr(monday, day));
+
+
+
+// 12. Задача +
 
 // Написать функцию, на вход которой подаётся строка. Функция возвращает массив, состоящий из символов этой строки. Решить задачу двумя способами.
 
-// 13. Задача
+// const monday = "Monday";
+
+// function getArray(string) {
+//     const newArr = [];
+//     for (const el of string) {
+//         newArr.push(el)
+//     }
+//     return newArr
+// };
+
+// console.log(getArray(monday));
+
+// или
+
+// function getArray2(string) {
+//     const newArr = [];
+//     for (let i = 0; i < string.length; i++) {
+//         newArr.push(string[i])
+//     }
+//     return newArr
+// };
+
+// console.log(getArray2(monday));
+
+
+
+// 13. Задача +
 
 // Написать функцию, на вход которой подаётся 2 параметра (1 параметр - строка, 2 параметр - символ). Функция возвращает строку, состоящая без символа.
 
-// 14. Задача
+// const monday = "Monday";
+// const del = "o";
 
-// Написать функцию функцию, которая обрезает
+// function delSymbol(str, sym) {
+//     let newString = "";
+//     for (const el of str) {
+//         if (el !== sym) {
+//             newString += el
+//         }
+//     }
+//     return newString
+// }
+// console.log(delSymbol(monday, del));
 
-// 15. Задача
+
+
+
+// 14. Задача +
+
+// Написать функцию функцию, которая обрезает со второго символа до предпоследнего включительно переданное слово.
+
+// const monday = "Monday";
+
+// function delSymbol(value) {
+//     console.log(value.slice(1, value.length - 1));
+// };
+
+// delSymbol(monday);
+
+
+
+// 15. Задача +
 
 // Написать функцию cropString, на вход которой подаётся 3 параметра (1 параметр - строка, 2 - число (начало обрезки), 3 - число (конец обрезки)). Функция возвращает строку, состощая из символов, начиная от 2 параметра, заканчивая 3 вкл.
 
 // Например:
 // console.log(cropString("tester", 2, 4)); // "ste"
-// 16. Задача
+
+// const monday = "Monday";
+
+// function cropString(string, start, end) {
+//     return string.slice(start, end + 1);
+// }
+
+// console.log(cropString(monday, 1, 2));
+
+
+
+// 16. Задача +
 
 // Написать функцию generateLink, на вход которой подаётся 3 параметра: ссылка, текст, класс для тега a. Функция возвращает строку вида: 
 // <a href="ссылка" class="класс">текст</a>.
+
+// const test1 = "www.leningrad.ru";
+// const test2 = "Какой-то текст тут";
+// const test3 = "start__link";
+
+// function generateLink(link, text, classLink) {
+//     return `<a href="${link}" class="${classLink}">${text}</a>`
+// };
+
+// console.log(generateLink(test1, test2, test3));
+
+
 
 // 17. Задача
 

@@ -864,9 +864,9 @@
 // ];
 
 // function getArr(arr) {
-//     let newArr = "";
+//     const newArr = [];
 //     for (const el of arr) {
-//         newArr += `Имя: ${el.name}, возвраст: ${el.age}\n`;
+//         newArr.push(`Имя: ${el.name}, возвраст: ${el.age}`);
 //     }
 //     return newArr
 // }
