@@ -639,7 +639,7 @@
 
 
 
-// 30. Задача + -
+// 30. Задача + - сначала использовал isNan, потом подглядел .replace
 
 // Написать функцию, на вход которой подаётся строка. Функция возвращает строку, удаляя оттуда все цифры
 
@@ -648,31 +648,68 @@
 // '123456789'           -> ''
 // 'This looks5 grea8t!' -> 'This looks great!'
 
-const someText = 'This looks5 grea8t!';
+// const someText = 'This looks5 grea8t!';
 
-function getOnlyText(text) {
-    let newText = "";
-    for (const el of text) {
-        if (isNaN(el)) {
-            newText += el
-        }
-    }
-    return newText
-};
+// ? isNaN но тут склейка происходит
 
-console.log(getOnlyText(someText));
+// function getOnlyText(text) {
+//     let newText = "";
+//     for (const el of text) {
+//         if (isNaN(el)) {
+//             newText += el
+//         }
+//     }
+//     return newText
+// };
+
+// console.log(getOnlyText(someText));
+
+// ? .replace
+
+// const someText = 'This looks5 grea8t!';
+
+// function getOnlyText(text) {
+//     let newText = "";
+//     for (const el of text) {
+//         if (el === el.replace(/[0-9]/g, "")) {
+//             newText += el
+//         }
+//     }
+//     return newText
+// };
+
+// console.log(getOnlyText(someText));
 
 
-// 31. Задача
+
+
+// 31. Задача +
 
 // Написать функцию, на вход которой подаётся строка. Функция возвращает строку, удаляя оттуда все сивмолы пробела
 
 // '8 j 8   mBliB8g  imjB8B8  jl  B'               --> '8j8mBliB8gimjB8B8jlB'
 // '8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd'   --> '88Bifk8hB8BB8BBBB888chl8BhBfd'
 // '8aaaaa dddd r     '                            --> '8aaaaaddddr'
-// ★ Задачи повышенной сложности ★
 
-// ★ 32. Задача (Продолжение 18 задачи)★
+// const someText = ' 8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd';
+
+// function getOnlyText(text) {
+//     let newText = "";
+//     for (const el of text) {
+//         if (el !== " ") {
+//             newText += el
+//         }
+//     }
+//     return newText
+// };
+
+// console.log(getOnlyText(someText));
+
+
+
+// ?★ Задачи повышенной сложности ★
+
+// ★ 32. Задача (Продолжение 18 задачи)★ + -
 
 // Написать функцию, на вход которой подаётся путь к файлу, например: C:\Program Files\project\test.js. Функция возвращает объект с двумя данными:
 
@@ -680,9 +717,51 @@ console.log(getOnlyText(someText));
 // Папка, в которой лежит файл;
 // Расширение файла;
 
+// const place = "C:\Program Files\roject\test.js";
+
+// function getData(value) {
+//     let disc = "";
+//     let expReverse = "";
+//     let folder = "";
+
+//     let test = value.split('').reverse().join('');
+
+//     for (const el of value) {
+//         if (el !== ":") {
+//             disc += el
+//         } else {
+//             break
+//         }
+//     }
+
+//     for (const el of test) {
+//         if (el !== ".") {
+//             expReverse += el
+//         } else {
+//             break
+//         }
+//     }
+
+//     const expansion = expReverse.split('').reverse().join('');
+
+//     // путь к папке
+//     folder = value.slice(disc.length + 1, -Math.abs(expansion.length + 1))
 
 
-// ★ 33. Задача ★
+
+//     return {
+//         disc: `${disc}`,
+//         exp: `${expansion}`,
+//         folder: `${folder}`
+//     }
+// }
+
+// console.log(getData(place));
+
+
+
+
+// ★ 33. Задача ★ +
 
 // Дан объект user, выполнить удаление свойств с помощью цикла, которые содержут слово delete в ключе.
 
@@ -693,14 +772,41 @@ console.log(getOnlyText(someText));
 //     delete: 105,
 //     'deleteProp': false
 // };
-// ★ 34. Задача ★
+
+// for (const key in user) {
+//     if (key.includes('delete')) {
+//         delete user[key]
+//     }
+
+// }
+// console.log(user);
+
+
+
+// ★ 34. Задача ★ +
 
 // Написать функцию stringClean, которая удаляет из строки все цифры.
 
 // '8j8mBliB8gimjB8B8jlB' --> 'jmBliBgimjBBjlB'
 // '97Bifk8hB65BB3BBBB8451chl0BhBfd' --> 'BifkhBBBBBBBchlBhBfd'
 // '8aaaaa dd5dd 7r0' --> 'aaaaa dd5dd r'
-// ★ 34. Задача ★
+
+// const someValue = '8aaaaa dd5dd 7r0';
+
+// function stringClean(value) {
+//     let string = '';
+//     for (const el of value) {
+//         if (el === el.replace(/[0-9]/g, "")) {
+//             string += el
+//         }
+//     }
+//     return string
+// }
+// console.log(stringClean(someValue))
+
+
+
+// ★ 34. Задача ★ -
 
 // Написать функцию lettersCount, которая принимает строку в качестве аргумента и возвращает объект, в котором ключами являются все буквы, которые есть в строке, а значениями - их количество в строке. Большая буква и маленькая должны считаться одинаковой буквой. Если строка пустая, то вернуть пустой объект.
 
@@ -715,9 +821,51 @@ console.log(getOnlyText(someText));
 //     d: 1,
 //     e: 1,
 // }
+
+// function getSymbols(value) {
+
+// }
+
+
 // ★ 35. Задача ★
 
 // Написать функцию, на вход которой подаётся строка с простым матемтическим выражением: 11 + 3, или 7*9. Функция возвращает результат сложения/умножения/деления и т.п. Примечание: функцию eval() не использовать!
+
+// let test = "11 - 3";
+
+// function getResult(value) {
+//     let localArr = value.split(' ')
+//     console.log(localArr);
+//     let s = [];
+
+//     for (let i = 0; i < localArr.length; i++) {
+//         if (typeof Number(localArr[i]) === 'number') {
+//             s += localArr[i]
+//         }
+//     }
+//     return s
+// }
+
+
+// console.log(getResult(test));
+
+
+
+// let a = "1_234_567_890";
+// let d = 0;
+// for (const key in a) {
+//     if (key.isNaN) {
+//         d = parseInt(a)
+//     }
+// }
+// d = parseInt(a)
+// console.log(d);
+
+
+
+
+
+
 
 // ★ 36. Задача ★
 
@@ -727,6 +875,10 @@ console.log(getOnlyText(someText));
 // const b = "4_5435_6548_9430"; // 4543565489430
 // const c = "1_"; // 1
 // const d = "_2"; // 2
+
+
+
+
 // ★ 37. Задача ★
 
 // Написать функцию, на вход которой в функцию подаётся строка дата в формате: "ДД.ММ.ГГГГ" Функция возвращает true, если такая дата существует, иначе false.
@@ -734,6 +886,11 @@ console.log(getOnlyText(someText));
 // Необходимо учесть високосные года;
 // Функция работает только с положительными годами (наша эра);
 // Выполнить программу без использования Date();
+
+
+
+
+
 // ★ 38. Задача ★
 
 // Написать программу-кодировщик: s = 'aabbbсaaaa' преобразуется в 'a2b3с1a4', то есть группы одинаковых символов исходной строки заменяются на этот символ и количество его повторений в этой позиции строки. Кодировщик должен учитывать регистр:
