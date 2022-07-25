@@ -291,23 +291,25 @@
 
 
 
-// 17. Задача + го
+// 17. Задача
 
 // Написать функцию, на вход которой подаётся строка из функции generateLink 16 задачи. Функция возвращает объект, состоящий из свойств:
 
-// link: адрес ссылки;
-// content: содержимое тега a;
-// className: имя класс;
+// const link = 'адрес ссылки';
+// const content = "содержимое тега a";
+// const className = "имя класс";
 
-// function generateLink(link, text, classLink) {
+// const string = `<a href="${link}" class="${className}">${content}</a>.`
+
+// function generateLink(link, content, className) {
 //     return {
 //         link: `${link}`,
-//         content: `${text}`,
-//         className: `${classLink}`
+//         content: `${content}`,
+//         className: `${className}`
 //     }
 // };
 
-// console.log(generateLink(test1, test2, test3));
+// console.log(generateLink(link, content, className));
 
 
 
@@ -318,7 +320,41 @@
 // Диск на котором лежит файл;
 // Расширение файла;
 
-// const place = "C:\Program Files\project\test.js";
+// const path = "C:\Program Files\project.fufo\test.js";
+
+
+// function reverseString(str) {
+//     return str.split('').reverse().join('')
+// }
+
+// function pathToExtDisk(ref) {
+// const disk = ref.slice(0, ref.indexOf(':'))
+
+// 1 вариант
+// const refReverse = reverseString(ref)
+// const ext = reverseString(refReverse.slice(0, refReverse.indexOf('.')))
+
+// 2 вариант
+// const splitArray = ref.split('.')
+// const ext = splitArray[splitArray.length - 1]
+
+// 3 вариант
+// const ext = ref.slice(ref.lastIndexOf('.') + 1)
+
+
+// * доп
+// -1 - индекс последнего элемента
+// -2 - индекс предпоследнего и т.д.
+
+
+//     return {
+//         disk,
+//         ext
+//     }
+// }
+
+// console.log(pathToExtDisk(path));
+
 
 // function getData(value) {
 //     let disc = "";
@@ -353,22 +389,84 @@
 
 
 
-// 19. Задача -
+// FIXME: 19. Задача -
 
 // Написать функцию, на вход которой подаётся строка в kebab-case, функция возращает эту же строку в lowerCamelCase cssToJs("background-color") == 'backgroundColor'; cssToJs("list-style-image") == 'listStyleImage'; cssToJs("-webkit-transition") == 'webkitTransition';
 
 // const cssStyle = "background-color";
 
-// function cssToJs(value) {
+// function getCamelCase(kebabCase) {
+//     let s = '';
+//     for (const el of kebabCase) {
+//         if (el === kebabCase.indexOf('-') + 1) {
+//             s = el.toUpperCase()
+//         }
+//     }
+//     return s
 
+// }
+
+// console.log(getCamelCase(cssStyle));
+
+// страрое решение
+// const cssStyleList = cssStyle.split('-');
+// for (let i = 1; i < cssStyleList.length; i++) {
+//     cssStyleList[i] = cssStyleList[i][0].toUpperCase();
+// }
+
+// console.log(cssStyleList);
+
+// let g = ''
+// // g = cssStyle[0].toUpperCase()
+// let newStr = " ";
+// newStrSplit = cssStyle.split('-');
+// console.log(newStrSplit);
+
+// for (const el of cssStyle) {
+//     if (el !== el[0]) {
+//         g = cssStyle.toUpperCase()
+//     }
+// }
+
+// console.log(cssStyle);
+
+
+
+// function cssToJs(value) {
+//     let newStr = " ";
+//     let newStrSplit = value.split('-');
+//     // newStrSplit = value.split('-')
+//     console.log(newStrSplit);
+//     let upperSym = " ";
+//     upperSym = newStrSplit[1].toUpperCase()
+//     console.log(upperSym);
+
+
+
+//     for (const el of newStrSplit.slice(1, newStrSplit.length)) {
+
+
+
+
+//         if (el !== "-") {
+//             newStr += el
+//         }
+//     }
 //     return newStr
 // }
+
+// let s = '';
+// s = cssStyle.split('-')
+// console.log(s);
+
+// s[1].toUpperCase()
+// console.log(s);
 
 // console.log(cssToJs(cssStyle));
 
 
 
-// 20. Задача +
+// 20. Задача ++
 
 // Написать функцию, на вход которой подаётся строка, содержащая класс по БЭМ, вида: class = "about__btn about__btn_disabled" В функцию подаётся строкал только вида, описанного сверху Вывести в консоль:
 
@@ -379,36 +477,10 @@
 // const classBam = "about__btn about__btn_disabled";
 
 // function getBam(value) {
-//     let countMod = 1;
 
-//     let block = "";
-//     let element = "";
-
-//     for (const el of value) {
-//         if (el !== "_") {
-//             block += el
-//         } else {
-//             break
-//         }
-//     }
-
-//     for (const el of value) {
-//         if (el !== " ") {
-//             element += el
-//         } else {
-//             break
-//         }
-//     }
-
-//     for (const el of value) {
-//         if (el !== " ") {
-//             countMod += 1
-//         } else {
-//             break
-//         }
-//     }
-
-//     let mod = value.slice(countMod);
+//     const block = value.slice(0, value.indexOf('_'));
+//     const element = value.slice(0, value.indexOf(' '));
+//     const mod = value.slice(value.indexOf(' ') + 1)
 
 //     return {
 //         "Название блока": `${block}`,
@@ -494,8 +566,7 @@
 // const someStr = "train";
 
 // function reverseString(str) {
-//     let localStr = "";
-//     return localStr = str.split('').reverse().join('')
+//     return str.split('').reverse().join('')
 // };
 
 // console.log(reverseString(someStr));
@@ -531,31 +602,39 @@
 // let secondName = "Volkov";
 
 // function getInitials(val1, val2) {
-//     let firName = val1.slice(0, 1)
-//     let secName = val2.slice(0, 1)
-
-//     return `${firName}.${secName}.`
+//     return `${val1[0]}.${val2[0]}.`
 // }
 
 // console.log(getInitials(firstName, secondName));
 
 
-// 26. Задача +
 
-// Написать функцию, на вход которой подаётся строка с текстом. Функция переворачивает все слова в тексте наоборот.
+// 26. Задача ++
+
+// Написать функцию, на вход которой подаётся строка с текстом. Функция переворачивает все символы в слове наоборот, оставляя порядок слов тем же самым.
 
 // Example:
-// "The greatest victory is that which requires no battle" --> "battle no requires which that is victory greatest The"
+// "The greatest victory is that which requires no battle" 
+// "ehT testaerg yrotciv si taht hcihw seriuqer on elttab"
 
 // let text = "The greatest victory is that which requires no battle";
 
-// function getTextReverse(value) {
-//     let textReverse = value.split(' ').reverse();
-//     let stringReverse = "";
-//     for (const el of textReverse) {
-//         stringReverse += el + " "
-//     }
-//     return stringReverse
+// //старое
+// // function getTextReverse(value) {
+// //     const textReverse = value.split(' ').reverse();
+// //     console.log(value);
+// //     let stringReverse = "";
+// //     for (const el of textReverse) {
+// //         stringReverse += el + " "
+// //     }
+// //     return stringReverse
+// // };
+
+
+// //новое
+// function getTextReverse(reverseWord) {
+//     let reverseText = reverseWord.split('').reverse().join('');
+//     return reverseText.split(' ').reverse().join(' ');
 // };
 
 // console.log(getTextReverse(text));
@@ -571,9 +650,9 @@
 // let someArray = ['asf3', 'as', 'red', 'test'];
 
 // function getArrNumber(arr) {
-//     let countArr = [];
+//     const countArr = [];
 //     for (const el of someArray) {
-//         countArr += el.length
+//         countArr.push(el.length)
 //     }
 //     return countArr
 // };
@@ -582,21 +661,24 @@
 
 
 
-// 28. Задача + -
+// FIXME: 28. Задача + - от сюда
 
 // Написать функцию, на вход которой подаётся массив с словами. Функция мутирует массив, переворачия все слова в массиве наоборот.
 
-// let text = ["The", "greatest", "victory", "is", "that", "which", "requires", "no", "battle"];
+// const text = ["The", "greatest", "victory", "is", "that", "which", "requires", "no", "battle"];
 
 // function getReverseArr(arr) {
-//     let newArr = [];
-//     for (const el of arr) {
-//         newArr.push(el.split('').reverse().join(''));
-//     }
-//     return newArr
+//     // for (const key in arr) {
+//     return arr.push(arr.split('').reverse().join(''));
 // };
 
 // console.log(getReverseArr(text));
+
+// function getTextReverse(reverseWord) {
+//    
+// };
+
+// console.log(getTextReverse(text));
 
 
 
@@ -611,13 +693,13 @@
 
 // const someText = "dddd AAAA 1234 G dddd GGG 4";
 
+// // ! 29 refactor
 // function getObject(value) {
 //     let lower = 0;
 //     let upper = 0;
 //     let number = 0;
 
 //     let localArr = [];
-
 //     for (const el of value) {
 //         localArr.push(el)
 //     }
@@ -827,6 +909,13 @@
 // }
 
 
+
+
+
+
+
+
+
 // ★ 35. Задача ★
 
 // Написать функцию, на вход которой подаётся строка с простым матемтическим выражением: 11 + 3, или 7*9. Функция возвращает результат сложения/умножения/деления и т.п. Примечание: функцию eval() не использовать!
@@ -863,36 +952,4 @@
 
 
 
-
-
-
-
-// ★ 36. Задача ★
-
-// Даны переменные типа string. Написать функцию, которая преобразует эти переменные к типу number, убрав лишние знаки.
-
-// const a = "1_234_567_890"; // 1234567890
-// const b = "4_5435_6548_9430"; // 4543565489430
-// const c = "1_"; // 1
-// const d = "_2"; // 2
-
-
-
-
-// ★ 37. Задача ★
-
-// Написать функцию, на вход которой в функцию подаётся строка дата в формате: "ДД.ММ.ГГГГ" Функция возвращает true, если такая дата существует, иначе false.
-
-// Необходимо учесть високосные года;
-// Функция работает только с положительными годами (наша эра);
-// Выполнить программу без использования Date();
-
-
-
-
-
-// ★ 38. Задача ★
-
-// Написать программу-кодировщик: s = 'aabbbсaaaa' преобразуется в 'a2b3с1a4', то есть группы одинаковых символов исходной строки заменяются на этот символ и количество его повторений в этой позиции строки. Кодировщик должен учитывать регистр:
-
-// "aBc" -> "a1B1c1"
+// FIXME: 20, 26,

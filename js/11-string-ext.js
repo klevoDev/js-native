@@ -24,7 +24,7 @@ console.log(strText[strText.length - 1]);
 // 2. <string>.toUpperCase() - Возвращает строк в верхем регистре 
 // 3. <string>.trim() - Удаляет пробелы слева и справа
 
-// 4. <string>.indexOf(value, index) - Возвращает индекс первого встречного значения value начиная с индекса index (по умолчанию 0)
+// ? 4. <string>.indexOf(value, index) - Возвращает индекс первого встречного значения value начиная с индекса index (по умолчанию 0)
 // Если ничего не найдёт, то вернёт -1
 
 console.log(strText.indexOf('mp')); // 2
@@ -34,15 +34,16 @@ console.log(strText.indexOf('ap', 3)); // -1
 // 5. <string>.includes(value, index) - проверят есть ли строка/часть строки value, начиная с индекса index (по умолчанию 0)
 // Проверяет - значит возвращает true/false
 
+'gfdg'.
 
-// * ДОП: Для проверки в есть текст в начале строки или в конце есть методы:
-// text.startsWith(value)
-// text.endsWith(value)
+    // * ДОП: Для проверки в есть текст в начале строки или в конце есть методы:
+    // text.startsWith(value)
+    // text.endsWith(value)
 
 
-// 6. <string>.slice(start, end); // Возвращает новую строку, копируя в неё все символы с позиции start до позиции end НЕ ВКЛЮЧИТЕЛЬНО
+    // ? 6. <string>.slice(start, end); // Возвращает новую строку, копируя в неё все символы с позиции start до позиции end НЕ ВКЛЮЧИТЕЛЬНО
 
-console.log(strText.slice(0, 3));
+    console.log(strText.slice(0, 3));
 
 const indexMp = strText.indexOf('mp', 3)
 console.log(strText.slice(0, indexMp));
