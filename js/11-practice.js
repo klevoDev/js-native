@@ -661,25 +661,26 @@
 
 
 
-// FIXME: 28. Задача + - от сюда
+// 28. Задача + - от сюда
 
 // Написать функцию, на вход которой подаётся массив с словами. Функция мутирует массив, переворачия все слова в массиве наоборот.
 
 // const text = ["The", "greatest", "victory", "is", "that", "which", "requires", "no", "battle"];
 
-// function getReverseArr(arr) {
-//     // for (const key in arr) {
-//     return arr.push(arr.split('').reverse().join(''));
-// };
+// function reverseAordArr(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         arr[i] = arr[i]
+//             .split('')
+//             .reverse()
+//             .join('');
+//     }
+// }
+// // let texter = 'text'
+// // texter[0] = 'T' // X
+// // texter = 'Text' // V
 
-// console.log(getReverseArr(text));
-
-// function getTextReverse(reverseWord) {
-//    
-// };
-
-// console.log(getTextReverse(text));
-
+// reverseAordArr(text);
+// console.log(text);
 
 
 // 29. Задача + - (isNan увел)
@@ -691,33 +692,34 @@
 // Количество чисел;
 
 
-// const someText = "dddd AAAA 1234 G dddd GGG 4";
 
-// // ! 29 refactor
-// function getObject(value) {
-//     let lower = 0;
-//     let upper = 0;
-//     let number = 0;
 
-//     let localArr = [];
-//     for (const el of value) {
-//         localArr.push(el)
-//     }
+// function getCountSymbols(string) {
+//     let lowers = 0;
+//     let uppers = 0;
+//     let numbers = 0;
 
-//     for (const el of localArr) {
-//         !isNaN(el) && el !== " " ? (number++) : null
-//         el === el.toLowerCase() && el !== " " && isNaN(el) ? (lower++) : null
-//         el === el.toUpperCase() && el !== " " && isNaN(el) ? (upper++) : null
+//     for (const el of string) {
+//         if (el !== " ") {
+//             if (!isNaN(el)) {
+//                 numbers++
+//             } else if (el === el.toLowerCase()) {
+//                 lowers++
+//             } else if (el === el.toUpperCase()) {
+//                 uppers++
+//             }
+//         }
 //     }
 
 //     return {
-//         "Количество заглавных букв": `${upper}`,
-//         "Количество строчных букв": `${lower}`,
-//         "Количество чисел": `${number}`
+//         uppers,
+//         lowers,
+//         numbers
 //     }
 // };
 
-// console.log(getObject(someText));
+// const someText = "dddd G 12344";
+// console.log(getCountSymbols(someText));
 
 
 
@@ -732,12 +734,12 @@
 
 // const someText = 'This looks5 grea8t!';
 
-// ? isNaN но тут склейка происходит
+// // ? isNaN но тут склейка происходит
 
 // function getOnlyText(text) {
 //     let newText = "";
 //     for (const el of text) {
-//         if (isNaN(el)) {
+//         if (isNaN(el) || el === " ") {
 //             newText += el
 //         }
 //     }
@@ -747,7 +749,6 @@
 // console.log(getOnlyText(someText));
 
 // ? .replace
-
 // const someText = 'This looks5 grea8t!';
 
 // function getOnlyText(text) {
@@ -779,11 +780,13 @@
 //     let newText = "";
 //     for (const el of text) {
 //         if (el !== " ") {
-//             newText += el
+//             newText = `${newText}${el}`
+//             // newText += el
 //         }
 //     }
 //     return newText
 // };
+
 
 // console.log(getOnlyText(someText));
 
@@ -791,6 +794,7 @@
 
 // ?★ Задачи повышенной сложности ★
 
+// FIXME: 
 // ★ 32. Задача (Продолжение 18 задачи)★ + -
 
 // Написать функцию, на вход которой подаётся путь к файлу, например: C:\Program Files\project\test.js. Функция возвращает объект с двумя данными:
@@ -843,7 +847,7 @@
 
 
 
-// ★ 33. Задача ★ +
+// ★ 33. Задача ★ +++
 
 // Дан объект user, выполнить удаление свойств с помощью цикла, которые содержут слово delete в ключе.
 
@@ -859,7 +863,6 @@
 //     if (key.includes('delete')) {
 //         delete user[key]
 //     }
-
 // }
 // console.log(user);
 
@@ -873,83 +876,22 @@
 // '97Bifk8hB65BB3BBBB8451chl0BhBfd' --> 'BifkhBBBBBBBchlBhBfd'
 // '8aaaaa dd5dd 7r0' --> 'aaaaa dd5dd r'
 
-// const someValue = '8aaaaa dd5dd 7r0';
+const someValue = '8aaaaa dd5dd 7r0';
 
-// function stringClean(value) {
-//     let string = '';
-//     for (const el of value) {
-//         if (el === el.replace(/[0-9]/g, "")) {
-//             string += el
-//         }
-//     }
-//     return string
-// }
-// console.log(stringClean(someValue))
-
-
-
-// ★ 34. Задача ★ -
-
-// Написать функцию lettersCount, которая принимает строку в качестве аргумента и возвращает объект, в котором ключами являются все буквы, которые есть в строке, а значениями - их количество в строке. Большая буква и маленькая должны считаться одинаковой буквой. Если строка пустая, то вернуть пустой объект.
-
-// Пример:
-// console.log(lettersCount('aAAbbccde'));
-
-// output:
-// {
-//     a: 3,
-//     b: 2,
-//     c: 2,
-//     d: 1,
-//     e: 1,
-// }
-
-// function getSymbols(value) {
-
-// }
+function stringClean(value) {
+    let string = '';
+    for (const el of value) {
+        if (isNaN(el) || el === " ") {
+            string += el
+        }
+    }
+    return string
+}
+console.log(stringClean(someValue))
 
 
 
 
 
 
-
-
-
-// ★ 35. Задача ★
-
-// Написать функцию, на вход которой подаётся строка с простым матемтическим выражением: 11 + 3, или 7*9. Функция возвращает результат сложения/умножения/деления и т.п. Примечание: функцию eval() не использовать!
-
-// let test = "11 - 3";
-
-// function getResult(value) {
-//     let localArr = value.split(' ')
-//     console.log(localArr);
-//     let s = [];
-
-//     for (let i = 0; i < localArr.length; i++) {
-//         if (typeof Number(localArr[i]) === 'number') {
-//             s += localArr[i]
-//         }
-//     }
-//     return s
-// }
-
-
-// console.log(getResult(test));
-
-
-
-// let a = "1_234_567_890";
-// let d = 0;
-// for (const key in a) {
-//     if (key.isNaN) {
-//         d = parseInt(a)
-//     }
-// }
-// d = parseInt(a)
-// console.log(d);
-
-
-
-// FIXME: 20, 26,
+// FIXME: 20, 26, 28
