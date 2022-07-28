@@ -194,33 +194,154 @@
 // console.log(getRandomInt(min, max));
 
 
-// 11. Задача
+
+// 11. Задача +
 
 // Написать функцию, которая переводит метры с сантиметры. На вход в функцию подаётся строка с числом метров: 3.5m. Функция возвращает строку с количество сантиметров: 350cm.
 
-// 12. Задача
+// const roadLength = "4.5m";
+
+// function getСentimeters(numberMeters) {
+//     return `${parseFloat(numberMeters) * 100}cm.`
+// }
+
+// console.log(getСentimeters(roadLength));
+
+
+
+// 12. Задача +
 
 // Написать функцию которая возвращает целое случаное число в диапазоне от a, до b. Два числа подаются на вход в функцию. Где a < b. Если это условие не выполняется, то возвращается null.
 
-// 13. Задача
+// function getRandomInt(minInt, maxInt) {
+//     return minInt < maxInt ? parseInt(Math.random() * (maxInt - minInt + 1) + minInt) : null
+// }
+// console.log(getRandomInt(1, 5));
+// console.log(getRandomInt(1, 13));
+// console.log(getRandomInt(1, 500));
+// console.log(getRandomInt(10, 5));
+// console.log(getRandomInt(112, 5));
 
-// Пользуясь функцией из предыдущей задачи выполнить: Написать функцию, на вход которой подаётся
 
-// 14. Задача
+
+// 13. Задача +
+
+// ### 13. Задача
+// Написать функцию, на вход которой подаётся нецелое число и строка (режим округления):
+// - В большую сторону (more);
+// - В меньшую сторону (less);
+// - Как в математике (math);
+// Функция возвращает округлённое число.
+
+
+// const more = "more";
+// const less = "less";
+// const math = "math";
+
+// function getInt(notInteger, roundMode) {
+//     if (roundMode === more) {
+//         return Math.ceil(notInteger)
+//     } else if (roundMode === less) {
+//         return Math.floor(notInteger)
+//     } else if (roundMode === math) {
+//         return Math.round(notInteger)
+//     }
+// }
+
+// console.log(getInt(5.6, math));
+
+
+// 14. Задача +
 
 // Создать массив и заполнить его случайными числами (random) в диапазоне от 1 до 5 не вкл. Количество элементов в массиве - 10 шт. Далее выполнять задачи по очереди:
 
-// Вывести массив в терминал в строчку;
-// Посчитать количество троек и вывести в консоль;
-// Затем заменить все единицы на тройки, а 5 - на единицы;
-// Посчитать кол-во единиц и вывести в консоль;
-// 15. Задача
+// const array = [];
+
+// for (let i = 0; i < 10; i++) {
+//     array.push(parseInt(Math.random() * (5 - 1) + 1))
+// }
+// console.log(array);
+// console.log('\n');
+
+// // Вывести массив в терминал в строчку;
+
+// for (const el of array) {
+//     console.log(el);
+// }
+// console.log('\n');
+
+
+
+// // Посчитать количество троек и вывести в консоль;
+
+// let countThree = 0;
+// for (const el of array) {
+//     el === 3 && (countThree += 1);
+// }
+
+// console.log(countThree);
+// console.log('\n');
+
+// // Затем заменить все единицы на тройки, а 5 - на единицы; // ? ловушка с пятеркой?
+
+// for (let i = 0; i < 10; i++) {
+//     array[i] === 1 && (array[i] = 3)
+// }
+
+// // меняло только первю тройку дальше не крутило
+// // for (const el of array) {
+// //     if (el === 1) {
+// //         array[el] = 3
+// //     }
+// // }
+
+// console.log(array);
+// // Посчитать кол-во единиц и вывести в консоль;
+
+// let countUnits = 0;
+
+// for (const el of array) {
+//     el === 1 && (countThree += 1);
+// }
+
+// console.log(countUnits);
+
+
+
+// 15. Задача +
 
 // Написать функцию, которая создаёт массив из случайных чисел (random) в заданном (от a до b вкл) диапазоне и заданной длины (l) Если не передать ни один из трёх параметров, то создаётся массив из 10 элементов из случанйых чисел диапазона от 0 до 10 вкл.
 
 // // Example:
 // const newRandArr = createRandomArray(5, 0, 1);
 // console.log(newRandArr); // Создаёт массив из 5 элементов, заполненных только 0 и 1: [0, 1, 1, 0, 1]
+
+
+// первая версия была без maxValue = 10
+
+// function createRandomArray(arrayLenght, minValue, maxValue = 10) {
+//     let randomArr = [];
+//     if (arrayLenght === undefined && minValue === undefined && maxValue === 10) {
+//         for (let i = 0; i < 10; i++) {
+//             randomArr.push(parseInt(Math.random() * (10 - 0 + 1) + 0))
+//         }
+//     } else {
+//         for (let i = 0; i < arrayLenght; i++) {
+//             randomArr.push(parseInt(Math.random() * (maxValue - minValue + 1) + minValue))
+//         }
+//     }
+
+//     return randomArr
+// }
+
+// console.log(createRandomArray(5, 0, 5));
+// console.log(createRandomArray(2, 1, 10));
+
+// console.log(createRandomArray());
+
+
+
+
 // ★ Задачи повышенной сложности ★
 
 // ★ 16. Задача ★
@@ -243,3 +364,5 @@
 // Кол-во оставшихся попыток выводить в консоль каждый раз, когда мы не угадываем число;
 // После того, как мы угадали число, в консоль выводится: Победа, вы угадали число: <число> и функция прекращает работу;
 // После того, как расходуются все попытки, в консоль выводится: Проигрыш, вы не угадали число: <число>;
+
+
