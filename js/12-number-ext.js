@@ -12,8 +12,11 @@
 
 // 4. isNaN(<any>); // Проверка на NaN (под капотом приводит сначала к типу Number, а затем проверят на NaN)
 
+// Не приводит к типу Number:
+// console.log(Number.isNaN(undefined)); false
+
 // * Методы Number
-// 5. <number>.toFixed(n) // округляет число до n знаков после запятой и ВОЗВРАЩАЕТ строку
+// 5. <number>.toFixed(n) // округляет число до n знаков после запятой и ВОЗВРАЩАЕТ строку + ~округляет по правилам математики
 
 // console.log(15.645645.toFixed(2));
 
@@ -52,5 +55,8 @@ console.log(randInt(3, 7));
 console.log(randInt(3, 7));
 console.log(randInt(3, 7));
 console.log(randInt(3, 7));
+
+
+
 
 
