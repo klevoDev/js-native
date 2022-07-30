@@ -183,31 +183,152 @@
 
 
 
-// 6. Задача (FD)
+// 6. Задача (FD) +
 
 // Написать функцию, на вход которой подаётся массив из чисел, функция возвращает новый массив из чисел, которые делятся на 4.
 
-// 7. Задача (FD)
+// const someArray = [8, 13, 12, 3, 4, 5, 1, 16];
+
+// // Gunction Declaration
+// function getDividedBy4(arrayNumbers) {
+//     let arrDividedBy4 = [];
+//     for (const el of arrayNumbers) {
+//         if (el % 4 === 0) {
+//             arrDividedBy4.push(el)
+//         }
+//     }
+//     return arrDividedBy4
+// }
+
+// console.log(getDividedBy4(someArray));
+
+// //Function Exprssion
+
+// const arrayDividedBy4 = function (arrayNumbers) {
+//     let arrDividedBy4 = [];
+//     for (const el of arrayNumbers) {
+//         el % 4 === 0 && arrDividedBy4.push(el)
+//     }
+//     return arrDividedBy4
+// }
+
+// console.log(arrayDividedBy4(someArray));
+
+// // Arrow Function
+
+// const dividedBy4 = arrayNumbers => {
+//     let arrDividedBy4 = [];
+//     for (const el of arrayNumbers) {
+//         el % 4 === 0 && arrDividedBy4.push(el)
+//     }
+//     return arrDividedBy4
+// }
+
+// console.log(dividedBy4(someArray));
+
+
+
+// 7. Задача (FD) +
 
 // Написать функцию, на вход которой подаётся любое количество чисел, функция возвращает массив из чисел, которые делятся на 3.
 
-// 8. Задача (FD)
+// const one = 1;
+// const second = 2;
+// const three = 3;
+// const four = 4;
+// const six = 6;
+
+// // Function Declaration
+
+// function getDividedBy3(...rest) {
+//     const newArr = [];
+//     for (const el of rest) {
+//         if (el % 3 === 0) {
+//             newArr.push(el)
+//         }
+//     }
+//     return newArr
+// }
+
+// console.log(getDividedBy3(one, second, three, four, six));
+
+// // Function Expression
+
+// const dividedBy3 = function (...rest) {
+//     const newArr = [];
+//     for (const el of rest) {
+//         el % 3 === 0 && newArr.push(el)
+//     }
+//     return newArr
+// }
+
+// console.log(dividedBy3(one, four, six));
+
+// // Arrow Function
+
+// const arrDividedBy3 = (...rest) => {
+//     const newArr = [];
+//     for (const el of rest) {
+//         el % 3 === 0 && newArr.push(el)
+//     }
+//     return newArr
+// }
+
+// console.log(arrDividedBy3(three));
+
+
+
+// 8. Задача (FD) +
 
 // Дана функция, привести её к виду Function Decalration.
 
 // const checkMoreTen = num => num > 10;
-// 9. Задача (FE)
+
+// const someNumber = 9;
+
+// function checkMoreTen(num) {
+//     return num > 10
+// }
+
+// console.log(checkMoreTen(someNumber));
+
+
+
+// 9. Задача (FE) +
 
 // Дана функция, привести функцию к виду Function Expression.
 
 // const getGender = text => text === 'm' ? 'male' : 'female';
-// 10. Задача (AF)
+
+// const gender = "m";
+
+// const getGender = function (text) {
+//     return text === "m" ? "male" : "female";
+// }
+
+// console.log(getGender(gender));
+
+
+
+// 10. Задача (AF) +
 
 // Дана функция, привести функцию к виду Arrow Function.
 
 // function test(x, y, z = 1) {
 //     return x * y * z; 
 // }
+
+// const six = 6;
+// const second = 2;
+// const three = 3;
+
+// const multyplyNum = (x, y, z = 1) => x * y * z
+
+// console.log(multyplyNum(six, second, three));
+
+
+
+
 // 11. Задача (AF)
 
 // Дана функция, привести функцию к виду Arrow Function.
@@ -215,6 +336,10 @@
 // function test(x, y, z = 0) {
 //     console.log(x + y + z);
 // }
+
+
+
+
 // 12. Задача (AF || FE || FD)
 
 // Написать функцию, на вход которой подаёт неизвестное количество строк. Функция вовзаращает число - количество всех символов из всех переданных строк.
