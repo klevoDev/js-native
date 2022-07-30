@@ -329,7 +329,7 @@
 
 
 
-// 11. Задача (AF)
+// 11. Задача (AF) +
 
 // Дана функция, привести функцию к виду Arrow Function.
 
@@ -337,46 +337,188 @@
 //     console.log(x + y + z);
 // }
 
+// const six = 6;
+// const second = 2;
+// const three = 3;
+
+// const test = (x, y, z = 0) => console.log(x + y + z);
+
+// test(six, second)
 
 
 
-// 12. Задача (AF || FE || FD)
+// 12. Задача (AF || FE || FD) +
 
 // Написать функцию, на вход которой подаёт неизвестное количество строк. Функция вовзаращает число - количество всех символов из всех переданных строк.
 
-// 13. Задача (AF || FE || FD)
+// const test = "test";
+// const monday = "mobday";
+// const go = "go";
+
+
+// // Function Declaration
+
+// function sumSymbol(...rest) {
+//     let countSymbol = 0;
+//     const newString = rest.join('');
+//     for (const el of newString) {
+//         countSymbol += 1
+//     }
+//     return countSymbol
+// }
+
+// console.log(sumSymbol(test, go));
+
+
+// // Function Expression
+
+// const countSymbol = function (...rest) {
+//     let countSymbol = 0;
+//     const newString = rest.join('');
+//     for (const el of newString) {
+//         countSymbol += 1
+//     }
+//     return countSymbol
+// }
+
+// console.log(countSymbol(monday, go));
+
+// // Arrow Function
+
+// const sumSymbol2 = (...rest) => {
+//     let countSymbol = 0;
+//     const newString = rest.join('');
+//     for (const el of newString) {
+//         countSymbol += 1
+//     }
+//     return countSymbol
+// }
+
+// console.log(sumSymbol2(go));
+
+
+
+
+// 13. Задача (AF || FE || FD) +
 
 // Написать функцию, на вход которой подаёт любое количество чисел. Функция возвращает сумму всех чисел.
 
-// 14. Задача (AF || FE || FD)
+
+// Function Declaration
+
+// function getSumNumbers(...numbers) {
+//     let countNumbers = 0
+//     for (const el of numbers) {
+//         countNumbers += el
+//     }
+//     return countNumbers
+// }
+
+// console.log(getSumNumbers(4, 3));
+
+// // Function Expression
+
+
+// const sumNumbers = function (...numbers) {
+//     let countNumbers = 0
+//     for (const el of numbers) {
+//         countNumbers += el
+//     }
+//     return countNumbers
+// }
+
+// console.log(sumNumbers(4, 3, 9, 23));
+
+// // Arrow Function
+
+// const sumNum = (...numbers) => {
+//     let countNumbers = 0
+//     for (const el of numbers) {
+//         countNumbers += el
+//     }
+//     return countNumbers
+// }
+
+// console.log(sumNum(4, 23));
+
+
+
+// 14. Задача (AF || FE || FD) +
 
 // Написать функцию, на вход которой подаётся массив чисел. Функция возвращает одно число - наименьшее из них.
 
-// 15. Задача
+
+// Function Declaration
+
+// const someArr = [4, 2, 19, -3, 0]
+
+// function getMinNumber(arrayNumbers) {
+//     return Math.min(...arrayNumbers)
+// }
+
+// console.log(getMinNumber(someArr));
+
+// // Function Expression
+
+// const someArray = [4, 2, 19, 0]
+
+// const minNumber = function (arrayNumbers) {
+//     return Math.min(...arrayNumbers)
+// }
+
+// console.log(minNumber(someArray));
+
+// // Arrow Function
+
+// const minNum = arrayNumbers => Math.min(...arrayNumbers);
+
+// console.log(minNum(someArr));
+
+
+
+
+
+// 15. Задача + -
 
 // Что вернёт фунция tester?
 
 // const tester = (...numbers) => typeof numbers;
-// let result = tester(3, 7, 4, 1); // ?
-// 16. Задача
+// let result = tester(3, 7, 4, 1); // ? number по каждому числу
+
+
+
+// 16. Задача +
 
 // Что вернёт фунция tester?
 
 // const tester = numbers => typeof numbers;
-// let result = tester([3, 7, 4, 1]); // ?
-// 17. Задача
+// let result = tester([3, 7, 4, 1]); // ? вернет обьект
+
+
+
+// 17. Задача +
 
 // Что вернёт фунция tester?
 
 // const tester = numbers => Array.isArray(numbers);
-// let result = tester([3, 7, 4, 1]); // ?
-// 18. Задача (FD)
+// let result = tester([3, 7, 4, 1]); // ? вернет true
+
+
+
+// 18. Задача (FD) +
 
 // Перепишите Arrow Function в Function Declaration.
 
 // const tester = numbers => Array.isArray(numbers);
 // let result = tester([3, 7, 4, 1]);
-// 19. Задача (AF)
+
+// function tester(numbers) {
+//     return Array.isArray(numbers)
+// }
+
+
+
+// 19. Задача (AF) +
 
 // Сделать рефакторинг функции isLongString.
 
@@ -387,22 +529,32 @@
 //         return false;
 //     }
 // }
+
+// const isLongString = string => string.length > 10
+
+
+
 // ★ Задачи повышенной сложности ★
 
 // ★ 20. Задача ★
 
-// Что выведется в консоль?
+// Что выведется в консоль? 
 
 // const tester = numbers => Array.isArray(numbers);
+// // ? tester функция проверяющая массив или нет
 
 // const res = changeBoolToString(tester([3, 7, 4, 1]));
+// // ? res тоже проверяет теперь
 
 // function changeBoolToString(a) {
 //     return a ? "array" : "Not an Array";
 // }
 
-// console.log(res);
-// ★ 21. Задача ★
+// console.log(res); // ? вернет тру
+
+
+
+// ★ 21. Задача ★ -
 
 // Что выведется в консоль?
 
