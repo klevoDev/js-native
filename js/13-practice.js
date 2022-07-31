@@ -159,7 +159,7 @@
 
 // //Function Expression
 
-// const sumText2 = function (arrayString) {
+// const sumText2 = function(arrayString) {
 //     let newString = '';
 //     for (const el of arrayString) {
 //         newString += el
@@ -341,7 +341,7 @@
 // const second = 2;
 // const three = 3;
 
-// const test = (x, y, z = 0) => console.log(x + y + z);
+// const test = (x, y, z = 0) => { console.log(x + y + z) }
 
 // test(six, second)
 
@@ -360,10 +360,14 @@
 
 // function sumSymbol(...rest) {
 //     let countSymbol = 0;
-//     const newString = rest.join('');
-//     for (const el of newString) {
-//         countSymbol += 1
+//     // const newString = rest.join('');
+//     // for (const el of newString) {
+//     //     countSymbol += 1
+//     // }
+//     for (const el of rest) {
+//         countSymbol += el.length
 //     }
+
 //     return countSymbol
 // }
 
@@ -443,6 +447,7 @@
 
 
 
+
 // 14. Задача (AF || FE || FD) +
 
 // Написать функцию, на вход которой подаётся массив чисел. Функция возвращает одно число - наименьшее из них.
@@ -478,12 +483,15 @@
 
 
 
+
+
 // 15. Задача + -
 
 // Что вернёт фунция tester?
 
 // const tester = (...numbers) => typeof numbers;
 // let result = tester(3, 7, 4, 1); // ? number по каждому числу
+// console.log(result);
 
 
 
@@ -536,7 +544,7 @@
 
 // ★ Задачи повышенной сложности ★
 
-// ★ 20. Задача ★
+// ★ 20. Задача ★ + -
 
 // Что выведется в консоль? 
 
@@ -544,13 +552,14 @@
 // // ? tester функция проверяющая массив или нет
 
 // const res = changeBoolToString(tester([3, 7, 4, 1]));
-// // ? res тоже проверяет теперь
+
 
 // function changeBoolToString(a) {
 //     return a ? "array" : "Not an Array";
 // }
+// // ? res тоже проверяет 
 
-// console.log(res); // ? вернет тру
+// // console.log(res); // ? "array"
 
 
 
@@ -562,9 +571,37 @@
 // const tester = numbers => Array.isArray(numbers);
 
 // const res = changeBoolToString(tester);
+// // Передали ссылку на функцию, но не вызвали её!
 
 // function changeBoolToString(a) {
+//     // a = tester
+//     // callback - функция с обратным вызовом
 //     return a(arr) ? "array" : "Not an Array";
 // }
 
 // console.log(res);
+
+
+
+// 20. Задача (AF)
+
+// Написать функцию, на вход которой подаётся 2 параметра. Функция вычисляет произведение двух чисел. Функция возвращает объект, в котором хранится 2 параметра и результат умножения.
+
+
+// function getSum(num1, num2) {
+//     return {
+//         num1,
+//         num2,
+//         multi: num1 * num2
+//     }
+// }
+
+
+
+// const test = (num1, num2) => ({
+//     num1,
+//     num2,
+//     multi: num1 * num2
+// })
+
+// console.log(getSum(3, 4));
