@@ -131,25 +131,19 @@
 
 
 
-// 9. Задача + - странное что то тут происходит)
+// 9. Задача +
 
 // Написать функцию, которая принимает на вход 2 параметра: массив чисел и 1 числовой пареметр. Если в массиве не содержится значение параметра, то проверка успешна.
 
 // const someNumbers = [3, 4, 6, 1];
 
-// const checkNumInArray = (array, number) => {
-//     for (const el of array) {
-//         if (Number(el) === Number(number)) {
-//             return true
-//         }
-//     }
-// }
+// const checkNumInArray = (array, number) => array.includes(number, 0)
 
-// console.log(checkNumInArray(someNumbers, 5));
+// console.log(checkNumInArray(someNumbers, 1));
 
 
 
-// 10. Задача
+// 10. Задача +
 
 // Написать функцию, которая принимает на вход 3 параметра.
 
@@ -157,42 +151,60 @@
 // Второй параметр значение, которое ищем;
 // Третий - слово 'end' или 'start'; Функция возвращает индекс первого встречного значения. Если такого значения не нашлось, то функция возвращает null.
 
-const numbers = [3, 4, 6, 1];
+// const numbers = [3, 4, 6, 1, 1];
 
-const getFirstIndex = (array, searchVallue, endOrStart) => {
-    let countIndex = 0;
-    if (endOrStart === "end") {
-        countIndex = array.lastIndexOf(searchVallue)
-    } else if (endOrStart === "start") {
-        countIndex = array.indexOf(searchVallue, 0)
-    }
+// const getFirstIndex = (array, searchVallue, endOrStart) => {
+//     let countIndex = 0;
+//     if (endOrStart === "end") {
+//         countIndex = array.lastIndexOf(searchVallue)
+//     } else if (endOrStart === "start") {
+//         countIndex = array.indexOf(searchVallue, 0)
+//     }
 
-    if (countIndex === -1) {
-        return null
-    }
-    return countIndex
-
-}
+//     countIndex === -1 && (countIndex = null)
+//     return countIndex
+// }
 
 // console.log(getFirstIndex(numbers, 1, "start"));
-console.log(getFirstIndex(numbers, 4, "end"));
+// console.log(getFirstIndex(numbers, 1, "end"));
 
 
-// let index = <array>.indexOf(value, startIndex = 0) // Ищет индекс первого встречного значения value, начиная с позиции startIndex (по умолчанию равен 0)
 
-// Возвращает найденный индекс или -1, если ничего не найдёт
-// ! lastIndexOf - аналогичная функция, только начинается с индекса -1 
-
-
-// 11. Задача
+// 11. Задача - + решил 18 задачу и решение от туда пришло сюда, сначала эту не смог сделать
 
 // Написать функцию, которая принимает на вход параметр и массив. Функция удаляет элемент из массива под этим индексом. Функция мутирует переданный массив. Если такого индекса нет, то функция выводит в консоль: Undefined delete item.
 
-// 12. Задача
+// const numbers = [1, 2, 53, 3, 4, 5];
+
+// const deleteElementArr = (array, index) => {
+//     return array.length <= index ? console.log('Undefined delete item.') : array.splice(index, 1);
+// }
+
+
+// deleteElementArr(numbers, 0);
+// console.log(numbers);
+
+
+
+// 12. Задача +
 
 // Написать функцию, которая принимает на вход 2 параметра: 1 - массив. 2 - слово 'end' или 'start'. Функция мутирует исходный массив, удаляя либо первый элемент, либо последний.
 
-// 13. Задача
+// const numbers = [1, 2, 53, 3, 4, 5];
+
+// const deleteFirstOrLastEl = (array, startEnd) => {
+//     startEnd === "start" && array.splice(0, 1)
+//     startEnd === "end" && array.splice(array.length - 1, 1)
+//     return array
+// }
+
+// console.log(deleteFirstOrLastEl(numbers, "start"));
+// console.log(deleteFirstOrLastEl(numbers, "end"));
+// console.log(numbers);
+
+
+
+// 13. Задача +
 
 // Написать функцию, которая принимает на вход строку. Функция возвращает строку задом наперёд.
 
@@ -200,20 +212,42 @@ console.log(getFirstIndex(numbers, 4, "end"));
 // Jack -> kcaJ
 // Memory -> yromeM
 // Snickers -> srekcins
-// 14. Задача
+
+// const getReverseString = string => string.split('').reverse().join('')
+
+// console.log(getReverseString("Memory"));
+
+
+
+// 14. Задача +
 
 // Написать функцию, на вход которой подаётся строка. Функция возвращает ту же строчку, но удаляя оттуда все знаки восклицания.
 
-// 15. Задача
+// const deletePoint = string => {
+//     let newString = "";
+//     for (const el of string) {
+//         el !== "!" && (newString += el)
+//     }
+//     return newString
+// }
+
+// console.log(deletePoint("Go! and Go!!!"));
+
+
+
+// 15. Задача +
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // const testStr = 'Test string for 15 task!'
 
-// console.log(Array.from(testStr));
-// console.log(testStr.split(''));
-// 16. Задача
+// console.log(Array.from(testStr)); // ? новый массив посимвольно
+// console.log(testStr.split('')); // ? ничего - угодал)
+
+
+
+// 16. Задача - 
 
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
@@ -221,13 +255,48 @@ console.log(getFirstIndex(numbers, 4, "end"));
 // const testString = 'Nice... Hello world.'
 
 // console.log(testString.split('.').join('!'));
-// 17. Задача
+
+
+
+// 17. Задача +
 
 // Написать функцию, на вход можно подать много параметров. Функция из всех этих параметров отбирает только массива и склеивает их в один единый. Функция возвращает получившийся массив. Если нету в переданных параметрах массива, то вернуть null.
 
-// 18. Задача
+// const numbers = [1, 2, 3];
+// const test = [4, 5];
+// const test2 = 120;
+// const test3 = "string";
+
+
+// const getArray = (...rest) => {
+//     let newArr = [];
+//     for (const el of rest) {
+//         if (Array.isArray(el)) {
+//             for (const value of el) {
+//                 newArr.push(value)
+//             }
+//         }
+//     }
+//     return newArr
+// }
+
+// console.log(getArray(numbers, test, test2, test3));
+
+
+
+// 18. Задача +
 
 // Написать функцию, на которой подаётся массив и число. Функция возвращает новый обрезанный массив, начиная с элемента под тем номером, который передали в функцию и заканчивая всегда последним элементом. Если указали некорректный номер элемента, то вернуть null.
+
+// const numbers = [1, 2, 53, 3, 4, 5];
+
+// const getArr = (array, number) => {
+//     return array.length <= number ? null : array.splice(number, array.length);
+// }
+
+// console.log(getArr(numbers, 3));
+
+
 
 // ★ Задачи повышенной сложности ★
 
