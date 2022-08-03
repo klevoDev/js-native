@@ -6,7 +6,7 @@
 
 // const chekArray = array => Array.isArray(array)
 
-// console.log(techekArrayst(3));
+// console.log(chekArray([3]));
 
 
 
@@ -14,12 +14,18 @@
 
 // Написать функцию, которая проверяет является ли переданная перемнная объектом.
 
-// let test = { s: 5 }
+
 
 // const chekObject = object => typeof object === "object" && object !== null
 
-// console.log(chekObject(test));
 
+
+// function chekObject(object) {
+//     return typeof object === "object" && object !== null
+// }
+
+// const test = { s: 5 }
+// console.log(chekObject(test));
 
 
 // 3. Задача +
@@ -35,6 +41,9 @@
 
 // console.log(newArray(s, d, y, "sfd", 45));
 
+// const newArr = function (array, ...variable) {
+//     return array.push(...variable) && array
+// }
 
 
 // 4. Задача -
@@ -46,20 +55,38 @@
 // let q = 5
 // let w = 1
 
-// const uniqueArray = (...property) => {
-//     const uniqueArr = property;
-//     console.log(uniqueArr);
+// const uniqueArray = (...params) => {
+//     const arr = []
 
-//     for (const el of property) {
-//         if (el !== property) {
-//             uniqueArr.push(el)
-//         }
+//     for (const el of params) {
+//         !arr.includes(el, 0) && arr.push(el)
 //     }
+//     // Если элемент встретился
 
-//     return uniqueArr
+//     return arr
 // }
 
 // console.log(uniqueArray(test, s, f, q, w));
+
+
+// const uniqueArray = (...params) => {
+//     const s = params
+//     const arr = []
+
+
+
+
+
+//     // Если элемент встретился && arr.push(el)
+
+//     return arr
+
+// }
+// console.log(uniqueArray(test, s, f, q, w));
+
+
+// TODO: * Если нету функции includes? Реализовать программу
+
 
 
 // 5. Задача +
@@ -83,12 +110,12 @@
 
 // Написать функцию, на вход которой подаётся массив. В массиве могут быть любые типы данных. Функция возвращает число - количество ссылочных типов данных.
 
-// const arr = [2, 3, null, [0, 1], { r: 34, s: 5 }, [], [null]];
+// const arr = [2, 3, null, [0, 1], { r: 34, s: 5 }, [], [null], () => { }];
 
 // const countReferenceType = array => {
 //     let countRefType = 0;
 //     for (const el of array) {
-//         if (el !== null && typeof el === "object" || typeof value === 'function') {
+//         if (el !== null && typeof el === "object" || typeof el === 'function') {
 //             countRefType += 1
 //         }
 //     }
@@ -119,8 +146,12 @@
 
 
 // 8. Задача +
-
-// Написать функцию, на вход которой подаётся массив, функция удаляет средний / средние элементы. Например: [3, 4, 7] -> [3, 7] Например: [1, 4, 6, 5] -> [1, 5]
+// TODO:
+// Написать функцию, на вход которой подаётся массив, функция удаляет средний / средние элементы. 
+// Например: [3, 4, 7] -> [3, 7] 
+// Например: [1, 4, 6, 5] -> [1, 5]
+// Например: [1, 4, 7, 6, 5] -> [1, 4, 6, 5]
+// Например: [1, 4, 7, 9, 1, 6, 7, 6, 5] -> [1, 4, 7, 9, 6, 7, 6, 5]
 
 
 // const arr = [2, 3, null, [0, 1], { r: 34, s: 5 }, [], [null], 6, 8];
@@ -137,7 +168,7 @@
 
 // const someNumbers = [3, 4, 6, 1];
 
-// const checkNumInArray = (array, number) => array.includes(number, 0)
+// const checkNumInArray = (array, number) => array.includes(number)
 
 // console.log(checkNumInArray(someNumbers, 1));
 
@@ -161,8 +192,7 @@
 //         countIndex = array.indexOf(searchVallue, 0)
 //     }
 
-//     countIndex === -1 && (countIndex = null)
-//     return countIndex
+//     return countIndex === -1 ? null : countIndex
 // }
 
 // console.log(getFirstIndex(numbers, 1, "start"));
@@ -177,12 +207,12 @@
 // const numbers = [1, 2, 53, 3, 4, 5];
 
 // const deleteElementArr = (array, index) => {
-//     return array.length <= index ? console.log('Undefined delete item.') : array.splice(index, 1);
+//     array.length <= index ? console.warn('Undefined delete item.') : array.splice(index, 1);
 // }
 
 
-// deleteElementArr(numbers, 0);
-// console.log(numbers);
+// deleteElementArr(numbers, 6);
+// console.log(numbers); // Отладка
 
 
 
@@ -237,13 +267,14 @@
 
 // 15. Задача +
 
+
 // Не выполняя код, дать ответ: 
 // Что выведется в консоль? Ответ записать в комментарий.
 
 // const testStr = 'Test string for 15 task!'
 
 // console.log(Array.from(testStr)); // ? новый массив посимвольно
-// console.log(testStr.split('')); // ? ничего - угодал)
+// console.log(testStr.split('')); // ? ничего - не угодал)
 
 
 
@@ -256,6 +287,14 @@
 
 // console.log(testString.split('.').join('!'));
 
+// // ['Nice', '', '', '  Hello world', '']
+
+// const test1 = 'test er st pr e klmn'
+
+// console.log(test1.split('e')); // ['t', 'st ', 'r st pr ', ' klmn']
+// console.log('carrot, milk, bread, eggs, water'.split(', '));
+
+
 
 
 // 17. Задача +
@@ -266,6 +305,12 @@
 // const test = [4, 5];
 // const test2 = 120;
 // const test3 = "string";
+
+
+// // // TODO:
+// // // ! Concat
+// // // ! null
+
 
 
 // const getArray = (...rest) => {
@@ -294,20 +339,98 @@
 //     return array.length <= number ? null : array.splice(number, array.length);
 // }
 
-// console.log(getArr(numbers, 3));
+// console.log(getArr(numbers, 6));
 
 
 
 // ★ Задачи повышенной сложности ★
 
-// ★ 19. Задача ★
+// ★ 19. Задача ★ + -
 
 // Написать функцию, которая принимает на вход параметры: массив чисел и числовые пареметры. Если в массиве не содержится значения параметров, то проверка успешна.
 
-// ★ 20. Задача ★
+// const numbers = [1, 2, 3];
+
+// const checkNumberInArray = (array, number) => array.includes(number, 0)
+
+// console.log(checkNumberInArray(numbers, 0));
+
+
+
+
+
+
+// ★ 20. Задача ★ +
 
 // Написать функцию, на вход которой подаётся массив и много параметров. Функция возвращает новый массив, скопировав туда все параметры переданного, добавляя по очереди сначала в начало массива элемент, затем в конец, затем снова в начало и т.д. пока не закончатся перадаваемые параметры.
 
-// ★ 21. Задача ★
+// ПРимер 
+// [1]
+
+// [5, 4, 2, 65, 76,]
+
+// [76, 2, 5, 1, 4, 65]
+
+// const numbers = [1];
+
+// const getArray = (array, ...rest) => {
+//     const newArr = [];
+
+//     for (const el of array) {
+//         newArr.push(el)
+//     }
+
+//     for (const key in rest) {
+//         if (key % 2 === 0) {
+//             for (const el of rest) {
+//                 newArr.push(el)
+//             }
+//         } else {
+//             for (const el of rest) {
+//                 newArr.unshift(el)
+//             }
+//         }
+//     }
+//     return newArr
+// }
+
+// console.log(getArray(numbers, 4, 5, 6));
+
+
+
+// ★ 21. Задача ★ +
 
 // Написать функцию, на вход которой подаётся строка. Функция возвращает ту же строчку, но удаляя оттуда все перечисленные знаки: .,!?:;
+
+// let s = "sdfsd = .,!?:;";
+
+
+
+
+// const delSymbol = string => {
+//     let symbol = ".,!?:;";
+
+//     let newString = "";
+
+//     for (const el of symbol) {
+//         if (el !== string) {
+//             newString += el
+//         }
+//     }
+
+//     return newString
+// }
+
+// console.log(delSymbol(s));
+
+
+// (el !== "." && el !== "," && el !== "!" && el !== "?" && el !== ":" && el !== ";"
+
+// ★★ 22. Задача ★★
+
+// Написать функцию, на вход которой подаётся массив и любое количество переменных любого типа. Функция возвращает переданный массив, удаляя из него остальные переданные параметры.
+
+
+
+
+// TODO: * 
