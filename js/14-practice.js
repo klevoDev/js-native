@@ -49,11 +49,11 @@
 // 4. Задача -
 // Написать функцию, на вход которой подаётся любое количество переменных любого типа. Функция возвращает массив, неповторяющихся элементов. Значение элемента не должен встретиться более 1 раза в вернувшимся массиве.
 
-// const test = 4
-// let s = 5
-// let f = 6
-// let q = 5
-// let w = 1
+const test = 4
+let s = 5
+let f = 6
+let q = 5
+let w = 1
 
 // const uniqueArray = (...params) => {
 //     const arr = []
@@ -69,20 +69,24 @@
 // console.log(uniqueArray(test, s, f, q, w));
 
 
-// const uniqueArray = (...params) => {
-//     const s = params
-//     const arr = []
+const uniqueArray = (...params) => {
+    let s = []
+    let d = []
+    const arr = []
+
+    for (let i = 0; i < params.length; i++) {
+        arr.push(params[i])
+    }
+
+    return arr
+
+}
+console.log(uniqueArray(test, s, f, q, w));
 
 
-
-
-
-//     // Если элемент встретился && arr.push(el)
-
-//     return arr
-
-// }
-// console.log(uniqueArray(test, s, f, q, w));
+{/* <array>.unshift(...items) // Добавляет элемент(ы) в начало массива 
+// Мутирует исходный массив
+// Возвращает новую длину массива */}
 
 
 // TODO: * Если нету функции includes? Реализовать программу
@@ -153,13 +157,31 @@
 // Например: [1, 4, 7, 6, 5] -> [1, 4, 6, 5]
 // Например: [1, 4, 7, 9, 1, 6, 7, 6, 5] -> [1, 4, 7, 9, 6, 7, 6, 5]
 
+// const arr = [1, 4, 7, 9, 1, 6, 7, 6, 5];
+// const arrMini = [1, 4, 7, 9, 6, 5];
 
-// const arr = [2, 3, null, [0, 1], { r: 34, s: 5 }, [], [null], 6, 8];
+// const deleteMiddleEl = array => {
 
-// const deleteMiddleEl = array => array.splice(1, array.length - 2) && array
+//     const middleEl = Math.floor(array.length / 2)
+//     const newArr = []
 
+//     if (middleEl % 2 === 0) {
+//         for (let i = 0; i < array.length; i++) {
+//             i !== middleEl && newArr.push(array[i])
+//         }
+//     } else {
+//         for (let i = 0; i < array.length; i++) {
+//             if (i !== middleEl && i !== middleEl - 1) {
+//                 newArr.push(array[i])
+//             }
+//         }
+//     }
+
+//     return newArr
+// }
+
+// console.log(deleteMiddleEl(arrMini));
 // console.log(deleteMiddleEl(arr));
-
 
 
 // 9. Задача +
@@ -307,9 +329,9 @@
 // const test3 = "string";
 
 
-// // // TODO:
-// // // ! Concat
-// // // ! null
+// // TODO:
+// // ! Concat +
+// // ! null
 
 
 
@@ -321,6 +343,24 @@
 //                 newArr.push(value)
 //             }
 //         }
+//     }
+//     return newArr
+// }
+
+// // новое решение
+// const getArray = (...rest) => {
+//     let newArr = [];
+//     for (const el of rest) {
+//         if (Array.isArray(el)) {
+//             newArr = newArr.concat(el)
+//         }
+
+//         // for (const el of rest) {
+//         //     if (!Array.isArray(el)) {
+//         //         newArr = null
+//         //     }
+//         // }
+
 //     }
 //     return newArr
 // }
@@ -433,4 +473,104 @@
 
 
 
-// TODO: * 
+// TODO: *  12-practice: 16 +, 17 +- null не вернул, 8+
+
+
+
+// ★ 16. Задача ★ + 
+
+// Написать функцию: (консольная игра "угадай число"). На вход в функцию идёт несколько параметров:
+
+// Диапазон загадываемого числа от до вкл;
+// Кол-во попыток;
+// Наличие подсказок: true или false;
+// Перед тем, как игрок приступает к угадыванию ему сообщается в консоле:
+
+// В каком диапазоне загадано число;
+// Сколько есть попыток;
+// Включены ли подсказки;
+// Механика:
+
+// Число генерируется с помощью метода Math.random(); +
+
+// Пользователя запрашивают через числа prompt(); +
+
+// Подсказки: Если мы не угадали число, то нам подсказывают - загаданное число больше или меньше того, что мы ввели; +
+
+// Кол-во оставшихся попыток выводить в консоль каждый раз, когда мы не угадываем число; +
+
+// После того, как мы угадали число, в консоль выводится: Победа, вы угадали число: <число> и функция прекращает работу;
+
+// После того, как расходуются все попытки, в консоль выводится: Проигрыш, вы не угадали число: <число>;
+
+
+// !ПОльзователь не видит условие игры +
+// ПОльзователь не видит подсказок +
+// Пользователь сразу видит ответ +
+// ? Возвращает undefined (пусть ничего не возвращает) -
+// alert() +
+// GПусть сообщает поражение или победа +
+// Если поражение, то сообщить. какое было число загадно +
+
+// const fromNumber = 1;
+// const upNumber = 6;
+// const userLives = 4;
+// const help = true;
+
+// console.log(guessNumber(fromNumber, upNumber, userLives, help));
+
+// function guessNumber(minNumber, maxNumber, lives, trueFalse) {
+
+//     let winNumber = 0;
+//     winNumber = parseInt(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+
+//     let countLives = lives;
+//     let userNumber = 0;
+//     let hints = "";
+//     let tip = '';
+
+//     // включены подсказки или нет
+//     trueFalse ? hints = "включены" : hints = "выключены"
+
+//     // сама программа жесть)
+//     if (trueFalse) {
+//         for (let i = 1; i <= lives; i++) {
+//             userNumber = Number(prompt(`
+//                 Введите число в диапазоне от ${minNumber} до ${maxNumber}
+//                 Включены ли подсказки: ${hints}
+//                 ${tip} 
+//                 Сколько есть попыток: ${lives} 
+//                 Осталось: ${countLives}
+// `));
+//             countLives -= 1
+
+//             if (winNumber > userNumber) {
+//                 tip = "Ваше число меньше загадонного";
+//             } else if (winNumber < userNumber) {
+//                 tip = "Ваше число больше загадонного";
+//             } else if (winNumber === userNumber) {
+//                 return alert("Победа");
+//             }
+
+//             // алерт проигрыша
+//             countLives < 1 && alert(`Проигрыш, вы не угадали число: ${winNumber}`)
+//         }
+//     } else {
+//         for (let i = 1; i <= lives; i++) {
+
+//             userNumber = Number(prompt(
+//                 `Введите число:
+//                 \nОсталось жизней: ${countLives}
+//                 \nВсего попыток: ${lives}`
+//             ));
+
+//             countLives -= 1
+
+//             if (winNumber === userNumber) {
+//                 return alert("Победа");
+//             } else if (countLives < 2) {
+//                 return alert(`Проигрыш, вы не угадали число: ${winNumber}`)
+//             }
+//         }
+//     }
+// }
