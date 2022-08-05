@@ -49,11 +49,13 @@
 // 4. Задача -
 // Написать функцию, на вход которой подаётся любое количество переменных любого типа. Функция возвращает массив, неповторяющихся элементов. Значение элемента не должен встретиться более 1 раза в вернувшимся массиве.
 
-const test = 4
-let s = 5
-let f = 6
-let q = 5
-let w = 1
+// const test = 4
+// let s = 5
+// let f = 6
+// let q = 5
+// let w = 1
+
+
 
 // const uniqueArray = (...params) => {
 //     const arr = []
@@ -69,24 +71,25 @@ let w = 1
 // console.log(uniqueArray(test, s, f, q, w));
 
 
-const uniqueArray = (...params) => {
-    let s = []
-    let d = []
-    const arr = []
 
-    for (let i = 0; i < params.length; i++) {
-        arr.push(params[i])
-    }
+// function includes2(params) {
 
-    return arr
+// }
 
-}
-console.log(uniqueArray(test, s, f, q, w));
+// const uniqueArray = (...params) => {
+//     let s = []
+//     let d = []
+//     const arr = []
 
+//     for (let i = 0; i < params.length; i++) {
+//         arr.push(params[i])
+//     }
 
-{/* <array>.unshift(...items) // Добавляет элемент(ы) в начало массива 
-// Мутирует исходный массив
-// Возвращает новую длину массива */}
+//     return arr
+
+// }
+// console.log(uniqueArray(test, s, f, q, w));
+
 
 
 // TODO: * Если нету функции includes? Реализовать программу
@@ -150,7 +153,7 @@ console.log(uniqueArray(test, s, f, q, w));
 
 
 // 8. Задача +
-// TODO:
+// FIXME:
 // Написать функцию, на вход которой подаётся массив, функция удаляет средний / средние элементы. 
 // Например: [3, 4, 7] -> [3, 7] 
 // Например: [1, 4, 6, 5] -> [1, 5]
@@ -165,6 +168,7 @@ console.log(uniqueArray(test, s, f, q, w));
 //     const middleEl = Math.floor(array.length / 2)
 //     const newArr = []
 
+//     // splice
 //     if (middleEl % 2 === 0) {
 //         for (let i = 0; i < array.length; i++) {
 //             i !== middleEl && newArr.push(array[i])
@@ -323,10 +327,7 @@ console.log(uniqueArray(test, s, f, q, w));
 
 // Написать функцию, на вход можно подать много параметров. Функция из всех этих параметров отбирает только массива и склеивает их в один единый. Функция возвращает получившийся массив. Если нету в переданных параметрах массива, то вернуть null.
 
-// const numbers = [1, 2, 3];
-// const test = [4, 5];
-// const test2 = 120;
-// const test3 = "string";
+
 
 
 // // TODO:
@@ -347,25 +348,18 @@ console.log(uniqueArray(test, s, f, q, w));
 //     return newArr
 // }
 
-// // новое решение
+
 // const getArray = (...rest) => {
 //     let newArr = [];
 //     for (const el of rest) {
 //         if (Array.isArray(el)) {
 //             newArr = newArr.concat(el)
+//             console.log(newArr);
 //         }
-
-//         // for (const el of rest) {
-//         //     if (!Array.isArray(el)) {
-//         //         newArr = null
-//         //     }
-//         // }
-
 //     }
-//     return newArr
+//     return newArr.length ? newArr : null
 // }
-
-// console.log(getArray(numbers, test, test2, test3));
+// console.log(getArray(120, "string"));
 
 
 
@@ -517,39 +511,37 @@ console.log(uniqueArray(test, s, f, q, w));
 // const userLives = 4;
 // const help = true;
 
-// console.log(guessNumber(fromNumber, upNumber, userLives, help));
+// guessNumber(fromNumber, upNumber, userLives, help);
 
-// function guessNumber(minNumber, maxNumber, lives, trueFalse) {
 
-//     let winNumber = 0;
-//     winNumber = parseInt(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+// // !TODO: Попробуй сделать в один цикл
+// function guessNumber(minNumber, maxNumber, lives, hasHints) {
+//     const winNumber = parseInt(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+//     const hints = hasHints ? "включены" : "выключены"
 
 //     let countLives = lives;
-//     let userNumber = 0;
-//     let hints = "";
 //     let tip = '';
 
 //     // включены подсказки или нет
-//     trueFalse ? hints = "включены" : hints = "выключены"
+
 
 //     // сама программа жесть)
-//     if (trueFalse) {
+//     if (hints) {
 //         for (let i = 1; i <= lives; i++) {
-//             userNumber = Number(prompt(`
+//             const userNumber = Number(prompt(`
 //                 Введите число в диапазоне от ${minNumber} до ${maxNumber}
 //                 Включены ли подсказки: ${hints}
 //                 ${tip} 
 //                 Сколько есть попыток: ${lives} 
-//                 Осталось: ${countLives}
-// `));
+//                 Осталось: ${countLives}`
+//             ));
 //             countLives -= 1
-
 //             if (winNumber > userNumber) {
 //                 tip = "Ваше число меньше загадонного";
 //             } else if (winNumber < userNumber) {
 //                 tip = "Ваше число больше загадонного";
 //             } else if (winNumber === userNumber) {
-//                 return alert("Победа");
+//                 alert("Победа");
 //             }
 
 //             // алерт проигрыша
@@ -558,7 +550,7 @@ console.log(uniqueArray(test, s, f, q, w));
 //     } else {
 //         for (let i = 1; i <= lives; i++) {
 
-//             userNumber = Number(prompt(
+//             const userNumber = Number(prompt(
 //                 `Введите число:
 //                 \nОсталось жизней: ${countLives}
 //                 \nВсего попыток: ${lives}`
@@ -567,9 +559,9 @@ console.log(uniqueArray(test, s, f, q, w));
 //             countLives -= 1
 
 //             if (winNumber === userNumber) {
-//                 return alert("Победа");
+//                 alert("Победа");
 //             } else if (countLives < 2) {
-//                 return alert(`Проигрыш, вы не угадали число: ${winNumber}`)
+//                 alert(`Проигрыш, вы не угадали число: ${winNumber}`)
 //             }
 //         }
 //     }
