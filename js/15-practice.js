@@ -288,29 +288,80 @@
 
 
 
-// ? 16. Задача
+// ? 16. Задача +
 
 // Написать функцию, которая находит первое положительное число в переданном массиве.
 
+// const someNumbers = [-1, -2, -3, 4, 5];
+
+// function getNumber(array) {
+//     return array.find((el) => el > 0)
+// }
+
+// console.log(getNumber(someNumbers));
 
 
 
-// ? 17. Задача
+// ? 17. Задача +
 
 // Написать функцию, на вход которой подаётся массив чисел, которая возвращает массив, в котором все числа уменьшаются в 2 раза.
 
-// ? 18. Задача
+// const someNumbers = [1, 2, 3, 4, 5];
+
+// function getArr(array) {
+//     return array.map((v, i, arr) => arr[i] - 2)
+// }
+
+// console.log(getArr(someNumbers));
+
+
+
+// ? 18. Задача +
 
 // Написать функцию, на вход которой подаётся массив строк, функция возвращает массив чисел - длины строк каждого слова из исходного массива. Например:
 
 // ['leg', 'pony', 'dog'] -> [3, 4, 3]
-// ? 19. Задача
+
+// const animals = ['leg', 'pony', 'dog'];
+
+// function getElementLength(array) {
+//     return array.map((el) => el.length)
+// }
+
+// console.log(getElementLength(animals));
+
+
+
+// ? 19. Задача +
 
 // Написать функцию, на вход которой подаётся массив чисел, функция увеличивает в 10 раз все числа в массиве, но не мутирует его, а возвращает новый.
 
-// ? 20. Задача
+// const someNumbers = [1, 2, 3, 4, 5];
+
+// function getArr(array) {
+//     return array.map((el) => el * 10)
+// }
+
+// console.log(getArr(someNumbers));
+
+
+
+// ? 20. Задача +
 
 // Написать функцию, которая считает количество нечётных чисел в массиве.
+
+// const someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// function GetOddNumbers(array) {
+//     let countNumbers = 0;
+//     array.forEach(el => el % 2 !== 0 && (countNumbers += 1));
+//     return countNumbers
+// }
+
+// const oddNum = GetOddNumbers(someNumbers);
+// console.log(oddNum);
+
+
 
 // ? 21. Задача
 
