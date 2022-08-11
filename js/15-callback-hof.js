@@ -152,7 +152,38 @@ function changeLength(array) {
 // callback должен вернуть true/false
 
 
+// * 8 let value = array.reduce( (prReturnValue, value, index, array) => {return ...}, startValue)
+// Вычисляет значение, на основе всего массива
+// reduce возвращает одно значение
 
+// callback возвращает значение и оно в следующей итерации будет записано в prReturnValue
+
+// В самую первую итерацию prReturnValue = startValue
+
+// Если startValue не задан, то по умолчанию равен первому элементу массива
+
+
+// Посчитать сумму всех чисел в массиве
+
+const listNumber = [7, 6, 7, 2, 3, 4, 7, 2, 3]
+
+let oldSum = 0
+for (const el of listNumber) {
+    oldSum += el
+}
+console.log(oldSum);
+
+const sum = listNumber.reduce((prReturnValue, value) => {
+    return prReturnValue + value
+})
+console.log(sum);
+
+
+// Посчитать сумму чётных
+const sumEven = listNumber.reduce((prReturnValue, value) => {
+    return value % 2 === 0 ? prReturnValue + value : prReturnValue
+}, 0)
+console.log(sumEven);
 
 // sort
 // reduce

@@ -258,14 +258,15 @@
 
 
 
-// ? 14. Задача + от сюда
+// ? 14. Задача +
 
 // Написать функцию, на вход которой подаётся массив, которая добавляет ко всем элементам массива префикс "ext-", не мутируя исходный, а возвращает новый массив.
 
 // const someNumbers = [1, 2, 3, 4, 5]
 
 // function getArr(array) {
-//     return array.map((el, i, array) => array[i] + "ext-")
+//     return array.map((el) => el + "ext-")
+//     // return array.map((el, i, array) => array[i] + "ext-")
 // }
 
 // console.log(getArr(someNumbers));
@@ -309,7 +310,7 @@
 // const someNumbers = [1, 2, 3, 4, 5];
 
 // function getArr(array) {
-//     return array.map((v, i, arr) => arr[i] - 2)
+//     return array.map(el => el - 2)
 // }
 
 // console.log(getArr(someNumbers));
@@ -346,20 +347,20 @@
 
 
 
-// ? 20. Задача +
+// ! 20. Задача + (все равно эти два ретерно тяжело в понимании)
 
 // Написать функцию, которая считает количество нечётных чисел в массиве.
 
 // const someNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// function GetOddNumbers(array) {
-//     let countNumbers = 0;
-//     array.forEach(el => el % 2 !== 0 && (countNumbers += 1));
-//     return countNumbers
+// function getOddNumbers(array) {
+//     return array.reduce((prReturnValue, el) => {
+//         return el % 2 !== 0 ? prReturnValue + 1 : prReturnValue
+//     }, 0)
 // }
 
-// const oddNum = GetOddNumbers(someNumbers);
-// console.log(oddNum);
+// console.log(getOddNumbers(someNumbers));
+
 
 
 
@@ -377,40 +378,43 @@
 
 
 
-// ? 22. Задача +
+// ! 22. Задача +
 
 // Написать функцию, которая считает сумму всех отрицательных чисел.
 
-// const someNumbers = [1, 2, 3, 4, 5];
+// const someNumbers = [-1, 2, 3, 4, -5, -2];
 
 // function getSumOddNumbers(array) {
-//     let sum = 0;
-//     array.forEach(el => el % 2 !== 0 && (sum += el));
-//     return sum
+//     return array.reduce((count, el) => el < 0 ? count += el : count, 0);
 // }
 
 // console.log(getSumOddNumbers(someNumbers));
 
 
 
-// ? 23. Задача + (apply, null) ?
+// ! 23. Задача + - тут сон во сне)
 
 // Написать функцию, которая возвращает наибольшее и наименьшее число из переданного массива. (функция возвращает объект с двумя свойствами)
 
-// const someNumbers = [1, 2, 3, 16, 4, 5];
+// const someNumbers = [7, 2, 3, 4, 5];
 
 // function gunMaxAndMinNumber(array) {
 
-//     const maxNumber = Math.max.apply(null, array)
-//     const minNumber = Math.min.apply(null, array)
+// return array.reduce((count, el) => {
+//     return maxNumber = el > count ? count = el : count;
+// })
 
-//     return {
-//         maxNumber,
-//         minNumber
-//     }
+
+//     return array.reduce((count, el) => {
+//         return {
+//             maxNumber: el > count ? count = el : count,
+//             minNumber: el < count ? count = el : count
+//         }
+//     })
 // }
 
 // console.log(gunMaxAndMinNumber(someNumbers));
+
 
 
 // ? 24. Задача +
@@ -441,7 +445,7 @@
 
 
 
-// ? 26. Задача - sorted
+// ! 26. Задача - sort
 
 // Написать функцию, которая принимает на вход массив чисел, функция мутирует исходный массив - сортируя его в порядке возрастания.
 
@@ -490,7 +494,7 @@
 
 
 
-// ? 30. Задача - sorted
+// ! 30. Задача - sort
 
 // Написать функцию, которая принимает на вход массив чисел, функция возвращает отсортированный массив чисел в порядке убывания. Но не мутирует исходный массив.
 
@@ -518,18 +522,11 @@
 // const arr = [3, 6, 7, -43, 34, 6, -98, 45, 432, 65, 876, -76, -8, 56, -7, 76, 45, 6];
 
 
-// function getObject(array) {
-
-//     const evenArray = array.filter(el => el % 2 === 0);
-//     const negArray = array.filter(el => el < 0);
-//     const moreTenArray = array.filter(el => el > 10);
-
-//     return {
-//         evenArray,
-//         negArray,
-//         moreTenArray
-//     }
-// }
+// const getObject = (array) => ({
+//     evenArray: array.filter(el => el % 2 === 0),
+//     negArray: array.filter(el => el < 0),
+//     moreTenArray: array.filter(el => el > 10)
+// })
 
 // console.log(getObject(arr));
 
@@ -537,7 +534,9 @@
 
 // ★ Условие для следующих задач:
 
-// Дан массив объектов, выполнить следующие задачи: !Запрещено мутировать исходный массив во всех задачах!
+// Дан массив объектов, выполнить следующие задачи: 
+// !Запрещено мутировать исходный массив во всех задачах!
+// ! Объекты мутировать можно!
 
 const users = [
     {
@@ -584,10 +583,8 @@ const users = [
 
 // Функция возвращает новый массив, не мутируя исходный так, чтобы можно было использоваться этот же массив во всех следующих задачах.
 
-// function getUserName(object) {
-//     let userName = [];
-//     object.filter(el => userName.push(el.name))
-//     return userName
+// function getUserName(userList) {
+//     return userList.map(el => el.name)
 // }
 
 // const userName = getUserName(users)
@@ -595,10 +592,13 @@ const users = [
 
 
 
-// ? 33. Задача - тут странно все как то получилос
+// ? 33. Задача +
 
-// Написать функцию, которая принимает на вход массив, функция возвращает массив, функция получает из массива объектов - массив строк вида:
+// Написать функцию, которая принимает на вход массив, функция возвращает массив строк вида:
 
+
+// console.log(
+//     `
 //     <div>
 //         <span>
 //             Имя: <значение>
@@ -610,6 +610,8 @@ const users = [
 //             Семейное положение: <значение>
 //         </span>
 //     </div>
+//     `
+// );
 
 // function getUserBio(array) {
 
@@ -620,14 +622,30 @@ const users = [
 //     });
 
 //     return {
-//         "Имя": userName,
-//         "Возраст": userAge,
-//         "Семейное положение": userIsMarried
+//         name: userName,
+//         age: userAge,
+//         isMarried: userIsMarried
 //     }
 // }
 
+// const user = getUserBio(users)
 
-// console.log(getUserBio(users));
+
+// console.log(
+//     `
+//     <div>
+//         <span>
+//             Имя: ${user.name}
+//         </span>
+//         <span>
+//             Возраст: ${user.age}
+//         </span>
+//         <span>
+//             Семейное положение: ${user.isMarried}
+//         </span>
+//     </div>
+//     `
+// );
 
 
 
@@ -635,11 +653,11 @@ const users = [
 
 // Написать функцию, которая принимает на вход массив и имя, функция находит и возвращает объект по имени первого найденного в массиве.
 
-// function getObject(array) {
-//     return array.find(el => el.name)
+// function getObject(array, name) {
+//     return array.find(el => name === el.name && (el.name))
 // }
 
-// console.log(getObject(users));
+// console.log(getObject(users, "Lila"));
 
 
 
@@ -656,49 +674,83 @@ const users = [
 
 
 
-// ? 36. Задача - условия не понял
+// ? 36. Задача +
 
 // Написать функцию, которая принимает на вход массив, имя, возраст и семейное положение, функция возвращает массив, в котором добавлен новый пользователь.
 
 // Количество очков задать равным 0;
 // id сделать случайным целым число в диапазоне от 1000 до 2000 не вкл;
 
+// function getNewUser(array, name, age, isMarried) {
 
-// ? 37. Задача - не решен вопрос с мутированием
+//     const id = parseInt(Math.random() * (2000 - 1000 + 1) + 1000);
+
+
+//     // 1 скопировать исходный массив
+//     // добавить к нему нового пользователя
+
+//     const copyUserList = array.concat([{
+//         id,
+//         name,
+//         age,
+//         isMarried,
+//         scores: 0
+//     }])
+
+//     return copyUserList
+// }
+
+// const result = getNewUser(users, "Max", 34, false)
+// console.log(users === result);
+// console.log(result);
+
+
+
+// ? 37. Задача +
+
+// Разрешаю мутировать :)
 
 // Написать функцию, которая принимает на вход массив, функция возвращает массив, добавляя каждому пользователю новое свойство: isTest: true.
 
 // function getObject(array) {
-//     const s = []
-//     // array.forEach((el, i) => s.push(array[i]));
-//     array.filter((el, i) => el["isTest"] = true);
-//     s.forEach(el => el["isTest"] = true);
-//     return s === array
+//     const newArr = []
+//     array.forEach(el => el["isTest"] = true);
+//     return newArr
 // }
 
-// console.log(getObject(users));
-// console.log("-------------");
+// getObject(users);
 // console.log(users);
 
 
 
-// ? 38. Задача -
+// ? 38. Задача +
 
 // Написать функцию, которая принимает на вход массив и id пользователя и новое семейное положение, функция возвращает массив, в котором меняется свойство isMarried на переданное.
 
-// function changeIsMarried(array, id, isMarried) {
-//     return array.map(el => el.id && (el.isMarried = isMarried))
-// }
 
+// function changeIsMarried(userList, id, isMarried) {
+
+//     const copyUserList = userList.concat([])
+
+//     const user = copyUserList.find((user) => user.id = id)
+//     user.isMarried = !user.isMarried
+
+//     return copyUserList
+
+// }
 // console.log(changeIsMarried(users, 100, true));
 
 
 
-// ? 39. Задача
+// ? 39. Задача +
 
 // Написать функцию, которая принимает на вход массив и id пользователя, функция возвращает новый массив, удаляя пользователя с переданным id.
 
+// function getDelUser(array, id) {
+//     return array.filter(el => el.id !== id)
+// }
 
+// console.log(getDelUser(users, 100));
 
 
 // ? 40. Задача +
@@ -713,48 +765,62 @@ const users = [
 
 
 
-// ? 41. Задача
+// ! 41. Задача - sort
 
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный в порядке увеличения очков.
 
-// ? 42. Задача
+
+
+// ! 42. Задача +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает пользователя с самым большим количеством очков.
 
+// function getLederScores(array) {
+//     return array.reduce((count, el) => count < el.scores ? count = el.scores : count, 0)
+// }
+
+// console.log(getLederScores(users));
 
 
-// ? 43. Задача
+
+
+// ! 43. Задача - sort
 
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный в алфавитном порядке имён.
 
-// ? 44. Задача +
+
+
+// ! 44. Задача + почему когда 0 убираю, все ломается?
 
 // Написать функцию, которая принимает на вход массив, функция возвращает сумму всех очков у всех пользователей.
 
 // function getSumScores(array) {
-//     let sum = 0;
-//     array.forEach(el => {
-//         sum += el.scores
-//     });
-//     return sum
+//     return array.reduce((count, el) => count += el.scores, 0)
 // }
 
 // console.log(getSumScores(users));
 
 
-// ? 45. Задача ? как понять от старшему к самому младшему
+
+// ! 45. Задача - sort
 
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный от самого старшему к самому младшему.
 
-// ? 46. Задача ? sorted
+
+
+// ! 46. Задача ? sort
 
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный так, что сначала в массиве все женатые/замужние, а все холостяки внизу списка.
 
-// ? 47. Задача ? sorted
+
+
+// ! 47. Задача ? sorted + filter
 
 // Написать функцию, которая принимает на вход массив, функция возвращает массив лучших трёх по количеству очков.
 
-// ? 48. Задача +
+
+
+//  48. Задача +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает массив пользователей, чья длина имени больше 4 символов.
 
@@ -778,37 +844,38 @@ const users = [
 
 
 
-// ? 50. Задача
+// ? 50. Задача +
 
 // Написать функцию, на вход которой подаётся 2 массива пользователей, функция возвращает новый массив, состоящий из всех пользователей двух массивов.
 
+// function concatArrays(arr1, arr2) {
+//     return arr1.concat(arr2);
+// }
+
+// console.log(concatArrays(users, users));
 
 
 
 // ★ Задачи повышенной сложности ★
 
-// ? ★ 51. Задача ★ +
+// ! ★ 51. Задача ★ +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает сумму всех очков у всех пользователей, которые женаты.
 
 // function getSumScoresMarried(array) {
-//     let sum = 0
-//     array.forEach(el => el.isMarried === true && (sum += el.scores))
-//     return sum
+//     return array.reduce((count, el) => el.isMarried === true ? count += 1 : count, 0)
 // }
 
 // console.log(getSumScoresMarried(users));
 
 
 
-// ? ★ 52. Задача ★ +
+// ! ★ 52. Задача ★ +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает сумму всех очков у всех совершеннолетних пользователей.
 
 // function getSumScoresOld(array) {
-//     let sum = 0
-//     array.forEach(el => el.age >= 18 && (sum += el.scores))
-//     return sum
+//     return array.reduce((count, el) => el.age >= 18 ? count += el.scores : count, 0)
 // }
 
 // console.log(getSumScoresOld(users));
@@ -819,29 +886,23 @@ const users = [
 
 // Написать функцию, которая возвращает первое встречное слово, в котором хотя бы 2 буквы заглавные
 
-// const someString = ["test", "aPple", "OnE", "TEster", "mouse"]
+const someString = ["test", "aPple", "OnE", "TEster", "mouse"]
 
-// function getString(array) {
-//     let count = 0
+function getString(array) {
 
-//     let test = someString.join(',')
-//     console.log(test);
+    return array.find((el, i) => el[i] === el[i].toUpperCase());
 
-//     let s = []
+}
 
-//     for (const el of test) {
 
-//         if (el !== ",") {
-//             s.push(el)
-//         }
-//     }
-
-//     console.log(s);
-//     return count
-// }
-
-// console.log(getString(someString));
+console.log(getString(someString));
 
 // ? ★ 54. Задача ★
 
 // Написать в функцию, на вход которой подаётся массив чисел Функция должна для каждого элемента этого массива вывести сумму двух его соседей и вернуть этот новый массив. Для элемента массива, являющихся крайними, одним из соседей считается элемент, находящийся на противоположном конце этого массива. Например, если на вход подаётся массив: 1 3 5 6 10, то на выход ожидается новый массив: 13 6 9 15 7 Если на вход пришло одно число, то вывести его же
+
+
+// 20, 22, 23, 33, 34, 37, 42, 44, 51, 52
+
+
+// не сделал reduce - 44 вопрос с 0
