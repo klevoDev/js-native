@@ -185,42 +185,73 @@ const sumEven = listNumber.reduce((prReturnValue, value) => {
 }, 0)
 console.log(sumEven);
 
-// sort
-// reduce
+// * 9. const <array> = <array>.sort() // Сортировка массива по символам
+// Метод мутирует массив и возвращает ссылку на тот же массив
+// callback возвращает -value или +value (от знака зависит сортировка)
 
 
+// * Number 1
+const sortArrayTest = [7, 657, 654, 856, 75, 867]
+
+console.log(sortArrayTest.sort((a, b) => a - b));
+
+// * Number 2
+const userTest = [
+    { name: 'Richard', age: 32, isGod: false },
+    { name: 'God', age: 2645, isGod: true },
+    { name: 'David', age: 52, isGod: false },
+    { name: 'Alex', age: 22, isGod: false },
+]
+
+const result = userTest.sort((user1, user2) => {
+    return user1.age - user2.age
+})
+
+console.log(result.reverse());
 
 
+// * String 1
+const sortArrayString = ['David', 'Paul', 'Alex', 'Richard']
+console.log(sortArrayString.sort());
 
 
+// * String 2
+const resultString = userTest.sort((user1, user2) => {
+    return user1.name > user2.name ? 1 : -1
+})
+console.log(resultString);
 
 
+// * Boolean 1
+const sortArraySBoolean = [true, false, false, true, true]
 
+console.log(sortArraySBoolean.sort().reverse());
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// * Boolean 2
+const resultBoolean = userTest.sort((user) => {
+    return user.isGod ? -1 : 1
+})
+console.log(resultString);
 
 
 
 // * Реализовать функцию, на вход которой подаётся массив и callback функция. Функция делает всё то же самое, что и метод forEach
+
+
+
+function forCh(array, callback) {
+    for (let i = 0; i < array.length; i++) {
+        callback(array[i], i, array)
+    }
+}
+
+forCh([3, 5, 76, 47, 65, 75], (value, index) => {
+    console.log(value, index);
+})
+
+// ** ! Реализуй свой map
+// ** ! Реализуй свой filter
+
+
+
+

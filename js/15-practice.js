@@ -347,7 +347,7 @@
 
 
 
-// ! 20. Задача + (все равно эти два ретерно тяжело в понимании)
+// ? 20. Задача +
 
 // Написать функцию, которая считает количество нечётных чисел в массиве.
 
@@ -357,9 +357,11 @@
 //     return array.reduce((prReturnValue, el) => {
 //         return el % 2 !== 0 ? prReturnValue + 1 : prReturnValue
 //     }, 0)
+
 // }
 
 // console.log(getOddNumbers(someNumbers));
+
 
 
 
@@ -378,21 +380,21 @@
 
 
 
-// ! 22. Задача +
+// ? 22. Задача +
 
 // Написать функцию, которая считает сумму всех отрицательных чисел.
 
 // const someNumbers = [-1, 2, 3, 4, -5, -2];
 
 // function getSumOddNumbers(array) {
-//     return array.reduce((count, el) => el < 0 ? count += el : count, 0);
+//     return array.reduce((sum, el) => el < 0 ? sum += el : sum, 0);
 // }
 
 // console.log(getSumOddNumbers(someNumbers));
 
 
 
-// ! 23. Задача + - тут сон во сне)
+// ? 23. Задача +
 
 // Написать функцию, которая возвращает наибольшее и наименьшее число из переданного массива. (функция возвращает объект с двумя свойствами)
 
@@ -400,17 +402,18 @@
 
 // function gunMaxAndMinNumber(array) {
 
-// return array.reduce((count, el) => {
-//     return maxNumber = el > count ? count = el : count;
-// })
-
-
-//     return array.reduce((count, el) => {
-//         return {
-//             maxNumber: el > count ? count = el : count,
-//             minNumber: el < count ? count = el : count
-//         }
+//     const maxValue = array.reduce((count, el) => {
+//         return el > count ? el : count;
 //     })
+
+//     const minValue = array.reduce((count, el) => {
+//         return el < count ? el : count;
+//     })
+
+//     return {
+//         maxValue,
+//         minValue
+//     }
 // }
 
 // console.log(gunMaxAndMinNumber(someNumbers));
@@ -445,10 +448,17 @@
 
 
 
-// ! 26. Задача - sort
+// ! 26. Задача +
 
 // Написать функцию, которая принимает на вход массив чисел, функция мутирует исходный массив - сортируя его в порядке возрастания.
 
+// const someNumbers = [543, 2543, 3674, 432, 544, 543];
+
+// function getSortArr(array) {
+//     return array.sort((a, b) => a - b)
+// }
+
+// console.log(getSortArr(someNumbers));
 
 
 // ? 27. Задача +
@@ -494,9 +504,21 @@
 
 
 
-// ! 30. Задача - sort
+// ! 30. Задача +
 
 // Написать функцию, которая принимает на вход массив чисел, функция возвращает отсортированный массив чисел в порядке убывания. Но не мутирует исходный массив.
+
+// const someNumbers = [1, 4, 2, 3, 6, 5]
+
+// function getSortArr(array) {
+//     const newArr = array.concat([]);
+//     newArr.sort((a, b) => a - b)
+//     return newArr
+// }
+
+
+// console.log(getSortArr(someNumbers));
+// console.log(someNumbers);
 
 
 
@@ -765,18 +787,28 @@ const users = [
 
 
 
-// ! 41. Задача - sort
+// ! 41. Задача +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный в порядке увеличения очков.
 
+// function getSortScores(array) {
+//     const sortScores = array.concat([]);
+//     return sortScores.sort((a, b) => a.scores - b.scores)
+// }
 
 
-// ! 42. Задача +
+// const sortScoresUsers = getSortScores(users);
+// console.log(sortScoresUsers === users);
+// console.log(sortScoresUsers);
+
+
+
+// ? 42. Задача +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает пользователя с самым большим количеством очков.
 
 // function getLederScores(array) {
-//     return array.reduce((count, el) => count < el.scores ? count = el.scores : count, 0)
+//     return array.reduce((count, el) => el.scores > count ? el.scores : count, 0)
 // }
 
 // console.log(getLederScores(users));
@@ -784,18 +816,24 @@ const users = [
 
 
 
-// ! 43. Задача - sort
+// ! 43. Задача + (еще раз проговорить)
 
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный в алфавитном порядке имён.
 
+// function sortAlphabet(array) {
+//     const newArr = array.concat([]);
+//     return newArr.sort((a, b) => a.name > b.name ? 1 : -1)
+// }
+// console.log(sortAlphabet(users));
 
 
-// ! 44. Задача + почему когда 0 убираю, все ломается?
+
+// ? 44. Задача +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает сумму всех очков у всех пользователей.
 
 // function getSumScores(array) {
-//     return array.reduce((count, el) => count += el.scores, 0)
+//     return array.reduce((count, el) => count + el.scores, 0)
 // }
 
 // console.log(getSumScores(users));
@@ -858,24 +896,26 @@ const users = [
 
 // ★ Задачи повышенной сложности ★
 
-// ! ★ 51. Задача ★ +
+// ? ★ 51. Задача ★ +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает сумму всех очков у всех пользователей, которые женаты.
 
 // function getSumScoresMarried(array) {
-//     return array.reduce((count, el) => el.isMarried === true ? count += 1 : count, 0)
+//     return array.reduce((count, el) => el.isMarried ? count + el.scores : count, 0)
 // }
 
 // console.log(getSumScoresMarried(users));
 
 
 
-// ! ★ 52. Задача ★ +
+
+
+// ? ★ 52. Задача ★ +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает сумму всех очков у всех совершеннолетних пользователей.
 
 // function getSumScoresOld(array) {
-//     return array.reduce((count, el) => el.age >= 18 ? count += el.scores : count, 0)
+//     return array.reduce((count, el) => el.age >= 18 ? count + el.scores : count, 0)
 // }
 
 // console.log(getSumScoresOld(users));
@@ -886,23 +926,30 @@ const users = [
 
 // Написать функцию, которая возвращает первое встречное слово, в котором хотя бы 2 буквы заглавные
 
-const someString = ["test", "aPple", "OnE", "TEster", "mouse"]
+// const someString = ["test", "aPple", "OnE", "TEster", "mouse", "1"]
 
-function getString(array) {
+// function getString(array) {
+//     let count = 0
+//     array.forEach((el, i) => {
+//         el[i] === el[i].toUpperCase() && (count += 1)
+//         if (count === 2 && el !== el.toLowerCase()) {
+//             console.log(el);
+//         }
+//     });
 
-    return array.find((el, i) => el[i] === el[i].toUpperCase());
-
-}
+// }
 
 
-console.log(getString(someString));
+// console.log(getString(someString));
 
-// ? ★ 54. Задача ★
+// ? ★ 54. Задача ★ -
 
 // Написать в функцию, на вход которой подаётся массив чисел Функция должна для каждого элемента этого массива вывести сумму двух его соседей и вернуть этот новый массив. Для элемента массива, являющихся крайними, одним из соседей считается элемент, находящийся на противоположном конце этого массива. Например, если на вход подаётся массив: 1 3 5 6 10, то на выход ожидается новый массив: 13 6 9 15 7 Если на вход пришло одно число, то вывести его же
 
 
-// 20, 22, 23, 33, 34, 37, 42, 44, 51, 52
+// 26, 30, 41, 43
 
+// задача 44 из восьмой темы
 
-// не сделал reduce - 44 вопрос с 0
+// ** ! Реализуй свой map
+// ** ! Реализуй свой filter
