@@ -840,23 +840,44 @@ const users = [
 
 
 
-// ! 45. Задача - sort
+// ! 45. Задача +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный от самого старшему к самому младшему.
 
+// function getSortAge(array) {
+//     return array.sort((a, b) => {
+//         return a.age - b.age
+//     })
+// }
 
+// console.log(getSortAge(users));
 
-// ! 46. Задача ? sort
+// ! 46. Задача +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает новый массив объектов, отсортированный так, что сначала в массиве все женатые/замужние, а все холостяки внизу списка.
 
+// function sortIsMaried(array) {
+//     return array.sort((a) => {
+//         return a.isMarried ? -1 : 1
+//     })
+// }
+
+// console.log(sortIsMaried(users));
 
 
-// ! 47. Задача ? sorted + filter
+// ! 47. Задача ? +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает массив лучших трёх по количеству очков.
 
+// function getTopUsers(array) {
+//     const sortArr = array.sort((a, b) => {
+//         return b.scores - a.scores
+//     })
 
+//     return sortArr.filter((el, i) => i < 3)
+// }
+
+// console.log(getTopUsers(users));
 
 //  48. Задача +
 
@@ -947,9 +968,79 @@ const users = [
 // Написать в функцию, на вход которой подаётся массив чисел Функция должна для каждого элемента этого массива вывести сумму двух его соседей и вернуть этот новый массив. Для элемента массива, являющихся крайними, одним из соседей считается элемент, находящийся на противоположном конце этого массива. Например, если на вход подаётся массив: 1 3 5 6 10, то на выход ожидается новый массив: 13 6 9 15 7 Если на вход пришло одно число, то вывести его же
 
 
-// 26, 30, 41, 43
+// ? ★ 55. Задача ★
 
-// задача 44 из восьмой темы
+// Реализовать свои варианты функции hof:
 
-// ** ! Реализуй свой map
-// ** ! Реализуй свой filter
+// forEach;
+// find;
+// findIndex;
+// ? map;
+
+// const someNumbers = [-1, 2, 3, 4, -5, -2];
+
+// function getMap(array) {
+//     const map = array.concat([]);
+//     // тут работем с map, в зависимости от задачи
+//     // возвращаем новый массив увеличивая на 10 каждый элемент
+//     for (let i = 0; i < map.length; i++) {
+//         map[i] += 10;
+//     }
+//     return map
+// }
+
+// const newArr = getMap(someNumbers)
+// console.log(newArr);
+
+
+// ? filter;
+
+// если условие тру, то его и возвращаем в новом массиве
+
+// const someNumbers = [-1, 2, 3, 4, -5, -2];
+
+// function getFilterArr(array) {
+//     const filter = [];
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] % 2 === 0) {
+//             filter.push(array[i])
+//         }
+//     }
+//     return filter
+// }
+
+// const newArr = getFilterArr(someNumbers)
+// console.log(newArr);
+
+
+
+// some;
+// every;
+// reduce;
+
+
+// 26, 30, 41, 43, 42 из восьмой темы, 45, 46, 47
+
+
+// ★ 42. Задача ★
+
+// Выполнить сортировку массива array. Четные элементы отправьте в массив arrayEven, а нечетные - в arrayOdd. А если встречается значение 0, то проигнорировать его (Переносить в arrayEven не нужно).
+
+// array = [0, 9, 2, 7, -2, 4, 34, -7, 0, -12, 28, 14, 0, 0, 15, 22, 0];
+// const arrayEven = [];
+// const arrayOdd = [];
+
+// function scatterArr(array) {
+//     array.forEach(el => {
+//         el % 2 === 0 && el !== 0 ? arrayEven.push(el) : arrayOdd.push(el)
+//     });
+// }
+
+// scatterArr(array);
+// console.log(arrayEven);
+// console.log(arrayOdd);
+
+
+
+
+

@@ -667,5 +667,4 @@ const varArray = [15, 12, 'text', true, 6, 7, 21, [], false, 0, 1, '', -1, 'worl
 // }
 
 
-// TODO: 42 (Яндекс в помощь)
 
