@@ -512,7 +512,7 @@
 
 // function getSortArr(array) {
 //     const newArr = array.concat([]);
-//     newArr.sort((a, b) => a - b)
+//     newArr.sort((a, b) => b - a)
 //     return newArr
 // }
 
@@ -828,6 +828,8 @@ const users = [
 
 
 
+
+
 // ? 44. Задача +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает сумму всех очков у всех пользователей.
@@ -846,7 +848,7 @@ const users = [
 
 // function getSortAge(array) {
 //     return array.sort((a, b) => {
-//         return a.age - b.age
+//         return b.age - a.age
 //     })
 // }
 
@@ -865,7 +867,7 @@ const users = [
 // console.log(sortIsMaried(users));
 
 
-// ! 47. Задача ? +
+// ! 47. Задача +
 
 // Написать функцию, которая принимает на вход массив, функция возвращает массив лучших трёх по количеству очков.
 
@@ -877,7 +879,17 @@ const users = [
 //     return sortArr.filter((el, i) => i < 3)
 // }
 
+// function getTopUsers2(array) {
+//     // return array.sort((a, b) => b.scores - a.scores).filter((el, i) => i < 3)
+//     return array
+//         .concat([])
+//         .sort((a, b) => b.scores - a.scores)
+//         .slice(0, 3)
+// }
+
+
 // console.log(getTopUsers(users));
+// console.log(getTopUsers2(users));
 
 //  48. Задача +
 
@@ -972,9 +984,43 @@ const users = [
 
 // Реализовать свои варианты функции hof:
 
-// forEach;
-// find;
-// findIndex;
+
+// ? find;
+// 
+
+// const someNumbers = [-1, 6, 2, 3, 4, -5, -2];
+
+// function findEven(array) {
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] % 2 === 0) {
+//             return array[i]
+//         }
+//     }
+// }
+
+// console.log(find(someNumbers, () => {}));
+
+
+
+
+// ? findIndex;
+
+// const someNumbers = [-1, 6, 2, 3, 4, -5, -2];
+
+// function find(array) {
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] === 1) {
+//             return array[i]
+//         } else {
+//             return -1
+//         }
+//     }
+// }
+
+// console.log(find(someNumbers));
+
+
+
 // ? map;
 
 // const someNumbers = [-1, 2, 3, 4, -5, -2];
@@ -1013,7 +1059,6 @@ const users = [
 // console.log(newArr);
 
 
-
 // some;
 // every;
 // reduce;
@@ -1044,3 +1089,11 @@ const users = [
 
 
 
+
+
+
+// calculate('4 + 5') // 9
+
+// console.log('error');
+// return 'error'
+throw new Error('Uncorrected action');// Бросить ошибку с надписью и программа прекращает работу после этой строчки
