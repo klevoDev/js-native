@@ -620,15 +620,15 @@
 // let text = "The greatest victory is that which requires no battle";
 
 // //старое
-// // function getTextReverse(value) {
-// //     const textReverse = value.split(' ').reverse();
-// //     console.log(value);
-// //     let stringReverse = "";
-// //     for (const el of textReverse) {
-// //         stringReverse += el + " "
-// //     }
-// //     return stringReverse
-// // };
+// function getTextReverse(value) {
+//     const textReverse = value.split(' ').reverse();
+//     console.log(value);
+//     let stringReverse = "";
+//     for (const el of textReverse) {
+//         stringReverse += el + " "
+//     }
+//     return stringReverse
+// };
 
 
 // //новое
