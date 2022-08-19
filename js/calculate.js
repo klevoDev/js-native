@@ -7,116 +7,129 @@
 // Задача, которая состоит из одной функции – не засчитывается!
 
 // ? •	Калькулятор умеет выполнять операции сложения, вычитания, умножения и деления с двумя числами: a + b, a - b, a * b, a / b. Данные передаются в виде одной строки! +
-// •	Калькулятор умеет работать как с арабскими (1,2,3,4,5…), так и с римскими (I,II,III,IV,V…) числами.
-// •	Калькулятор должен принимать на вход числа от 1 до 10 включительно, не более. На выходе числа не ограничиваются по величине и могут быть любыми.
-// •	Калькулятор умеет работать только с целыми числами.
-// •	Результат на выходе всегда строка с целым числом. В делении учитываем только целую часть.
+
+// ? •	Калькулятор умеет работать как с арабскими (1,2,3,4,5…), так и с римскими (I,II,III,IV,V…) числами.
+
+// ? •	Калькулятор должен принимать на вход числа от 1 до 10 включительно, не более. На выходе числа не ограничиваются по величине и могут быть любыми. +
+
+// •	Калькулятор умеет работать только с целыми числами. 
+
+// ? •	Результат на выходе всегда строка с целым числом. В делении учитываем только целую часть. +
+
 // •	Калькулятор умеет работать только с арабскими или римскими цифрами одновременно, при вводе пользователем строки вроде 3 + II калькулятор должен бросить error и прекратить свою работу.
-// •	Т.к. в римской системе нет нуля и отрицательных чисел - возвращаем пустую строку.
+
+// ? •	Т.к. в римской системе нет нуля и отрицательных чисел - возвращаем пустую строку. +
+
 // •	При вводе пользователем неподходящих чисел калькулятор должен бросить error и завершить свою работу.
+
 // •	При вводе пользователем строки, не соответствующей одной из вышеописанных арифметических операций приложение бросить error и завершает свою работу.
 
 
-// if (stringSplit !== 3) {
-//     a = parseInt(stringSplit)
-//     // console.log(stringSplit.split(' '))
-// }
 
 
 // Expression - выражение перевод
 
 
-// const mathExpression = "20.5*50"
+const mathExpression = "20 * 50"
 
 
-// function calculate(string) {
+function calculate(string) {
 
-//     let a = 0;
-//     let b = 0;
-//     let operator = "";
+    let a = 0;
+    let b = 0;
+    let operator = "";
 
-//     let result = "";
-//     // делаем посимвольно
+    let result = "";
+    // делаем посимвольно
 
-//     let stringSplit = string.split(' ')
-
-
-//     // проверяем на количество знаков(*/+-) и кидаем ошибку
-//     let count = 0;
-
-//     for (const el of stringSplit) {
-//         if (el === "+" || el === "-" || el === "/" || el === "*") {
-//             count += 1
-//         }
-//     }
-
-//     if (count >= 2) {
-//         throw new Error('Uncorrected action AAA');
-//     }
+    let stringSplit = string.split(' ')
 
 
+    // проверяем на количество знаков(*/+-) и кидаем ошибку
+    let count = 0;
+
+    for (const el of stringSplit) {
+        if (el === "+" || el === "-" || el === "/" || el === "*") {
+            count += 1
+        }
+    }
+
+    if (count >= 2) {
+        throw new Error('Uncorrected action AAA');
+    }
 
 
 
-//     // проверяем длину строки
-//     if (stringSplit.length === 4) {
-//         // проверяем на количество символов и присваиваем значения из строк
-//         if (stringSplit.length < 4) {
-//             a = stringSplit[0];
-//             b = stringSplit[2];
-//             operator = stringSplit[1];
-//         } else {
-//             throw new Error('Uncorrected action AAA');
-//         }
-//     } else {
-//         a = parseInt(string)
-
-//         // присваиваем оператор
-//         for (const el of string) {
-//             if (el === "+" || el === "-" || el === "/" || el === "*") {
-//                 operator += el
-//             }
-
-//             // теперь b присваиваем
-//             const arrEl = string.split('').reverse().join('');
-//             let elementReverse = ''
-
-//             for (const el of arrEl) {
-//                 if (el !== "+" && el !== "-" && el !== "/" && el !== "*") {
-//                     elementReverse += el
-//                 } else {
-//                     break
-//                 }
-//             }
-
-//             b = elementReverse.split('').reverse().join('')
-//         }
 
 
-//         // считаем
-//         if (Number(a) && Number(b)) {
-//             const count = {
-//                 '+': (a, b) => parseInt(a) + parseInt(b),
-//                 '-': (a, b) => a - b,
-//                 '*': (a, b) => a * b,
-//                 '/': (a, b) => a / b,
-//             };
-//             result = count[operator](a, b);
-//         } else {
-//             throw new Error('Uncorrected action AAAA');
-//         }
+    // проверяем длину строки
+    if (stringSplit.length === 4) {
+        // проверяем на количество символов и присваиваем значения из строк
+        if (stringSplit.length < 4) {
+            a = stringSplit[0];
+            b = stringSplit[2];
+            operator = stringSplit[1];
+        } else {
+            throw new Error('Uncorrected action AAA');
+        }
+    } else {
+        // присваиваем а
 
-//         // для отладки сразу в консоль
-//         // return console.log(String(Math.round(result)));
-//         // в прод ;)
-//         return String(Math.round(result));
-//     }
-// }
+        for (const el of string) {
+            if (el !== "+" && el !== "-" && el !== "/" && el !== "*") {
+                a += el
+            } else {
+                break
+            }
+        }
+
+        // присваиваем оператор
+        for (const el of string) {
+            if (el === "+" || el === "-" || el === "/" || el === "*") {
+                operator += el
+            }
+
+            // теперь b присваиваем
+            const arrEl = string.split('').reverse().join('');
+
+            let elementReverse = ''
+
+            for (const el of arrEl) {
+                if (el !== "+" && el !== "-" && el !== "/" && el !== "*") {
+                    elementReverse += el
+                } else {
+                    break
+                }
+            }
+
+            b = elementReverse.split('').reverse().join('')
+        }
 
 
-// const answer = calculate(mathExpression);
-// console.log(answer);
-// console.log(typeof answer);
+        // считаем
+        if (Number(a) && Number(b)) {
+            const count = {
+                '+': (a, b) => parseInt(a) + parseInt(b),
+                '-': (a, b) => a - b,
+                '*': (a, b) => a * b,
+                '/': (a, b) => a / b,
+            };
+            result = count[operator](a, b);
+        } else {
+            throw new Error('Uncorrected action AAAA');
+        }
+
+        // для отладки сразу в консоль
+        // return console.log(String(Math.round(result)));
+        // в прод ;)
+        return String(Math.round(result));
+    }
+}
+
+
+const answer = calculate(mathExpression);
+console.log(answer);
+console.log(typeof answer);
 
 
 
@@ -125,46 +138,12 @@
 
 
 
-// function convertToRoman(firstNum, secondNum, operator) {
-//     let roman = {
-//         "M": 1000,
-//         "CM": 900,
-//         "D": 500,
-//         "CD": 400,
-//         "C": 100,
-//         "XC": 90,
-//         "L": 50,
-//         "XL": 40,
-//         "X": 10,
-//         "IX": 9,
-//         "V": 5,
-//         "IV": 4,
-//         "I": 1
-//     };
-
-//     let num1 = firstNum;
-//     let num2 = secondNum;
-//     let num3 = num1 * num2;
-//     let result = "";
-
-//     for (var i of Object.keys(roman)) {
-//         var repeat = Math.floor(num3 / roman[i]);
-//         num3 -= repeat * roman[i];
-//         result += i.repeat(repeat);
-//     }
-
-//     return result;
-// }
-
-// console.log(convertToRoman(2, 2, "+"));
-
-
 
 //===============================
 
 
-const mathExpression = "V * CM";
-const mathExpression2 = "5 * 100";
+const mathExpression1 = "V + V";
+const mathExpression2 = "1.5 - 10";
 
 function romanCalc(string) {
 
@@ -220,6 +199,23 @@ function romanCalc(string) {
     }
 
 
+    // проверка от 1 до 10 вкл int
+    if (a > 10 || a < 1) {
+        throw new Error('Uncorrected action BBB');
+    }
+
+    if (b > 10 || b < 1) {
+        throw new Error('Uncorrected action BBB');
+    }
+
+    // // проверка на целое число
+    // if (Number.isInteger(a) || Number.isInteger(b)) {
+    //     console.log(Number.isInteger(a));
+    //     throw new Error('Uncorrected action CCC');
+    // }
+
+
+
     // удаляем пробелы, а то NAN на b
     b = b.trim()
 
@@ -242,6 +238,16 @@ function romanCalc(string) {
         let aInt = romanToInt(a)
         let bInt = romanToInt(b)
 
+        // проверка от 1 до 10 вкл roman
+        if (aInt > 10 || aInt < 1) {
+            throw new Error('Uncorrected action BBB');
+        }
+
+        if (bInt > 10 || bInt < 1) {
+            throw new Error('Uncorrected action BBB');
+        }
+
+
         // считаем
         if (Number(aInt) && Number(bInt)) {
             const count = {
@@ -251,6 +257,11 @@ function romanCalc(string) {
                 '/': (aInt, bInt) => aInt / bInt,
             };
             result = count[operator](aInt, bInt);
+        }
+
+        // проверка на 0 и отрицательные числа для римских чисел
+        if (result < 1) {
+            console.log('');
         }
 
 
@@ -295,18 +306,15 @@ function romanCalc(string) {
                 '*': (aInt, bInt) => aInt * bInt,
                 '/': (aInt, bInt) => aInt / bInt,
             };
-            result = count[operator](aInt, bInt);
+            // округляем и приводим к стринг
+            result = String(Math.round(count[operator](aInt, bInt)))
         }
     }
-
     return result
 }
 
 
-
-
-
-console.log(romanCalc(mathExpression));
+console.log(romanCalc(mathExpression1));
 console.log(romanCalc(mathExpression2));
 
 
