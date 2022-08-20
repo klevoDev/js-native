@@ -12,149 +12,44 @@
 
 // ? •	Калькулятор должен принимать на вход числа от 1 до 10 включительно, не более. На выходе числа не ограничиваются по величине и могут быть любыми. +
 
-// •	Калькулятор умеет работать только с целыми числами. 
+// ? •	Калькулятор умеет работать только с целыми числами. +
 
 // ? •	Результат на выходе всегда строка с целым числом. В делении учитываем только целую часть. +
 
-// •	Калькулятор умеет работать только с арабскими или римскими цифрами одновременно, при вводе пользователем строки вроде 3 + II калькулятор должен бросить error и прекратить свою работу.
+// ? •	Калькулятор умеет работать только с арабскими или римскими цифрами одновременно, при вводе пользователем строки вроде 3 + II калькулятор должен бросить error и прекратить свою работу.
 
 // ? •	Т.к. в римской системе нет нуля и отрицательных чисел - возвращаем пустую строку. +
 
-// •	При вводе пользователем неподходящих чисел калькулятор должен бросить error и завершить свою работу.
+// •	При вводе пользователем неподходящих чисел калькулятор должен бросить error и завершить свою работу. + -
 
-// •	При вводе пользователем строки, не соответствующей одной из вышеописанных арифметических операций приложение бросить error и завершает свою работу.
-
-
+// •	При вводе пользователем строки, не соответствующей одной из вышеописанных арифметических операций приложение бросить error и завершает свою работу. + -
 
 
-// Expression - выражение перевод
-
-
-const mathExpression = "20 * 50"
-
-
-function calculate(string) {
-
-    let a = 0;
-    let b = 0;
-    let operator = "";
-
-    let result = "";
-    // делаем посимвольно
-
-    let stringSplit = string.split(' ')
-
-
-    // проверяем на количество знаков(*/+-) и кидаем ошибку
-    let count = 0;
-
-    for (const el of stringSplit) {
-        if (el === "+" || el === "-" || el === "/" || el === "*") {
-            count += 1
-        }
-    }
-
-    if (count >= 2) {
-        throw new Error('Uncorrected action AAA');
-    }
-
-
-
-
-
-    // проверяем длину строки
-    if (stringSplit.length === 4) {
-        // проверяем на количество символов и присваиваем значения из строк
-        if (stringSplit.length < 4) {
-            a = stringSplit[0];
-            b = stringSplit[2];
-            operator = stringSplit[1];
-        } else {
-            throw new Error('Uncorrected action AAA');
-        }
-    } else {
-        // присваиваем а
-
-        for (const el of string) {
-            if (el !== "+" && el !== "-" && el !== "/" && el !== "*") {
-                a += el
-            } else {
-                break
-            }
-        }
-
-        // присваиваем оператор
-        for (const el of string) {
-            if (el === "+" || el === "-" || el === "/" || el === "*") {
-                operator += el
-            }
-
-            // теперь b присваиваем
-            const arrEl = string.split('').reverse().join('');
-
-            let elementReverse = ''
-
-            for (const el of arrEl) {
-                if (el !== "+" && el !== "-" && el !== "/" && el !== "*") {
-                    elementReverse += el
-                } else {
-                    break
-                }
-            }
-
-            b = elementReverse.split('').reverse().join('')
-        }
-
-
-        // считаем
-        if (Number(a) && Number(b)) {
-            const count = {
-                '+': (a, b) => parseInt(a) + parseInt(b),
-                '-': (a, b) => a - b,
-                '*': (a, b) => a * b,
-                '/': (a, b) => a / b,
-            };
-            result = count[operator](a, b);
-        } else {
-            throw new Error('Uncorrected action AAAA');
-        }
-
-        // для отладки сразу в консоль
-        // return console.log(String(Math.round(result)));
-        // в прод ;)
-        return String(Math.round(result));
-    }
-}
-
-
-const answer = calculate(mathExpression);
-console.log(answer);
-console.log(typeof answer);
-
-
-
-
-//==========================
-
-
-
+// Expression - выражение
 
 //===============================
 
 
-const mathExpression1 = "V + V";
-const mathExpression2 = "1.5 - 10";
+const mathExpression1 = "I - II";
+const mathExpression2 = "1+3";
+const mathExpression3 = "1 + IV";
+const mathExpression4 = "1 +   4";
 
-function romanCalc(string) {
+
+function calculate(string) {
 
     let a = '';
     let b = '';
     let operator = "";
     let result = "";
+    let stringSplit = ''
 
-    // делаем посимвольно
-    let stringSplit = string.split(' ')
-
+    // разбивка элементов вибираем способ (1+3 или 1 + 3)
+    if (string.length === 3) {
+        stringSplit = string.split('')
+    } else {
+        stringSplit = string.split(' ')
+    }
 
     // проверяем на количество знаков(*/+-) и кидаем ошибку
     let count = 0;
@@ -198,7 +93,6 @@ function romanCalc(string) {
         b = elementReverse.split('').reverse().join('')
     }
 
-
     // проверка от 1 до 10 вкл int
     if (a > 10 || a < 1) {
         throw new Error('Uncorrected action BBB');
@@ -208,16 +102,15 @@ function romanCalc(string) {
         throw new Error('Uncorrected action BBB');
     }
 
-    // // проверка на целое число
-    // if (Number.isInteger(a) || Number.isInteger(b)) {
-    //     console.log(Number.isInteger(a));
-    //     throw new Error('Uncorrected action CCC');
-    // }
-
-
-
     // удаляем пробелы, а то NAN на b
     b = b.trim()
+
+    // проверка на int + римское
+    if (isNaN(a) && !isNaN(b)) {
+        throw new Error('Uncorrected action isNaN');
+    } else if (isNaN(b) && !isNaN(a)) {
+        throw new Error('Uncorrected action isNaN');
+    }
 
     // проверяем на вывод в консоль
     if (isNaN(a) && isNaN(b)) {
@@ -247,7 +140,6 @@ function romanCalc(string) {
             throw new Error('Uncorrected action BBB');
         }
 
-
         // считаем
         if (Number(aInt) && Number(bInt)) {
             const count = {
@@ -260,9 +152,7 @@ function romanCalc(string) {
         }
 
         // проверка на 0 и отрицательные числа для римских чисел
-        if (result < 1) {
-            console.log('');
-        }
+        result < 1 && console.log(' ')
 
 
         // теперь результат переводим в римские цифры
@@ -314,15 +204,17 @@ function romanCalc(string) {
 }
 
 
-console.log(romanCalc(mathExpression1));
-console.log(romanCalc(mathExpression2));
+console.log(calculate(mathExpression1));
+console.log(calculate(mathExpression2));
+// console.log(calculate(mathExpression3));
+console.log(calculate(mathExpression4));
 
 
 
 
 
 // calculate('1 + 2'); // '3' +
-// calculate('1+2'); // '3' +
+// calculate('1+2'); // '3'
 // calculate(' 1  +    2 '); // '3' +
 // calculate('VI / III'); // 'II'
 // calculate('VII / III'); // 'II'
@@ -405,4 +297,3 @@ console.log(romanCalc(mathExpression2));
 // calculator('5 / 0').toThrowError();
 // calculator('0 + 1').toThrowError();
 // calculator('1 + 0').toThrowError();
-
