@@ -30,11 +30,10 @@
 //===============================
 
 
-const mathExpression1 = "I - II";
-const mathExpression2 = "1+3";
+const mathExpression1 = "II - I";
+const mathExpression2 = "4*10";
 const mathExpression3 = "1 + IV";
 const mathExpression4 = "1 +   4";
-
 
 function calculate(string) {
 
@@ -49,6 +48,10 @@ function calculate(string) {
         stringSplit = string.split('')
     } else {
         stringSplit = string.split(' ')
+    }
+
+    if (string.length === 1) {
+        throw new Error('Uncorrected action ONE');
     }
 
     // проверяем на количество знаков(*/+-) и кидаем ошибку
@@ -77,6 +80,8 @@ function calculate(string) {
     for (const el of stringSplit) {
         if (el === "+" || el === "-" || el === "/" || el === "*") {
             operator += el
+        } else if (el === "%") {
+            throw new Error('Uncorrected action %');
         }
     }
 
@@ -106,9 +111,9 @@ function calculate(string) {
     b = b.trim()
 
     // проверка на int + римское
-    if (isNaN(a) && !isNaN(b)) {
+    if (!isNaN(a) && isNaN(b)) {
         throw new Error('Uncorrected action isNaN');
-    } else if (isNaN(b) && !isNaN(a)) {
+    } else if (!isNaN(b) && isNaN(a)) {
         throw new Error('Uncorrected action isNaN');
     }
 
@@ -152,8 +157,7 @@ function calculate(string) {
         }
 
         // проверка на 0 и отрицательные числа для римских чисел
-        result < 1 && console.log(' ')
-
+        a < b && (result = '')
 
         // теперь результат переводим в римские цифры
         function convertToRoman(number) {
@@ -200,29 +204,33 @@ function calculate(string) {
             result = String(Math.round(count[operator](aInt, bInt)))
         }
     }
-    return result
+    // прод
+    // return result
+
+    // для проверок
+    return console.log(result);
 }
 
 
-console.log(calculate(mathExpression1));
-console.log(calculate(mathExpression2));
-// console.log(calculate(mathExpression3));
-console.log(calculate(mathExpression4));
+// console.log(calculate(mathExpression1));
+// console.log(calculate(mathExpression2));
+// // console.log(calculate(mathExpression3));
+// console.log(calculate(mathExpression4));
 
 
 
 
 
 // calculate('1 + 2'); // '3' +
-// calculate('1+2'); // '3'
+// calculate('1+2'); // '3' +
 // calculate(' 1  +    2 '); // '3' +
-// calculate('VI / III'); // 'II'
-// calculate('VII / III'); // 'II'
-// calculate('I + II'); // 'III'
-// calculate('I - II'); // ''
-// calculate('I + 1'); // throws Error
-// calculate('I'); // throws Error
-//calculate('1 + 1 + 1'); // throws Error +
+// calculate('VI / III'); // 'II' +
+// calculate('VII / III'); // 'II' +
+// calculate('I + II'); // 'III' +
+// calculate('I - II'); // '' +
+// calculate('I + 1'); // throws Error +
+// calculate('I'); // throws Error + 
+// calculate('1 + 1 + 1'); // throws Error +
 
 // Процесс отладки и тестирования:
 // Должен работать с десятичными числами (сложение)
@@ -233,67 +241,67 @@ console.log(calculate(mathExpression4));
 // calculate('10 + 10')//.toBe('20'); +
 
 // Должен работать с десятичными числами (вычитание)
-//   calculator('10 - 1').toBe('9');
-//   calculator('5-4').toBe('1');
-//   calculator('4 - 4').toBe('0');
-//   calculator('1 - 10').toBe('-9');
-//   calculator('4 - 5').toBe('-1');
+// calculate('10 - 1') //.toBe('9'); +
+// calculate('5-4') //.toBe('1'); +
+// calculate('4 - 4') //.toBe('0'); +
+// calculate('1 - 10') //.toBe('-9'); +
+// calculate('4 - 5') //.toBe('-1'); +
 
 // Должен работать с десятичными числами (умножение)
-// calculate('10 * 10').toBe('100');
-// calculate('4*10').toBe('40');
-// calculate('5 * 1').toBe('5');
-// calculate('5 * 5').toBe('25');
+// calculate('10 * 10') //.toBe('100');
+// ? calculate('4*10') //.toBe('40'); проверка 118 строки сломала - что за нафиг!
+// calculate('5 * 1') //.toBe('5'); +
+// calculate('5 * 5') //.toBe('25'); +
 
 
 // Должен работать с десятичными числами (деление)
-//   calculator('10 / 1').toBe('10');
-//   calculator('6/2').toBe('3');
-//   calculator('5 / 4').toBe('1');
-//   calculator('2 / 4').toBe('0');
+// calculate('10 / 1') //.toBe('10'); +
+// calculate('6/2') //.toBe('3'); +
+// calculate('5 / 4') //.toBe('1'); +
+// calculate('2 / 4') //.toBe('0'); +
 
 // Должен работать с римскими числами (сложение)
-//   calculator('I + I').toBe('II');
-//   calculator('I + II').toBe('III');
-//   calculator('IV + III').toBe('VII');
-//   calculator('X+X').toBe('XX');
-//   calculator('X + IX').toBe('XIX');
+// calculate('I + I') //.toBe('II'); +
+// calculate('I + II') //.toBe('III'); +
+// calculate('IV + III') //.toBe('VII'); +
+// calculate('X+X') //.toBe('XX'); +
+// calculate('X + IX') //.toBe('XIX'); +
 
 // Должен работать с римскими числами (вычитание)
-//   calculator('X - I').toBe('IX');
-//   calculator('V - IV').toBe('I');
-//   calculator('IV - IV').toBe('');
-//   calculator('I - X').toBe('');
-//   calculator('IV - V').toBe('');
+// calculate('X - I') //.toBe('IX'); +
+// calculate('V - IV') //.toBe('I'); +
+// calculate('IV - IV') //.toBe(''); +
+// calculate('I - X') //.toBe(''); +
+// calculate('IV - V') //.toBe(''); +
 
 // Должен работать с римскими числами (умножение)
-//   calculator('X * X').toBe('C');
-//   calculator('IV * X').toBe('XL');
-//   calculator('V * I').toBe('V');
-//   calculator('V * V').toBe('XXV');
+// calculate('X * X') //.toBe('C'); +
+// calculate('IV * X') //.toBe('XL'); +
+// calculate('V * I') //.toBe('V'); +
+// calculate('V * V') //.toBe('XXV'); +
 
 // Должен работать с римскими числами (деление)
-//   calculator('X / I').toBe('X');
-//   calculator('VI / II').toBe('III');
-//   calculator('V / IV').toBe('I');
-//   calculator('II / IV').toBe('');
+// calculate('X / I') //.toBe('X'); +
+// calculate('VI / II') //.toBe('III'); +
+// calculate('V / IV') //.toBe('I'); +
+// calculate('II / IV') //.toBe(''); +
 
 //  Должен выбрасывать ошибку на некорректных данных
-// calculator('').toThrowError();
-// calculator(' ').toThrowError();
-// calculator('     ').toThrowError();
-// calculator('4').toThrowError();
-// calculator('+').toThrowError();
-// calculator('++1').toThrowError();
-// calculator('V').toThrowError();
-// calculator('3 % 4').toThrowError();
-// calculator('1 + 1 + 1').toThrowError();
-// calculator('11 + 1').toThrowError();
-// calculator('1 + 11').toThrowError();
-// calculator('XI + I').toThrowError();
-// calculator('I + XI').toThrowError();
-// calculator('1 + V').toThrowError();
-// calculator('I + 1').toThrowError();
-// calculator('5 / 0').toThrowError();
-// calculator('0 + 1').toThrowError();
-// calculator('1 + 0').toThrowError();
+// calculate('') //.toThrowError();
+// calculate(' ') //.toThrowError(); +
+// calculate('     ') //.toThrowError(); +
+// calculate('4') //.toThrowError(); +
+// calculate('+') //.toThrowError(); +
+// calculate('++1') //.toThrowError(); +
+// calculate('V') //.toThrowError(); +
+//calculate('3 % 4') //.toThrowError(); +
+// calculate('1 + 1 + 1') //.toThrowError(); +
+// calculate('11 + 1') //.toThrowError(); +
+// calculate('1 + 11') //.toThrowError(); +
+// calculate('XI + I') //.toThrowError(); +
+// calculate('I + XI') //.toThrowError(); +
+// calculate('1 + V') //.toThrowError(); +
+// calculate('I + 1') //.toThrowError(); +
+// calculate('5 / 0') //.toThrowError(); +
+// calculate('0 + 1') //.toThrowError(); +
+// calculate('1 + 0') //.toThrowError(); +
