@@ -24,16 +24,64 @@
 
 // •	При вводе пользователем строки, не соответствующей одной из вышеописанных арифметических операций приложение бросить error и завершает свою работу. + -
 
+// ====
 
-// Expression - выражение
+// переводим к int римские цифры
+const romanToInt = function (s) {
+    const romanObj = { 'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000 };
+    let num = 0;
+    let len = s.length;
+    for (var i = 0; i < len - 1; i++) {
+        let curNum = romanObj[s.charAt(i)];
+        let rightNum = romanObj[s.charAt(i + 1)];
+        num += curNum >= rightNum ? curNum : -curNum;
+    }
+    num += romanObj[s.charAt(i)]
+    return num;
+};
+
+// =====
+
+// теперь результат переводим в римские цифры 
+function convertToRoman(number) {
+    let roman = {
+        "M": 1000,
+        "CM": 900,
+        "D": 500,
+        "CD": 400,
+        "C": 100,
+        "XC": 90,
+        "L": 50,
+        "XL": 40,
+        "X": 10,
+        "IX": 9,
+        "V": 5,
+        "IV": 4,
+        "I": 1
+    };
+    let res = "";
+
+    for (var i of Object.keys(roman)) {
+        var repeat = Math.floor(number / roman[i]);
+        number -= repeat * roman[i];
+        res += i.repeat(repeat);
+    }
+    return res
+}
+
+// ====
+
+
+
 
 //===============================
 
 
 const mathExpression1 = "II - I";
-const mathExpression2 = "4*10";
-const mathExpression3 = "1 + IV";
+const mathExpression2 = "9*9";
+const mathExpression3 = "X * X";
 const mathExpression4 = "1 +   4";
+
 
 function calculate(string) {
 
@@ -49,6 +97,8 @@ function calculate(string) {
     } else {
         stringSplit = string.split(' ')
     }
+
+
 
     if (string.length === 1) {
         throw new Error('Uncorrected action ONE');
@@ -75,6 +125,11 @@ function calculate(string) {
             break
         }
     }
+    // a = stringSplit.slice(0, 1)
+    // console.log(a);
+
+
+    // 6. <string>.slice(start, end); // Возвращает новую строку, копируя в неё все символы с позиции start до позиции end НЕ ВКЛЮЧИТЕЛЬНО
 
     // присваиваем оператор
     for (const el of stringSplit) {
@@ -84,6 +139,9 @@ function calculate(string) {
             throw new Error('Uncorrected action %');
         }
     }
+
+    // operator = stringSplit.slice(1, 2)
+    // console.log(operator);
 
     //теперь b присваиваем
     const arrEl = string.split('').reverse().join('');
@@ -98,6 +156,7 @@ function calculate(string) {
         b = elementReverse.split('').reverse().join('')
     }
 
+
     // проверка от 1 до 10 вкл int
     if (a > 10 || a < 1) {
         throw new Error('Uncorrected action BBB');
@@ -110,28 +169,20 @@ function calculate(string) {
     // удаляем пробелы, а то NAN на b
     b = b.trim()
 
+
     // проверка на int + римское
-    if (!isNaN(a) && isNaN(b)) {
+    if (!isNaN(b) && isNaN(a)) {
         throw new Error('Uncorrected action isNaN');
-    } else if (!isNaN(b) && isNaN(a)) {
-        throw new Error('Uncorrected action isNaN');
+    } else if (!isNaN(a) && isNaN(b)) {
+        throw new Error('Uncorrected action isNaN')
     }
+
+
 
     // проверяем на вывод в консоль
     if (isNaN(a) && isNaN(b)) {
-        // переводим к int римские цифры
-        const romanToInt = function (s) {
-            const romanObj = { 'I': 1, 'V': 5, 'X': 10, 'L': 50, 'C': 100, 'D': 500, 'M': 1000 };
-            let num = 0;
-            let len = s.length;
-            for (var i = 0; i < len - 1; i++) {
-                let curNum = romanObj[s.charAt(i)];
-                let rightNum = romanObj[s.charAt(i + 1)];
-                num += curNum >= rightNum ? curNum : -curNum;
-            }
-            num += romanObj[s.charAt(i)]
-            return num;
-        };
+        // переводим к int римские цифры romanToInt(a)
+
 
         let aInt = romanToInt(a)
         let bInt = romanToInt(b)
@@ -146,6 +197,8 @@ function calculate(string) {
         }
 
         // считаем
+
+
         if (Number(aInt) && Number(bInt)) {
             const count = {
                 '+': (aInt, bInt) => parseInt(aInt) + parseInt(bInt),
@@ -156,35 +209,12 @@ function calculate(string) {
             result = count[operator](aInt, bInt);
         }
 
+
         // проверка на 0 и отрицательные числа для римских чисел
         a < b && (result = '')
 
-        // теперь результат переводим в римские цифры
-        function convertToRoman(number) {
-            let roman = {
-                "M": 1000,
-                "CM": 900,
-                "D": 500,
-                "CD": 400,
-                "C": 100,
-                "XC": 90,
-                "L": 50,
-                "XL": 40,
-                "X": 10,
-                "IX": 9,
-                "V": 5,
-                "IV": 4,
-                "I": 1
-            };
-            let res = "";
+        // теперь результат переводим в римские цифры convertToRoman(number)
 
-            for (var i of Object.keys(roman)) {
-                var repeat = Math.floor(number / roman[i]);
-                number -= repeat * roman[i];
-                res += i.repeat(repeat);
-            }
-            return res
-        }
         // в консоль
         result = convertToRoman(result)
     } else {
@@ -205,17 +235,33 @@ function calculate(string) {
         }
     }
     // прод
-    // return result
+    return result
 
     // для проверок
-    return console.log(result);
+    // return console.log(result);
 }
 
 
-// console.log(calculate(mathExpression1));
-// console.log(calculate(mathExpression2));
-// // console.log(calculate(mathExpression3));
-// console.log(calculate(mathExpression4));
+
+console.log(calculate(mathExpression1));
+console.log(calculate(mathExpression2));
+console.log(calculate(mathExpression3));
+console.log(calculate(mathExpression4));
+
+
+
+
+
+
+function calculateRef(str) {
+    // 1 - Разбить строку на a, p & sign
+    // 2 - проверка параметров a, b, sign
+    // 3 - Проверить римские числа или арабские
+    // 4 - Если римские, то преобразуем в арабские
+    // 5 - Вычисляем
+    // 6 - Если были римские, то преобразовать обратно
+    // 7 - Вернуть строку - ответ (return)
+}
 
 
 
@@ -249,7 +295,7 @@ function calculate(string) {
 
 // Должен работать с десятичными числами (умножение)
 // calculate('10 * 10') //.toBe('100');
-// ? calculate('4*10') //.toBe('40'); проверка 118 строки сломала - что за нафиг!
+// ? calculate('4*10') //.toBe('40'); проверка 118 строки сломала - что за нафиг! короче цифра 10 ломает все
 // calculate('5 * 1') //.toBe('5'); +
 // calculate('5 * 5') //.toBe('25'); +
 
