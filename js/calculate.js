@@ -478,3 +478,7 @@ calculate('II / IV') //.toBe(''); +
 // calculate('5 / 0') //.toThrowError(); +
 // calculate('0 + 1') //.toThrowError(); +
 // calculate('1 + 0') //.toThrowError(); +
+
+
+
+
