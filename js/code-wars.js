@@ -1,47 +1,46 @@
-// function removeUrlAnchor(url) {
-//     let s = ''
-//     for (const el of url) {
-//         el !== '#' && (s += el)
-//     }
-//     return s
-// }
 
-
-
-
-
-
-
-// function removeUrlAnchor(url) {
-//     const justUrl = Array.from('www.codewars.com')
-//     let newUrl = ''
-
-//     justUrl.forEach(el => el !== justUrl && (newUrl += el));
-
-//     return newUrl
-// }
-
-
-// function removeUrlAnchor(url) {
-//     const index = url.indexOf('#')
-//     const newUrl = url.slice(0, index)
-
-//     return newUrl
-// }
-
-
-function removeUrlAnchor(url) {
-
-    const index = url.indexOf('#')
-
-    return index !== -1 ? url.slice(0, index) : url
-
-
-
-
+// Square Every Digit
+function squareDigits(num) {
+    const arrNum = String(num).split('')
+    let stringNum = ''
+    arrNum.forEach(el => stringNum += el * el);
+    return Number(stringNum)
 }
 
-console.log(removeUrlAnchor('www.codewars.co#m'));
-console.log(removeUrlAnchor('www.codewars.com?page=1'));
+// palindrome
+function palindrome(str) {
+    const poli = str.split('').reverse().join('')
+    let poliArr = poli.split('')
+    let str2 = str.split('')
+    console.log(poliArr);
+
+    let s = []
+    let t = []
+
+    for (const el of poliArr) {
+        el !== ' ' && s.push(el)
+    }
+
+    for (const el of str2) {
+        el !== ' ' && t.push(el)
+    }
+    console.log(s);
+    console.log(t);
+    let g = s.join('').toLowerCase()
+    let h = t.join('').toLowerCase()
+    console.log(g);
+    console.log(h);
+
+
+    if (g.toLowerCase() === h.toLowerCase()) {
+        return true
+    } else {
+        return false
+    }
+}
+
+console.log(palindrome("A man, a plan, a canal. Panama"));
+
+
 
 
