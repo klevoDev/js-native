@@ -1,4 +1,18 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Square Every Digit
 function squareDigits(num) {
     const arrNum = String(num).split('')
@@ -39,7 +53,6 @@ function palindrome(str) {
     }
 }
 
-console.log(palindrome("A man, a plan, a canal. Panama"));
 
 
 
