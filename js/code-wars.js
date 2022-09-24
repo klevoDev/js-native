@@ -1,52 +1,97 @@
 
 
 
-// function change(str) {
-//     let arrStr = str.split('')
-//     let newArr = []
-//     for (let i = 0; i < arrStr.length; i++) {
-//         if (arrStr[i] === 'a') {
-//             newArr += 'b'
-//         } else if (arrStr[i] === 'b') {
-//             newArr += 'a'
-//         } else if (arrStr[i] !== 'b' || arrStr[i] !== 'a') {
-//             newArr += arrStr[i]
-//         }
+
+// 6 kyu Who likes it?
+// function likes(names) {
+//     let count = 0
+
+//     names.forEach(el => count++);
+
+//     if (count === 0) {
+//         return "no one likes this"
+//     } else if (count === 1) {
+//         return `${names[0]} likes this`
+//     } else if (count === 2) {
+//         return `${names[0]} and ${names[1]} like this`
+//     } else if (count === 3) {
+//         return `${names[0]}, ${names[1]} and ${names[2]} like this`
+//     } else if (count > 3) {
+//         return `"${names[0]}, ${names[1]} and ${count - 2} others like this"`
 //     }
-//     return newArr
 // }
 
-// console.log(change('abc'));
-
-function dotCalculator(equation) {
 
 
-
-    return '...';
-}
-
-console.log(change('abc'));
+// 6 kyu Replace With Alphabet Position
 
 
-// вопрос саше
-function countPositivesSumNegatives(input) {
-    let positive = 0
-    let negative = 0
-    if (!input) {
-        return []
+// 6 kyu Zero-plentiful Array
+function countZero(arr) {
+
+    let count = 0
+
+    for (let i = 0; i < arr.length; i++) {
+        if (i % 5 === 0 && arr[i] !== 0) {
+            count++
+        }
     }
 
-    for (let i = 0; i < input.length; i++) {
-        input[i] > 0 ? positive++ : negative += input[i]
-    }
-    if (positive === 0 && negative === 0) {
-        return []
-    }
-    return [positive, negative]
+    return count
 }
 
 
-console.log(countPositivesSumNegatives());
+
+
+
+
+
+
+// function upperCase(str) {
+//     if (str === str.toUpperCase()) {
+//         return true
+//     } else {
+//         return false
+//     }
+// }
+
+// console.log(upperCase('LS'));
+
+
+
+
+
+
+// function numCount(num) {
+
+//     let count = 1
+
+//     for (let i = 0; i < num; i++) {
+//         num % i === 0 && (count++)
+//     }
+//     return count
+// }
+
+// console.log(numCount(12));
+
+
+// function countPositivesSumNegatives(input) {
+//     let positive = 0
+//     let negative = 0
+//     if (!input) {
+//         return []
+//     }
+
+//     for (let i = 0; i < input.length; i++) {
+//         input[i] > 0 ? positive++ : negative += input[i]
+//     }
+//     if (positive === 0 && negative === 0) {
+//         return []
+//     }
+//     return [positive, negative]
+// }
+
+
 
 // вопрос саше
 function countPositivesSumNegatives(input) {
@@ -77,7 +122,7 @@ function countPositivesSumNegatives(input) {
 
 // console.log(countPositivesSumNegatives([0]));
 // console.log(countPositivesSumNegatives([0, 0]));
-console.log(countPositivesSumNegatives([null]));
+
 
 
 
