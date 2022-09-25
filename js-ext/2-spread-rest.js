@@ -187,41 +187,41 @@ console.log(newObj);
 // ~ Массив с объектами не делай
 
 
-function userManOne(obj, items) {
-    return {
-        ...obj,
-        address: {
-            ...obj.address,
-            street: {
-                ...obj.address.street
-            }
-        },
-        items: [
-            ...obj.items,
-            items,
-        ],
-    };
-}
+// function userManOne(obj, item) {
+//     return {
+//         ...obj,
+//         address: {
+//             ...obj.address,
+//             street: {
+//                 ...obj.address.street
+//             }
+//         },
+//         items: [
+//             ...obj.items,
+//             item,
+//         ],
+//     };
+// }
 
-console.log(userManCopy(userMan, 'table'));
+// console.log(userManOne(userMan, 'table'));
 
-function userManTwo(obj, ...items) {
-    return {
-        ...obj,
-        address: {
-            ...obj.address,
-            street: {
-                ...obj.address.street
-            }
-        },
-        items: [
-            ...obj.items,
-            ...items,
-        ],
-    };
-}
+// function userManTwo(obj, ...items) {
+//     return {
+//         ...obj,
+//         address: {
+//             ...obj.address,
+//             street: {
+//                 ...obj.address.street
+//             }
+//         },
+//         items: [
+//             ...obj.items,
+//             ...items,
+//         ],
+//     };
+// }
 
-console.log(userManTwo(userMan, 'table', 'cards', 'book'));
+// console.log(userManTwo(userMan, 'table', 'cards', 'book'));
 
 
 
@@ -249,70 +249,68 @@ const newUserMan = {
     ]
 }
 
+// function userManThree(obj, title, house) {
+//     return {
+//         ...obj,
+//         address: {
+//             ...obj.address,
+//             street: {
+//                 ...obj.address.street,
+//                 title,
+//                 house,
+//                 evenOddStreets: {
+//                     ...obj.address.street.evenOddStreets
+//                 }
+//             }
+//         },
+//         items: [
+//             ...obj.items
+//         ],
+//     }
+// }
+
+// console.log(userManThree(newUserMan, 'Lenina', 10));
 
 
-function userManThree(obj, title, house) {
-    return {
-        ...obj,
-        address: {
-            ...obj.address,
-            street: {
-                ...obj.address.street,
-                title,
-                house,
-                evenOddStreets: {
-                    ...obj.address.street.evenOddStreets
-                }
-            }
-        },
-        items: [
-            ...obj.items
-        ],
-    }
-}
-
-console.log(userManThree(newUserMan, 'Lenina', 10));
+// function changeName(obj, name) {
+//     return {
+//         ...obj,
+//         name,
+//         address: {
+//             ...obj.address,
+//             street: {
+//                 ...obj.address.street,
+//                 evenOddStreets: {
+//                     ...obj.address.street.evenOddStreets
+//                 }
+//             },
+//         },
+//         items: [
+//             ...obj.items
+//         ]
+//     }
+// }
 
 
-function changeName(obj, name) {
-    return {
-        ...obj,
-        name,
-        address: {
-            ...obj.address,
-            street: {
-                ...obj.address.street,
-                evenOddStreets: {
-                    ...obj.address.street.evenOddStreets
-                }
-            },
-        },
-        items: [
-            ...obj.items
-        ]
-    }
-}
+// console.log(changeName(newUserMan, 'Max'));
 
+// function changeAge(obj) {
+//     return {
+//         ...obj,
+//         age: obj.age + 1,
+//         address: {
+//             ...obj.address,
+//             street: {
+//                 ...obj.address.street,
+//                 evenOddStreets: {
+//                     ...obj.address.street.evenOddStreets
+//                 },
+//             },
+//         },
+//         items: [
+//             ...obj.items
+//         ]
+//     }
+// }
 
-console.log(changeName(newUserMan, 'Max'));
-
-function changeAge(obj, age) {
-    return {
-        ...obj,
-        age,
-        address: {
-            ...obj.address,
-            street: {
-                ...obj.address.street,
-                evenOddStreets: {
-                    ...obj.address.street.evenOddStreets
-                },
-            },
-        },
-        items: [
-            ...obj.items
-        ]
-    }
-}
-
-console.log(changeAge(newUserMan, 25));
+// console.log(changeAge(newUserMan));

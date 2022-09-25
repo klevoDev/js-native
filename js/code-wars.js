@@ -1,4 +1,23 @@
 
+// 6 kyu Find the odd int
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
