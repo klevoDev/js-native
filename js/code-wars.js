@@ -1,27 +1,82 @@
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 7 kyu Highest and Lowest +
+
+// function highAndLow(numbers) {
+//     const arrNumbers = numbers.split(' ')
+//     return `${Math.max(...arrNumbers)} ${Math.min(...arrNumbers)}`
+// }
+
+// console.log(highAndLow('1 2 -3 4 5'));
+
+
+
+
+// 7 kyu Vowel Count +
+
+// function getCount(str) {
+//     let count = 0
+//     for (let i = 0; i < str.length; i++) {
+
+//         if (str[i] === 'a' || str[i] === 'e' || str[i] === 'i' || str[i] === 'o' || str[i] === 'u') {
+//             count++
+//         }
+//     }
+//     return count;
+// }
+// console.log(getCount('abracadabra'));
+
+
+
+
+
+// 6 kyu T.T.T.49: John and Anne's sweet date
+
+
+
+// function test(w1, r1, w2, r2, timePeriod) {
+//     let allCount = 0
+
+
+//     for (let i = 0; i < timePeriod; i++) {
+
+//     }
+
+
+
+//     return allCount
+// }
+
+
+// console.log(test(3, 1, 7, 3, 10));
+
+
+
+
+
+
+
+
+
+
 // 6 kyu Find the odd int
 
+// 6 kyu Who likes it? +
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 6 kyu Who likes it?
 // function likes(names) {
 //     let count = 0
 
@@ -113,19 +168,19 @@ function countZero(arr) {
 
 
 // вопрос саше
-function countPositivesSumNegatives(input) {
-    let positive = 0
-    let negative = 0
+// function countPositivesSumNegatives(input) {
+//     let positive = 0
+//     let negative = 0
 
 
-    for (let i = 0; i < input.length; i++) {
-        input[i] > 0 ? positive++ : negative += input[i]
-    }
-    if (positive === 0 && negative === 0) {
-        return []
-    }
-    return [positive, negative]
-}
+//     for (let i = 0; i < input.length; i++) {
+//         input[i] > 0 ? positive++ : negative += input[i]
+//     }
+//     if (positive === 0 && negative === 0) {
+//         return []
+//     }
+//     return [positive, negative]
+// }
 
 // TypeError: Cannot read property 'length' of null
 //     at countPositivesSumNegatives (test.js:8:31)
@@ -148,68 +203,75 @@ function countPositivesSumNegatives(input) {
 
 
 
-        // function a2hex(str) {
-        //     let arr = [];
-        //     for (let i = 0; i < str.length; i++) {
-        //         let hex = Number(str.charCodeAt(i)).toString(16);
-        //         arr.push(hex);
-        //     }
+// function a2hex(str) {
+//     let arr = [];
+//     for (let i = 0; i < str.length; i++) {
+//         let hex = Number(str.charCodeAt(i)).toString(16);
+//         arr.push(hex);
+//     }
 
-        //     let hex = arr.join('');
-        //     let s = hex.split('')
-        //     // let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-        //     // let j = []
-        //     // for (let i = 0; i < s.length; i++) {
-        //     //     s[i] === nums[i] && (j.push(nums[i]))
-        //     // }
+//     let hex = arr.join('');
+//     let s = hex.split('')
+//     // let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+//     // let j = []
+//     // for (let i = 0; i < s.length; i++) {
+//     //     s[i] === nums[i] && (j.push(nums[i]))
+//     // }
 
-        //     return s
-        // }
-        // ; //returns 32343630
+//     return s
+// }
+// ; //returns 32343630
 
-        // // console.log(a2hex('Hello, World!'));
-
-
+// // console.log(a2hex('Hello, World!'));
 
 
 
 
-        // // Square Every Digit
-        // function squareDigits(num) {
-        //     const arrNum = String(num).split('')
-        //     let stringNum = ''
-        //     arrNum.forEach(el => stringNum += el * el);
-        //     return Number(stringNum)
-        // }
-
-        // // palindrome
-        // function palindrome(str) {
-        //     const poli = str.split('').reverse().join('')
-        //     let poliArr = poli.split('')
-        //     let str2 = str.split('')
-        //     console.log(poliArr);
-
-        //     let s = []
-        //     let t = []
-
-        //     for (const el of poliArr) {
-        //         el !== ' ' && s.push(el)
-        //     }
-
-        //     for (const el of str2) {
-        //         el !== ' ' && t.push(el)
-        //     }
-        //     console.log(s);
-        //     console.log(t);
-        //     let g = s.join('').toLowerCase()
-        //     let h = t.join('').toLowerCase()
-        //     console.log(g);
-        //     console.log(h);
 
 
-        //     if (g.toLowerCase() === h.toLowerCase()) {
-        //         return true
-        //     } else {
-        //         return false
-        //     }
-        // }
+// // Square Every Digit
+// function squareDigits(num) {
+//     const arrNum = String(num).split('')
+//     let stringNum = ''
+//     arrNum.forEach(el => stringNum += el * el);
+//     return Number(stringNum)
+// }
+
+// // palindrome
+// function palindrome(str) {
+//     const poli = str.split('').reverse().join('')
+//     let poliArr = poli.split('')
+//     let str2 = str.split('')
+//     console.log(poliArr);
+
+//     let s = []
+//     let t = []
+
+//     for (const el of poliArr) {
+//         el !== ' ' && s.push(el)
+//     }
+
+//     for (const el of str2) {
+//         el !== ' ' && t.push(el)
+//     }
+//     console.log(s);
+//     console.log(t);
+//     let g = s.join('').toLowerCase()
+//     let h = t.join('').toLowerCase()
+//     console.log(g);
+//     console.log(h);
+
+
+//     if (g.toLowerCase() === h.toLowerCase()) {
+//         return true
+//     } else {
+//         return false
+//     }
+// }
+
+
+
+
+
+
+
