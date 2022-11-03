@@ -14,6 +14,33 @@
 
 
 
+
+
+
+// 8 kyu Even or Odd +
+
+// function evenOrOdd(number) {
+//     return number % 2 === 0 ? "Even" : "Odd";
+// }
+
+
+
+
+// 6 kyu Multiples of 3 or 5 +
+
+// function solution(number) {
+//     let sum = 0
+//     for (let i = 0; i < number; i++) {
+//         if (i % 3 === 0 || i % 5 === 0) {
+//             sum += i
+//         }
+//     }
+//     return sum;
+// }
+// console.log(solution(15));
+
+
+
 // 7 kyu Highest and Lowest +
 
 // function highAndLow(numbers) {
@@ -101,18 +128,18 @@
 
 
 // 6 kyu Zero-plentiful Array
-function countZero(arr) {
+// function countZero(arr) {
 
-    let count = 0
+//     let count = 0
 
-    for (let i = 0; i < arr.length; i++) {
-        if (i % 5 === 0 && arr[i] !== 0) {
-            count++
-        }
-    }
+//     for (let i = 0; i < arr.length; i++) {
+//         if (i % 5 === 0 && arr[i] !== 0) {
+//             count++
+//         }
+//     }
 
-    return count
-}
+//     return count
+// }
 
 
 
