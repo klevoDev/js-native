@@ -17,6 +17,68 @@
 
 
 
+
+// 6 kyu Find The Parity Outlier +
+
+// function findOutlier(i) {
+
+//     let odd = []
+//     let even = []
+
+//     for (const el of i) {
+//         el % 2 === 0 ? even.push(el) : odd.push(el)
+//     }
+
+//     if (odd.length > 1) {
+//         return Number(even.join(''))
+//     } else {
+//         return Number(odd.join(''))
+//     }
+// }
+
+
+// console.log(findOutlier([1, 1, 0, 1, 1]));
+
+
+
+
+// 6 kyu Bit Counting +
+
+// var countBits = function (n) {
+//     let nBin = n.toString(2)
+//     let total = ''
+//     for (const el of nBin) {
+//         el === '1' && total++
+//     }
+//     return total
+// };
+
+// console.log(countBits(8784356007));
+
+
+
+// 6 kyu Create Phone Number +
+
+// function createPhoneNumber(numbers) {
+//     let codeCountry = []
+//     let codeCity = []
+//     let homePhone = []
+
+//     for (let i = 0; i < numbers.length; i++) {
+//         if (i < 3) {
+//             codeCountry.push(numbers[i])
+//         } else if (i > 2 && i < 6) {
+//             codeCity.push(numbers[i])
+//         } else if (i > 5) {
+//             homePhone.push(numbers[i])
+//         }
+//     }
+//     return `(${codeCountry.join('')}) ${codeCity.join('')}-${homePhone.join('')}`
+// }
+
+// console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
+
+
 // 8 kyu Even or Odd +
 
 // function evenOrOdd(number) {
