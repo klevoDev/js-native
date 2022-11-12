@@ -11,11 +11,87 @@
 
 
 
+// ======================>
 
 
+// 7 kyu Small enough? - Beginner +
+
+// function smallEnough(a, limit) {
+//     const value = a.find(el => el > limit)
+//     return value > limit ? false : true
+// }
 
 
+// ======================>
 
+
+// 6 kyu Break camelCase +
+
+// const sort = (str) => {
+//     let newArr = []
+//     for (const el of str) {
+//         if (el !== el.toUpperCase()) {
+//             newArr.push(el)
+//         } else {
+//             newArr.push(' ')
+//             newArr.push(el)
+//         }
+//     }
+
+//     return newArr.join('')
+// }
+
+// console.log(sort("idenTifier"));
+
+
+// ======================>
+
+
+// 6 kyu Find the unique number
+
+// const test = (arr) => {
+//     let num = []
+//     for (const el of arr) {
+//         if (arr[0] === arr[1]) {
+//             el !== arr[0] && num.push(el)
+//         } else {
+//             if (arr[0] === arr[2]) {
+//                 return arr[1]
+//             } else {
+//                 return arr[0]
+//             }
+//         }
+//     }
+//     return Number(num)
+// }
+
+
+// console.log(test([1, 0, 0]));
+// console.log(test([0, 1, 0]));
+// console.log(test([0, 0, 1]));
+
+
+// ======================>
+
+
+// 6 kyu Does my number look big in this?
+
+// const numbers = (num) => {
+//     const arrNum = String(num).split('')
+//     const multiplier = arrNum.length
+//     let sum = 0
+//     for (const el of arrNum) {
+//         sum += el ** multiplier
+//     }
+
+//     return sum === num ? true : false
+// }
+
+
+// console.log(numbers(1533));
+
+
+// ======================>
 
 
 // 6 kyu Find The Parity Outlier +
@@ -40,6 +116,7 @@
 // console.log(findOutlier([1, 1, 0, 1, 1]));
 
 
+// ======================>
 
 
 // 6 kyu Bit Counting +
@@ -55,6 +132,8 @@
 
 // console.log(countBits(8784356007));
 
+
+// ======================>
 
 
 // 6 kyu Create Phone Number +
@@ -79,6 +158,9 @@
 // console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]));
 
 
+// ======================>
+
+
 // 8 kyu Even or Odd +
 
 // function evenOrOdd(number) {
@@ -86,6 +168,7 @@
 // }
 
 
+// ======================>
 
 
 // 6 kyu Multiples of 3 or 5 +
@@ -102,6 +185,8 @@
 // console.log(solution(15));
 
 
+// ======================>
+
 
 // 7 kyu Highest and Lowest +
 
@@ -113,6 +198,7 @@
 // console.log(highAndLow('1 2 -3 4 5'));
 
 
+// ======================>
 
 
 // 7 kyu Vowel Count +
@@ -130,39 +216,8 @@
 // console.log(getCount('abracadabra'));
 
 
+// ======================>
 
-
-
-// 6 kyu T.T.T.49: John and Anne's sweet date
-
-
-
-// function test(w1, r1, w2, r2, timePeriod) {
-//     let allCount = 0
-
-
-//     for (let i = 0; i < timePeriod; i++) {
-
-//     }
-
-
-
-//     return allCount
-// }
-
-
-// console.log(test(3, 1, 7, 3, 10));
-
-
-
-
-
-
-
-
-
-
-// 6 kyu Find the odd int
 
 // 6 kyu Who likes it? +
 
@@ -185,11 +240,11 @@
 // }
 
 
+// ======================>
 
-// 6 kyu Replace With Alphabet Position
 
+// 6 kyu Zero-plentiful Array +
 
-// 6 kyu Zero-plentiful Array
 // function countZero(arr) {
 
 //     let count = 0
@@ -202,163 +257,6 @@
 
 //     return count
 // }
-
-
-
-
-
-
-
-
-// function upperCase(str) {
-//     if (str === str.toUpperCase()) {
-//         return true
-//     } else {
-//         return false
-//     }
-// }
-
-// console.log(upperCase('LS'));
-
-
-
-
-
-
-// function numCount(num) {
-
-//     let count = 1
-
-//     for (let i = 0; i < num; i++) {
-//         num % i === 0 && (count++)
-//     }
-//     return count
-// }
-
-// console.log(numCount(12));
-
-
-// function countPositivesSumNegatives(input) {
-//     let positive = 0
-//     let negative = 0
-//     if (!input) {
-//         return []
-//     }
-
-//     for (let i = 0; i < input.length; i++) {
-//         input[i] > 0 ? positive++ : negative += input[i]
-//     }
-//     if (positive === 0 && negative === 0) {
-//         return []
-//     }
-//     return [positive, negative]
-// }
-
-
-
-// вопрос саше
-// function countPositivesSumNegatives(input) {
-//     let positive = 0
-//     let negative = 0
-
-
-//     for (let i = 0; i < input.length; i++) {
-//         input[i] > 0 ? positive++ : negative += input[i]
-//     }
-//     if (positive === 0 && negative === 0) {
-//         return []
-//     }
-//     return [positive, negative]
-// }
-
-// TypeError: Cannot read property 'length' of null
-//     at countPositivesSumNegatives (test.js:8:31)
-//     at Context.<anonymous> (test.js:40:18)
-//     at processImmediate (internal/timers.js:464:21)
-
-
-
-
-
-
-// console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
-
-// console.log(countPositivesSumNegatives([0]));
-// console.log(countPositivesSumNegatives([0, 0]));
-
-
-
-
-
-
-
-// function a2hex(str) {
-//     let arr = [];
-//     for (let i = 0; i < str.length; i++) {
-//         let hex = Number(str.charCodeAt(i)).toString(16);
-//         arr.push(hex);
-//     }
-
-//     let hex = arr.join('');
-//     let s = hex.split('')
-//     // let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
-//     // let j = []
-//     // for (let i = 0; i < s.length; i++) {
-//     //     s[i] === nums[i] && (j.push(nums[i]))
-//     // }
-
-//     return s
-// }
-// ; //returns 32343630
-
-// // console.log(a2hex('Hello, World!'));
-
-
-
-
-
-
-// // Square Every Digit
-// function squareDigits(num) {
-//     const arrNum = String(num).split('')
-//     let stringNum = ''
-//     arrNum.forEach(el => stringNum += el * el);
-//     return Number(stringNum)
-// }
-
-// // palindrome
-// function palindrome(str) {
-//     const poli = str.split('').reverse().join('')
-//     let poliArr = poli.split('')
-//     let str2 = str.split('')
-//     console.log(poliArr);
-
-//     let s = []
-//     let t = []
-
-//     for (const el of poliArr) {
-//         el !== ' ' && s.push(el)
-//     }
-
-//     for (const el of str2) {
-//         el !== ' ' && t.push(el)
-//     }
-//     console.log(s);
-//     console.log(t);
-//     let g = s.join('').toLowerCase()
-//     let h = t.join('').toLowerCase()
-//     console.log(g);
-//     console.log(h);
-
-
-//     if (g.toLowerCase() === h.toLowerCase()) {
-//         return true
-//     } else {
-//         return false
-//     }
-// }
-
-
 
 
 
