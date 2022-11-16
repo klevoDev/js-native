@@ -11,6 +11,43 @@
 
 
 
+
+
+
+
+
+
+
+
+
+// ======================>
+
+
+// 7 kyu You're a square!
+
+// function isSquare(n) {
+//     return Math.sqrt(n) % 1 === 0
+// }
+// console.log(isSquare(4));
+
+
+// ======================>
+
+
+// 7 kyu Disemvowel Troll +
+
+// function disemvowel(str) {
+//     const vowels = ['a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U']
+
+//     return str
+//         .split('')
+//         .filter(char => !vowels.includes(char))
+//         .join('');
+// }
+
+// console.log(disemvowel("This website is for losers LOL!"));
+
+
 // ======================>
 
 
