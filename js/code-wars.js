@@ -13,11 +13,91 @@
 
 
 
+// ======================>
 
 
+// 8 kyu Counting sheep...
 
 
+// function countSheeps(arrayOfSheep) {
+//     let totalSheep = 0
+//     for (const el of arrayOfSheep) {
+//         el === true && totalSheep++
+//     }
+//     return totalSheep
+// }
 
+// console.log(countSheeps([true, true, true, false,
+//     true, true, true, true,
+//     true, false, true, false,
+//     true, false, false, true,
+//     true, true, true, true,
+//     false, false, true, true]));
+
+
+// ======================>
+
+
+// 8 kyu Find the smallest integer in the array
+
+// function s(args) {
+//     return Math.min(...args)
+// }
+
+// console.log(s([34, 15, 88, 2]));
+
+
+// ======================>
+
+
+// 8 kyu Square(n) Sum
+
+// function squareSum(numbers) {
+//     let result = 0
+//     for (const el of numbers) {
+//         result += el * el
+//     }
+//     return result
+// }
+
+// console.log(squareSum([1, 2, 2]));
+
+
+// ======================>
+
+
+// 8 kyu Sum of positive
+
+// function positiveSum(arr) {
+//     let result = 0
+//     for (const el of arr) {
+//         el > 0 && (result += el)
+//     }
+//     return result
+// }
+
+// console.log(positiveSum([1, -4, 7, 12]));
+// console.log(positiveSum([]));
+
+
+// ======================>
+
+
+// 6 kyu Stop gninnipS My sdroW!
+
+// const s = (str) => {
+//     let arrStr = str.split(' ')
+
+//     return arrStr.map(el => {
+//         if (el.split('').length >= 5) {
+//             return el.split('').reverse().join('')
+//         } else {
+//             return el
+//         }
+//     }).join('')
+// }
+
+// console.log(s("Welcome"));
 
 
 // ======================>
