@@ -12,6 +12,82 @@
 
 
 
+// ======================>
+
+
+// 8 kyu Localize The Barycenter of a Triangle
+
+// function barTriang(p1, p2, p3) {
+
+    // let sumZeroEl = []
+    // let sumSecondEl = []
+    // let result = []
+
+    // sumZeroEl.push(p1[0], p2[0], p3[0])
+    // sumSecondEl.push(p1[1], p2[1], p3[1])
+
+    // result.push(sumZeroEl.reduce((partialSum, a) => partialSum + a, 0) / 3).toFixed(2)
+
+    // result.push(sumSecondEl.reduce((partialSum, a) => partialSum + a, 0) / 3)
+
+    // return result.map(el => Number(el.toFixed(4)))
+// }
+
+// console.log(barTriang([4, 6], [12, 4], [10, 10]));
+
+
+// ======================>
+
+
+// 8 kyu Basic Mathematical Operation
+
+// function basicOp(operation, value1, value2) {
+//     return eval(value1 + operation + value2)
+// }
+
+// console.log(basicOp('+', 4, 7));
+// console.log(basicOp('+', 4, 7));
+// console.log(basicOp('*', 5, 5));
+
+
+// ======================>
+
+
+// 8 kyu Century From Year
+
+// function century(year) {
+//     return Math.ceil(year / 100)
+// }
+
+// console.log(century(1900));
+
+
+// ======================>
+
+
+// 5 kyu Moving Zeros To The End
+
+// function moveZeros(arr) {
+//     let newArr = []
+//     let countZero = 0
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] !== 0) {
+//             newArr.push(arr[i])
+//         } else {
+//             countZero++
+//         }
+//     }
+
+//     for (let i = 0; i < countZero; i++) {
+//         newArr.push(0)
+//     }
+
+//     return newArr
+// }
+
+// console.log(moveZeros([false, 1, 0, 1, 2, 0, 1, 3, "a"]));
+// console.log(moveZeros([1, 2, 0, 1, 0, 1, 0, 3, 0, 1]));
+
 
 // ======================>
 
