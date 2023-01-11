@@ -12,6 +12,57 @@
 
 
 
+
+
+
+
+function findNeedle(haystack) {
+   return haystack.indexOf('needle')
+  }
+
+console.log(findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]));
+
+
+
+
+// 8 kyu Beginner - Lost Without a Map
+
+
+// function maps(x){
+//         return x.map(value => value * 2)
+// }
+
+
+// ======================>
+
+
+// 8 kyu Convert number to reversed array of digits
+
+// function digitize(n) {
+//     return Array.from(String(n), Number).reverse();
+   
+//   }
+
+//   console.log(digitize(35231));
+
+
+// ======================>
+
+
+// function isDivisible(n, x, y) {
+//     return n % x === 0 && n % y === 0 ? true : false
+//   }
+
+
+// ======================>
+
+
+// 8 kyu Keep Hydrated!
+
+// function litres(time) {
+//     return Math.floor(itme * 0.5);
+//   }
+
 // ======================>
 
 
