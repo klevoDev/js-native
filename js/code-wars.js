@@ -16,13 +16,113 @@
 
 
 
-function findNeedle(haystack) {
-   return haystack.indexOf('needle')
+
+
+
+function betterThanAverage(classPoints, yourPoints) {
+   return Math.max.apply(null, classPoints) < yourPoints
   }
 
-console.log(findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]));
+console.log(betterThanAverage([1, 2], 4));
+// ======================>
 
 
+// 8 kyu Sum Arrays
+
+
+// function sum (numbers) {
+//     if (numbers === []) {
+//         return 0
+//     } else {
+//         let result = numbers.reduce((increase, num) =>  increase + num, 0);
+//         return result
+//     } 
+// };
+
+
+// ======================>
+
+
+// 8 kyu Beginner - Reduce but Grow
+
+
+// function grow(x){
+//     let result = x.reduce((increase, num) =>  increase * num, 1);
+//       return result
+// }
+
+// console.log(grow([1,2,3]));
+
+
+// ======================>
+
+
+// 8 kyu Reversed sequence
+
+
+// const reverseSeq = n => {
+//     let arr = []
+//     for (let i = 1; i <= n; i++) {
+//         arr.push(i)
+//     }
+//     return arr.reverse()
+//   };
+
+
+// ======================>
+
+
+// 8 kyu Calculate BMI
+
+
+// function bmi(weight, height) {
+//     if(weight / height ** 2 <= 18.5) {
+//         return "Underweight"
+//     } else if (weight / height ** 2 <= 25.0) {
+//         return "Normal"
+//     } else if(weight / height ** 2 <= 30.0) {
+//         return "Overweight"
+//     } else if (weight / height ** 2 > 30) {
+//         return "Obese"
+//     }
+//   }
+
+
+// ======================>
+
+
+// 8 kyu MakeUpperCase
+
+
+// function makeUpperCase(str) {
+//     return str.toUpperCase()
+//   }
+
+
+// ======================>
+
+
+// 8 kyu Will you make it?
+
+// const zeroFuel = (distanceToPump, mpg, fuelLeft) => {
+//     return fuelLeft * mpg >= distanceToPump ? true : false
+//   };
+
+
+// ======================>
+
+
+// 8 kyu A Needle in the Haystack
+
+
+//     function findNeedle(haystack) {
+//         return `found the needle at position ${haystack.indexOf('needle')}`
+//       }
+
+// console.log(findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]));
+
+
+// ======================>
 
 
 // 8 kyu Beginner - Lost Without a Map
